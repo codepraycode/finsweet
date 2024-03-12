@@ -1,0 +1,40 @@
+// Utility classes
+@use './variables' as *;
+@use './mixins' as mixins;
+
+
+.bg {
+    &-hero {
+        background-color: $hero-bg;
+    }
+}
+
+
+.text {
+    &-active {
+        color: $active-text;
+    }
+    &-white {
+        color: $white;
+
+        &-darken {
+            color: darken($color: $white, $amount: 20%);
+        }
+    }
+}
+
+
+
+// Fonts
+.poppins-regular {
+    @include mixins.poppins-regular;
+}
+
+.poppins-medium {
+    @include mixins.poppins-medium;
+}
+
+.poppins-semibold {
+    @include mixins.poppins-semibold;
+}
+
