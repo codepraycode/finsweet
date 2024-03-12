@@ -3,6 +3,14 @@
 @use './mixins' as mixins;
 
 
+
+// Layout
+.container {
+    max-width: $desktop-size;
+    margin-inline: auto;
+}
+
+
 .bg {
     &-hero {
         background-color: $hero-bg;
@@ -18,8 +26,12 @@
         color: $white;
 
         &-darken {
-            color: darken($color: $white, $amount: 20%);
+            color: $white-darken;
         }
+    }
+
+    &-capitalize {
+        text-transform:capitalize !important;
     }
 }
 
@@ -38,3 +50,38 @@
     @include mixins.poppins-semibold;
 }
 
+
+// Buttons
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+
+    @include mixins.poppins-semibold;
+
+    &-transparent {
+        background-color: transparent;
+        border: 0;
+    }
+
+    &-with-arrow {
+        position: relative;
+        width: fit-content;
+        // background-color: red;
+        &::after {
+            $arrow-size: 2rem;
+
+            content: "";
+            position: absolute;
+            bottom: 47%;
+
+            width: $arrow-size;
+            height: calc($arrow-size / 4);
+            background-image: url('/images/icons/arrow.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            // background-color: red;
+        }
+    }
+}

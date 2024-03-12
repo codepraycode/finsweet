@@ -1,8 +1,13 @@
+import Header from "./Header";
 
 
 const HeroSection = () => {
     return (
-        <h1>Hero Section</h1>
+        <section>
+            <Header />
+            <hr/>
+            <h1>Hero Section</h1>
+        </section>
     )
 }
 

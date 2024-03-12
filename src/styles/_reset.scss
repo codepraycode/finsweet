@@ -15,7 +15,12 @@ body {
     font-size: $base-font;
 }
 
+
 a {
     color: inherit;
-    text-decoration: none;
+    // text-decoration: none;
+}
+
+hr {
+    border-color: $white-gray;
 }
