@@ -1,8 +1,15 @@
+import Header from "./Header";
 
 
 const HeroSection = () => {
     return (
-        <h1>Hero Section</h1>
+        <section className="bg-hero">
+            <Header />
+            <hr/>
+            <div className="hero container">
+                Hero Section
+            </div>
+        </section>
     )
 }
 
