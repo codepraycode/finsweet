@@ -79,5 +79,63 @@
 }
 
 .hero {
-    height: 90vh;
+    @include flex;
+    justify-content: space-between;
+    height: 89vh;
+    // align-items: center;
+
+    h1 {
+        // align-self: flex-start;
+        padding-top: 10rem;
+        width: 50%;
+        @include mixins.poppins-semibold;
+        font-size: 3.8rem;
+        line-height: 3.9rem;
+
+        color: $white;
+        span {
+            display: inline-block;
+            line-height: 1.5rem;
+            color: $white-darken;
+            font-size: 1.2rem;
+
+            margin-block: 1.54rem;
+        }
+
+        &::before {
+            content: "";
+            $box-size: 1.3rem;
+
+            display: block;
+            
+            width: $box-size;
+            height: $box-size;
+
+            background-color: hsla(0, 0%, 100%, 0.06);
+            border-radius: .2rem;
+            margin-bottom: 1.7rem;
+        }
+    }
+
+    &_image {
+        width: 40%;
+        height: 100%;
+        // background-color: red;
+        background-image: url('/images/hero_Image.png');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        // background-color: red;
+        background-size: contain
+    }
+
+    .btn {
+        @include mixins.poppins-medium;
+        font-size: 1rem;
+
+        &::after {
+            --arrow-size: 2.3rem;
+            --arrow-height: 27%;
+        }
+    }
 }
