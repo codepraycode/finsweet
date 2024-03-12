@@ -3,10 +3,12 @@ import Header from "./Header";
 
 const HeroSection = () => {
     return (
-        <section>
+        <section className="bg-hero">
             <Header />
             <hr/>
-            <h1>Hero Section</h1>
+            <div className="hero container">
+                Hero Section
+            </div>
         </section>
     )
 }

@@ -13,6 +13,8 @@
 body {
     @include mixins.poppins-regular;
     font-size: $base-font;
+    width: 100%;
+    height: 100%;
 }
 
 

@@ -26,8 +26,6 @@
 
 .header-top {
     @include flex;
-    // align-items: flex-start;
-    // padding-bottom: 1.3rem;
 
     .logo {
         align-self: center;
@@ -78,4 +76,8 @@
             }
         }
     }
+}
+
+.hero {
+    height: 90vh;
 }
