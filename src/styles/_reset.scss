@@ -15,6 +15,7 @@ body {
     font-size: $base-font;
     width: 100%;
     height: 100%;
+    color: $hero-bg;
 }
 
 
@@ -25,4 +26,29 @@ a {
 
 hr {
     border-color: $white-gray;
+}
+
+h1, h2, h3
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+ul[role="list"] {
+    list-style: none;
+    padding: 0;
+}
+
+input {
+    color: inherit;
+
+    &::placeholder {
+        opacity: .6;
+    }
 }

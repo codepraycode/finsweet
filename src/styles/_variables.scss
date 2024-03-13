@@ -1,16 +1,27 @@
 // All variable styles
-
 // Colors
 $hero-bg: hsla(234, 21%, 17%, 1);
+$hero-bg-gray: hsla(234, 21%, 17%, 0.17);
 $active-bar: hsla(27, 100%, 67%, 1);
 $active-text: hsla(27, 100%, 84%, 1);
+$active-bg: hsla(27, 100%, 91%, 1);
 
 $white: hsla(0, 0%, 100%, 1);
 $white-gray: hsla(0, 0%, 100%, 0.05);
 $white-darken: darken($color: $white, $amount: 30%);
 
+$blue: hsla(237, 97%, 63%, 1);
+$blue-light: hsla(237, 100%, 70%, 1);
+$light-blue: hsla(237, 100%, 99%, 1);
+$blue-accent: hsla(185, 52%, 95%, 1);
+$gray: hsla(234, 8%, 40%, 1);
+$box-cap-deep: hsla(0, 0%, 100%, 0.06);
+$box-cap-blue:hsla(237, 100%, 70%, 1);
 // Fonts
 $base-font: 16px;
 
+
+
 // Screen size
-$desktop-size: 1500px;
+$desktop-size: 1300px;
+
