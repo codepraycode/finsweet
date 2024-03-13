@@ -223,13 +223,7 @@
     .info-cta {
         @include flex;
         align-items: center;
-        a {
-            margin-left: auto;
-            color: $blue;
-            text-decoration: none;
-            --arrow-distance: 7.6rem;
-            --arrow-height: 34%;
-        }
+
         & > div {
             @include flex;
             justify-content: space-between;
@@ -269,25 +263,30 @@
         }
     }
 
-    .card {
-        width: 32rem;
-        height: 8.8rem;
+    .card-icon {
+        float: left;
+        margin-right: 1.2rem;
+    }
+}
 
-        background-color: $white;
-        padding: 2rem;
+.services {
+    button {
+        margin-block: 3rem;
+    }
 
-        &-icon {
-            width: 2.95rem;
-            float: left;
-            margin-right: 1.2rem;
-        }
+    .half-length {
+        width: 60%;
+    }
 
-        &-margin {
-            &-top {
-                margin-top: 1rem;
-            }
-            &-bottom {
-                margin-bottom: 1rem;
+    .cards {
+        @include flex;
+        justify-content: space-between;
+
+        .card {
+            width: 25rem;
+
+            h3 {
+                margin-block: .7rem;
             }
         }
     }

@@ -58,7 +58,7 @@ const AboutSection = () => {
                     </div>
                 </div>
 
-                <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark">
+                <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
                     Read about us
                 </Link>
             </div>

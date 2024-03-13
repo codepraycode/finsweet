@@ -22,6 +22,9 @@
     &-blue-accent {
         background-color: $blue-accent;
     }
+    &-orange {
+        background-color: $active-bg;
+    }
 }
 
 
@@ -140,12 +143,14 @@
         @include mixins.poppins-medium;
         letter-spacing: .2rem;
         text-transform: uppercase;
+        margin-bottom: .5rem;
     }
 
     &-h1 {
         @include mixins.poppins-semibold;
         font-size: 3rem;
         line-height: 3.6rem;
+        
     }
     &-h2 {
         @include mixins.poppins-semibold;
@@ -168,3 +173,51 @@
 
 //     }
 // }
+
+a.nav-cta {
+    margin-left: auto;
+    color: $blue;
+    text-decoration: none;
+    --arrow-distance: 7.6rem;
+    --arrow-height: 34%;
+}
+
+// Cards
+article.card {
+    h3 {
+        font-size: 1rem;
+        @include mixins.poppins-semibold;
+    }
+    p {
+        @include mixins.poppins-regular;
+        font-size: .87rem;
+        margin-top: .5rem;
+    }
+
+    a.nav-cta {
+        @include mixins.poppins-medium;
+        font-size: 1rem;
+        --arrow-distance: 6rem;
+    }
+}
+.card {
+    width: 32rem;
+    // height: 8.8rem;
+
+    background-color: $white;
+    padding: 2rem;
+
+    &-icon {
+        width: 2.95rem;
+    }
+
+    &-margin {
+        &-top {
+            margin-top: 1rem;
+        }
+
+        &-bottom {
+            margin-bottom: 1rem;
+        }
+    }
+}
