@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const NewsLetter = () => {
     return (
-        <div className="container container--padded newsletter">
+        <div className="container container--padded container--outer-space newsletter">
             <h1 >
                 <span className="section-header">NEWSLETTER</span>
                 
@@ -111,7 +111,7 @@ const FooterDetails = () => {
 
 const FooterSection = () => {
     return (
-        <section>
+        <section >
 
             <NewsLetter />
             <br/><br/><br/><br/>
