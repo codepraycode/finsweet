@@ -44,3 +44,11 @@ ul[role="list"] {
     list-style: none;
     padding: 0;
 }
+
+input {
+    color: inherit;
+
+    &::placeholder {
+        opacity: .6;
+    }
+}

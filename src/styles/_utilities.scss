@@ -66,6 +66,15 @@
 
 // Buttons
 
+
+.shape-on-edge {
+    @include mixins.shape-on-edge;
+}
+
+.d-block {
+    display: block !important;
+}
+
 .btn {
     display: inline-block;
     cursor: pointer;
@@ -82,7 +91,7 @@
         border: 0;
 
         color: $white;
-        position: relative;
+        
 
         z-index: 0;
 
@@ -91,21 +100,7 @@
 
         font-size: .9rem !important;
 
-        &::before {
-            content: "";
-            position: absolute;
-
-            width: 1.75rem;
-            height: 1.75rem;
-
-            background-image: url('/images/shapes-1.svg');
-            // background-color: red;   
-            background-repeat: no-repeat;
-
-            top: 0;
-            left: 0;
-        }
-
+        @include mixins.shape-on-edge;
         &::after {
             --arrow-height: 42% !important;
             --arrow-distance: 8.95rem;
@@ -142,6 +137,7 @@
 
 .section {
     &-header {
+        display: block;
         font-size: .8rem;
         @include mixins.poppins-medium;
         letter-spacing: .2rem;
@@ -153,11 +149,13 @@
         @include mixins.poppins-semibold;
         font-size: 3rem;
         line-height: 3.6rem;
+        display: block;
         
     }
     &-h2 {
         @include mixins.poppins-semibold;
         font-size: 2.25rem;
+        
     }
     &-h3 {
         display: inline-block;
