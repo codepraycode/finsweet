@@ -8,6 +8,10 @@
 .container {
     max-width: $desktop-size;
     margin-inline: auto;
+
+    &--padded {
+        padding-block: 7rem;
+    }
 }
 
 
@@ -120,5 +124,17 @@
             background-repeat: no-repeat;
             // background-color: red;
         }
+
+        &.arrow-dark::after {
+            background-image: url('/images/icons/arrow-dark.svg');
+        }
     }
 }
+
+
+// Border
+// .border-des {
+//     &-right {
+
+//     }
+// }

@@ -15,6 +15,7 @@ body {
     font-size: $base-font;
     width: 100%;
     height: 100%;
+    color: $hero-bg;
 }
 
 
@@ -27,7 +28,8 @@ hr {
     border-color: $white-gray;
 }
 
-h1, h2 {
+h1, h2,
+p {
     margin: 0;
     padding: 0;
 }

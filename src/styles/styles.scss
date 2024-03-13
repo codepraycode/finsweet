@@ -186,3 +186,100 @@
         
     }}
 }
+
+.about_us {
+
+    h2 {
+        font-size: .8rem;
+        @include mixins.poppins-medium;
+        letter-spacing: .2rem;
+    }
+
+    ._top {
+        margin-block: 1rem;
+        @include flex;
+
+        p {
+            @include mixins.poppins-semibold;
+
+            &:first-of-type {
+                font-size: 3rem;
+                line-height: 3.6rem;
+            }
+            &:last-of-type {
+                font-size: 2.25rem;
+                // line-height: 3.6rem;
+
+                span {
+                    display: inline-block;
+                    @include mixins.poppins-regular;
+                    font-size: 1rem;
+
+                    margin-top: 1rem;
+                    color: $gray;
+                }
+            }
+        }
+    }
+
+    .img_lineup {
+        @include flex;
+        justify-content: space-between;
+
+        margin-block: 4rem;
+
+        .img_wrapper {
+            width: 26rem;
+            height: 27rem;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &:first-of-type {
+                background-image: url('/images/about-us/img-1.png');
+            }
+            &:nth-child(2){
+                background-image: url('/images/about-us/img-2.png');
+            }
+            &:nth-child(3){
+                background-image: url('/images/about-us/img-3.png');
+            }
+        }
+    }
+
+    .info-cta {
+        @include flex;
+        // justify-content: space-between;
+        align-items: center;
+        a {
+            margin-left: auto;
+            color: $blue;
+            text-decoration: none;
+            // width: 8rem;
+            // background-color: red;
+
+            --arrow-distance: 7.6rem;
+            --arrow-height: 34%;
+        }
+        & > div {
+            @include flex;
+            justify-content: space-between;
+            // background-color: red;
+            width: 50%;
+            div {
+                span {
+                    display: inline-block;
+                    font-size: 1rem;
+                    @include mixins.poppins-regular;
+
+                    &:first-of-type {
+                        @include mixins.poppins-semibold;
+                        font-size: 2.25rem;
+                    }
+                }
+                
+            }
+        }
+    }
+}
