@@ -10,7 +10,7 @@ const HeroSection = () => {
 
             <div className="hero container">
                 
-                <h1>
+                <h1 className="box-cap">
                     Transform Your Idea Into Reality with Finsweet
                     
                     <span>

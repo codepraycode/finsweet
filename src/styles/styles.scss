@@ -78,15 +78,34 @@
     }
 }
 
+
+.box-cap {
+    &::before {
+        content: "";
+        $box-size: 1.3rem;
+        
+        display: block;
+        
+        width: $box-size;
+        height: $box-size;
+        
+        background-color: $box-cap-deep;
+        border-radius: .2rem;
+        margin-bottom: 1.1rem;
+    }
+    
+    &--blue::before {
+        background-color: $box-cap-blue;
+    }
+}
+
+
 .hero {
     @include flex;
     justify-content: space-between;
     height: 70vh;
-    // background-color: red !important;
-    // align-items: center;
 
     h1 {
-        // align-self: flex-start;
         padding-top: 10rem;
         width: 50%;
         @include mixins.poppins-semibold;
@@ -99,23 +118,10 @@
             line-height: 1.5rem;
             color: $white-darken;
             font-size: 1.2rem;
-
             margin-block: 1.54rem;
         }
 
-        &::before {
-            content: "";
-            $box-size: 1.3rem;
-
-            display: block;
-            
-            width: $box-size;
-            height: $box-size;
-
-            background-color: hsla(0, 0%, 100%, 0.06);
-            border-radius: .2rem;
-            margin-bottom: 1.7rem;
-        }
+        
     }
 
     &_image {

@@ -9,7 +9,7 @@ const CustomerSection = () => {
 
                 <div className="half-length">
 
-                    <h1 className="section-h1">Our customers love what we do</h1>
+                    <h1 className="section-h1 box-cap box-cap--blue">Our customers love what we do</h1>
                     <p className="section-h3">Transform your idea into reality with finsweet</p>
                     <p className="section-p">
                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.                       
