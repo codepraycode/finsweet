@@ -8,12 +8,29 @@
 .container {
     max-width: $desktop-size;
     margin-inline: auto;
+
+    &--padded {
+        padding-block: 7rem;
+    }
+
+    &--outer-space {
+        margin-block: 7rem;
+    }
 }
 
 
 .bg {
     &-hero {
         background-color: $hero-bg;
+    }
+    &-blue-accent {
+        background-color: $blue-accent;
+    }
+    &-orange {
+        background-color: $active-bg;
+    }
+    &-light-blue {
+        background-color: $light-blue;
     }
 }
 
@@ -53,6 +70,15 @@
 
 // Buttons
 
+
+.shape-on-edge {
+    @include mixins.shape-on-edge;
+}
+
+.d-block {
+    display: block !important;
+}
+
 .btn {
     display: inline-block;
     cursor: pointer;
@@ -64,16 +90,39 @@
         border: 0;
     }
 
+    &-shape-bg {
+        background-color: $blue;
+        border: 0;
+
+        color: $white;
+        
+
+        z-index: 0;
+
+        padding-block: 1.2rem;
+        padding-inline: 2rem 4rem;
+
+        font-size: .9rem !important;
+
+        @include mixins.shape-on-edge;
+        &::after {
+            --arrow-height: 42% !important;
+            --arrow-distance: 8.95rem;
+        }
+    }
+
     &-with-arrow {
         position: relative;
         width: fit-content;
         // background-color: red;
         &::after {
-            $arrow-size: 2rem;
+            $arrow-size: var(--arrow-size, 2rem);
 
             content: "";
             position: absolute;
-            bottom: 47%;
+            bottom: var(--arrow-height, 45%);
+            left: var(--arrow-distance, 5.8rem);
+            // left: 0;
 
             width: $arrow-size;
             height: calc($arrow-size / 4);
@@ -82,6 +131,127 @@
             background-size: contain;
             background-repeat: no-repeat;
             // background-color: red;
+        }
+
+        &.arrow-dark::after {
+            background-image: url('/images/icons/arrow-dark.svg');
+        }
+    }
+}
+
+.section {
+    &-header {
+        display: block;
+        font-size: .8rem;
+        @include mixins.poppins-medium;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        margin-bottom: .5rem;
+    }
+
+    &-h1 {
+        @include mixins.poppins-semibold;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        display: block;
+        
+    }
+    &-h2 {
+        @include mixins.poppins-semibold;
+        font-size: 2.25rem;
+        
+    }
+    &-h3 {
+        display: inline-block;
+        @include mixins.poppins-medium;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+    &-h4 {
+        // display: inline-block;
+        @include mixins.poppins-medium;
+        font-size: 1.5rem;
+    }
+
+    &-p {
+        display: inline-block;
+        @include mixins.poppins-regular;
+        font-size: 1rem;
+    
+        margin-top: 1rem;
+        color: $gray;
+    }
+}
+
+// Border
+// .border-des {
+//     &-right {
+
+//     }
+// }
+
+a.nav-cta {
+    margin-left: auto;
+    color: $blue;
+    text-decoration: none;
+    --arrow-distance: 7.6rem;
+    --arrow-height: 34%;
+}
+
+.half-length {
+    width: 60%;
+
+    &--more {
+        width: 83%;
+    }
+}
+
+
+// Cards
+article.card {
+    h3 {
+        font-size: 1rem;
+        @include mixins.poppins-semibold;
+    }
+    p {
+        @include mixins.poppins-regular;
+        font-size: .87rem;
+        margin-top: .5rem;
+    }
+
+    a.nav-cta {
+        @include mixins.poppins-medium;
+        font-size: 1rem;
+        --arrow-distance: 6rem;
+    }
+}
+
+.float-left {
+    float: left;   
+}
+.float-right {
+    float: right;
+    width: 80%;
+    // background-color: red;
+}
+.card {
+    width: 32rem;
+    // height: 8.8rem;
+
+    background-color: $white;
+    padding: 2rem;
+
+    &-icon {
+        width: 2.95rem;
+    }
+
+    &-margin {
+        &-top {
+            margin-top: 1rem;
+        }
+
+        &-bottom {
+            margin-bottom: 1rem;
         }
     }
 }

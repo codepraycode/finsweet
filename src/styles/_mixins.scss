@@ -15,3 +15,21 @@
     font-weight: 600;
     font-style: normal;
 }
+
+@mixin shape-on-edge($size: 1.75rem, $image:'/images/shapes-1.svg') {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+
+        width: $size;
+        height: $size;
+
+        background-image: url($image);
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 0;
+        left: 0;
+    }
+}
