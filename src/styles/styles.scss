@@ -490,3 +490,50 @@
         }
     }
 }
+
+
+.blogs {
+    
+    .blog-highlights {
+        @include flex;
+        // gap: 2rem;
+        
+        justify-content: space-between;
+        gap: 2rem;
+
+        article.blog-card {
+            @include flex;
+            background-color: $white;
+            // width: 38rem;
+            .feature-img {
+                width: 18rem;
+                // height: 15.5rem;
+                
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            
+            .details {
+                width: 20rem;
+                padding: 2rem;
+                span {
+                    @include mixins.poppins-medium;
+                    display: block;
+                    font-size: .875rem;
+                    opacity: .6;
+                    margin-bottom: .5rem
+                }
+
+                h1 {
+                    @include mixins.poppins-semibold;
+                    font-size: 1.5rem;
+                }
+
+                a {
+                    --arrow-distance: 6.5rem;
+                }
+            }
+        }
+    }
+}
