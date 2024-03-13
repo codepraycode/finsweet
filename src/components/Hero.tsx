@@ -25,6 +25,23 @@ const HeroSection = () => {
 
                 <div className="hero_image" />
             </div>
+
+            <div className="hero_client container">
+                <h2>
+                    <span>Our Clients</span>
+                    <br />
+                    We&#39;ve Worked with
+                </h2>
+
+
+                <ul role="list">
+                    <li style={{backgroundImage:'url(/images/clients/logoipsum-4.svg)'}} />
+                    <li style={{backgroundImage:'url(/images/clients/logoipsum-3.svg)'}} />
+                    <li style={{backgroundImage:'url(/images/clients/logoipsum-2.svg)'}} />
+                    <li style={{backgroundImage:'url(/images/clients/logoipsum-1.svg)'}} />
+                    <li style={{backgroundImage:'url(/images/clients/logoipsum.svg)'}} />
+                </ul>
+            </div>
         </section>
     )
 }

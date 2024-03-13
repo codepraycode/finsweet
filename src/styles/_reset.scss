@@ -27,7 +27,7 @@ hr {
     border-color: $white-gray;
 }
 
-h1 {
+h1, h2 {
     margin: 0;
     padding: 0;
 }
@@ -35,4 +35,9 @@ h1 {
 img {
     width: 100%;
     height: auto;
+}
+
+ul[role="list"] {
+    list-style: none;
+    padding: 0;
 }

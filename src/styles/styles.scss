@@ -81,7 +81,8 @@
 .hero {
     @include flex;
     justify-content: space-between;
-    height: 89vh;
+    height: 70vh;
+    // background-color: red !important;
     // align-items: center;
 
     h1 {
@@ -138,4 +139,50 @@
             --arrow-height: 27%;
         }
     }
+}
+
+.hero_client {
+    @include flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 2rem 4rem;
+    h2 {
+        @include mixins.poppins-medium;
+        color: $white;
+        font-size: 1rem;
+        // background-color: red;
+
+        span {
+            display: inline-block;
+            line-height: 1.5rem;
+            color: $white-darken;
+            font-size: .9rem;
+        }
+    }
+
+    ul {
+        // margin-left: auto;
+        @include flex;
+        width: fit-content;
+        // justify-content: space-evenly;
+        // background-color: red;
+        // column-gap: 4rem;
+        li {
+            display: inline-block;
+
+            $lent: 10rem;
+            width: $lent;
+            height: calc($lent / 3);
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            margin: 0 2rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        
+    }}
 }
