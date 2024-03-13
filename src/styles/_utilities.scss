@@ -19,6 +19,9 @@
     &-hero {
         background-color: $hero-bg;
     }
+    &-blue-accent {
+        background-color: $blue-accent;
+    }
 }
 
 
@@ -131,6 +134,33 @@
     }
 }
 
+.section {
+    &-header {
+        font-size: .8rem;
+        @include mixins.poppins-medium;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+    }
+
+    &-h1 {
+        @include mixins.poppins-semibold;
+        font-size: 3rem;
+        line-height: 3.6rem;
+    }
+    &-h2 {
+        @include mixins.poppins-semibold;
+        font-size: 2.25rem;
+    }
+
+    &-p {
+        display: inline-block;
+        @include mixins.poppins-regular;
+        font-size: 1rem;
+    
+        margin-top: 1rem;
+        color: $gray;
+    }
+}
 
 // Border
 // .border-des {

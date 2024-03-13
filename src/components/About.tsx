@@ -5,15 +5,15 @@ import Link from "next/link";
 const AboutSection = () => {
     return (
         <section className="container container--padded about_us">
-            <h2>ABOUT US</h2>
+            <h2 className="section-header">ABOUT US</h2>
             
             <div className="_top">
-                <p>
+                <p className="section-h1">
                     The company leads entire webdesign process from concept to delivery.
                 </p>
                 <p>
-                    The Era Of Technology. <br />
-                    <span>Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.</span>
+                    <span className="section-h2">The Era Of Technology.</span> <br />
+                    <span className="section-p">Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.</span>
                 </p>
             </div>
 

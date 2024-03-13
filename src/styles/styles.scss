@@ -189,37 +189,9 @@
 
 .about_us {
 
-    h2 {
-        font-size: .8rem;
-        @include mixins.poppins-medium;
-        letter-spacing: .2rem;
-    }
-
     ._top {
         margin-block: 1rem;
         @include flex;
-
-        p {
-            @include mixins.poppins-semibold;
-
-            &:first-of-type {
-                font-size: 3rem;
-                line-height: 3.6rem;
-            }
-            &:last-of-type {
-                font-size: 2.25rem;
-                // line-height: 3.6rem;
-
-                span {
-                    display: inline-block;
-                    @include mixins.poppins-regular;
-                    font-size: 1rem;
-
-                    margin-top: 1rem;
-                    color: $gray;
-                }
-            }
-        }
     }
 
     .img_lineup {
@@ -250,15 +222,11 @@
 
     .info-cta {
         @include flex;
-        // justify-content: space-between;
         align-items: center;
         a {
             margin-left: auto;
             color: $blue;
             text-decoration: none;
-            // width: 8rem;
-            // background-color: red;
-
             --arrow-distance: 7.6rem;
             --arrow-height: 34%;
         }
@@ -279,6 +247,47 @@
                     }
                 }
                 
+            }
+        }
+    }
+}
+
+.expertise {
+    @include flex;
+    column-gap:10rem;
+    h3 {
+        font-size: 1rem;
+        @include mixins.poppins-semibold;
+    }
+    p {
+        @include mixins.poppins-regular;
+        font-size: .87rem;
+        margin-top: .5rem;
+
+        .section-p {
+            margin-top: 2rem;
+        }
+    }
+
+    .card {
+        width: 32rem;
+        height: 8.8rem;
+
+        background-color: $white;
+        padding: 2rem;
+
+        &-icon {
+            width: 2.95rem;
+            float: left;
+            margin-right: 1.2rem;
+        }
+
+        &-margin {
+            &-top {
+                margin-top: 1rem;
+            }
+            &-bottom {
+                margin-bottom: 1rem;
             }
         }
     }
