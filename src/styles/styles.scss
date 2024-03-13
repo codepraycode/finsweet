@@ -263,10 +263,17 @@
         }
     }
 
-    .card-icon {
-        float: left;
-        margin-right: 1.2rem;
+    .float-right {
+        width: 70%;
+        position: relative;
+        right: 4rem;
     }
+
+    .card {
+        overflow: hidden;
+    }
+
+    
 }
 
 .services {
@@ -274,9 +281,7 @@
         margin-block: 3rem;
     }
 
-    .half-length {
-        width: 60%;
-    }
+    
 
     .cards {
         @include flex;
@@ -287,6 +292,50 @@
 
             h3 {
                 margin-block: .7rem;
+            }
+        }
+    }
+}
+
+.process {
+    counter-reset: linkedcard;
+    .cards-linked {
+        @include flex;
+        column-gap: 3rem;
+        .card {
+            $border-color: $hero-bg-gray;
+            padding:2rem 1.3rem;
+            border: 1px solid $border-color;
+            position: relative;
+
+            width: 26rem !important;
+            counter-increment: linkedcard;
+
+            &::after {
+                content: "0" counter(linkedcard);
+
+                position: absolute;
+                $space: 1.4rem;
+                top: calc($space / 2);
+                right: $space;
+
+                color: $hero-bg-gray;
+                font-size: 1.5rem;
+
+                @include mixins.poppins-semibold;
+            }
+
+            &:not(:last-of-type)::before {
+                content: "";
+
+                position: absolute;
+                right: -20%;
+                bottom: 50%;
+
+                width: 20%;
+                height: 0px;
+                border: .125rem solid $hero-bg-gray;
+                border-style:dashed;
             }
         }
     }

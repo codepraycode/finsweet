@@ -182,6 +182,15 @@ a.nav-cta {
     --arrow-height: 34%;
 }
 
+.half-length {
+    width: 60%;
+
+    &--more {
+        width: 83%;
+    }
+}
+
+
 // Cards
 article.card {
     h3 {
@@ -199,6 +208,15 @@ article.card {
         font-size: 1rem;
         --arrow-distance: 6rem;
     }
+}
+
+.float-left {
+    float: left;   
+}
+.float-right {
+    float: right;
+    width: 80%;
+    // background-color: red;
 }
 .card {
     width: 32rem;

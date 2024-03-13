@@ -21,31 +21,40 @@ const ExpertiseSection = () => {
 
                 <div className="cards">
                     <article className="card card-margin-bottom">
-                        <div className="card-icon">
+                        <div className="card-icon float-left">
                             <Image src={'/images/icons/rocket.svg'} alt="On Time Delivery" width={50} height={50}/>
                         </div>
 
-                        <h3>On Time Delivery</h3>
-                        <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
+                        <div className="float-right">
+                            <h3>On Time Delivery</h3>
+                            <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
+                        </div>
+
 
                     </article>
                     <article className="card">
-                        <div className="card-icon">
+                        <div className="card-icon float-left">
                             <Image src={'/images/icons/cog.svg'} alt="Best Quality" width={50} height={50}/>
                         </div>
 
-                        <h3>Best Quality</h3>
-                        <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
+                        <div className="float-right">
+                            <h3>Best Quality</h3>
+                            <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
+                        </div>
+
 
                     </article>
 
                     <article className="card card-margin-top">
-                        <div className="card-icon">
+                        <div className="card-icon float-left">
                             <Image src={'/images/icons/support.svg'} alt="Support Assist" width={50} height={50}/>
                         </div>
 
-                        <h3>Support Assist</h3>
-                        <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
+                        <div className="float-right">
+                            <h3>Support Assist</h3>
+                            <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
+                        </div>
+
 
                     </article>
                 </div>
