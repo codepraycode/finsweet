@@ -5,7 +5,9 @@ import React from 'react'
 import Logo from './UI/Logo'
 import NavLinks from './UI/NavLink'
 import Button from './UI/Button'
-import appData from '@/data.json';
+import {header} from '@/data.json';
+
+
 
 function Header() {
     return (
@@ -15,11 +17,12 @@ function Header() {
 
 
                 <NavLinks
-                    links={appData.header.nav}
+                    links={header.nav}
 
                     cta={
                         <Button
                             label='Clone project'
+                            isLink={!header.cta.button}
                         />
                     }
                 />

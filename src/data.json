@@ -33,7 +33,28 @@
             }
         ],
         "cta": {
-            "label": "Clone project"
+            "label": "Clone project",
+            "button": false
         }
+    },
+    "hero": {
+        "mainText": "Transform Your Idea Into Reality with Finsweet",
+        "subText": "The entire Finsweet team knows what's good with Webflow and you can too with 1 week and a good attitude.",
+        "image": "/images/hero_Image.png",
+        "cta": {
+            "label": "Request Quote",
+            "button": true
+        }
+    },
+    "clients": {
+        "mainTitle": "Our Clients",
+        "subTitle": "We've Worked with",
+        "logos": [
+            "/images/clients/logoipsum.svg",
+            "/images/clients/logoipsum-1.svg",
+            "/images/clients/logoipsum-2.svg",
+            "/images/clients/logoipsum-3.svg",
+            "/images/clients/logoipsum-4.svg"
+        ]
     }
 }
