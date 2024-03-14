@@ -1,0 +1,39 @@
+{
+    "header": {
+        "nav": [
+            {
+                "url": "/",
+                "active": true,
+                "label": "Home"
+            },
+            {
+                "url": "/services",
+                "active": false,
+                "label": "Services"
+            },
+            {
+                "url": "/company",
+                "active": false,
+                "label": "Company"
+            },
+            {
+                "url": "/career",
+                "active": false,
+                "label": "Career"
+            },
+            {
+                "url": "/blog",
+                "active": false,
+                "label": "Blog"
+            },
+            {
+                "url": "/contact-us",
+                "active": false,
+                "label": "Contact Us"
+            }
+        ],
+        "cta": {
+            "label": "Clone project"
+        }
+    }
+}
