@@ -305,5 +305,92 @@
                 }
             ]
         ]
+    },
+    "customers": {
+        "main": "The process we are working With Our client Worldwide",
+        "subTitle": "Transform your idea into reality with finsweet",
+        "paragraph": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        "highlights": {
+            "label": "30+ Customer Reviews",
+            "customers": [
+                {
+                    "avatar": {
+                        "url": "/images/customers/customer-1.png",
+                        "alt": "Customer 1",
+                        "width": 50,
+                        "height": 50
+                    },
+                    "review": null,
+                    "company": {
+                        "name": null,
+                        "position": null,
+                        "logo": null
+                    }
+                },
+                {
+                    "avatar": {
+                        "url": "/images/customers/customer-2.png",
+                        "alt": "Customer 2",
+                        "width": 50,
+                        "height": 50
+                    },
+                    "review": null,
+                    "company": {
+                        "name": null,
+                        "position": null,
+                        "logo": null
+                    }
+                },
+                {
+                    "avatar": {
+                        "url": "/images/customers/customer-3.png",
+                        "alt": "Customer 3",
+                        "width": 50,
+                        "height": 50
+                    },
+                    "review": null,
+                    "company": {
+                        "name": null,
+                        "position": null,
+                        "logo": null
+                    }
+                }
+            ]
+        },
+        "reviews": [
+            {
+                "avatar": {
+                    "url": "/images/customers/customer-1.png",
+                    "alt": "Customer 1",
+                    "width": 50,
+                    "height": 50
+                },
+                "fullname": "Johnny Andro",
+                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "company": {
+                    "name": "Logo Ipsum",
+                    "position": "Director, Company",
+                    "logo": {
+                        "url": "/images/clients/logoipsum-3-alt.svg",
+                        "alt": "Logo Ipsum",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            },
+            {
+                "avatar": null,
+                "fullname": null,
+                "review": null,
+                "company": null
+            },
+            {
+                "avatar": null,
+                "fullname": null,
+                "review": null,
+                "company": null
+            }
+            
+        ]
     }
 }

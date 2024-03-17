@@ -1,5 +1,8 @@
 import Image from "next/image";
+import siteData from "@/data.json";
+import { Fragment } from "react";
 
+const { customers } = siteData;
 
 const CustomerSection = () => {
     return (
@@ -9,50 +12,82 @@ const CustomerSection = () => {
 
                 <div className="half-length">
 
-                    <h1 className="section-h1 box-cap box-cap--blue">Our customers love what we do</h1>
-                    <p className="section-h3">Transform your idea into reality with finsweet</p>
+                    <h1 className="section-h1 box-cap box-cap--blue">
+                        {customers.main}
+                    </h1>
+                    <p className="section-h3">
+                        {customers.subTitle}
+                    </p>
                     <p className="section-p">
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.                       
+                        {customers.paragraph}
                     </p>
                     <div className="customers-highlight">
-                        <span className="customer-img">
-                            <Image src={"/images/customers/customer-1.png"} alt="Customer 1" width={40} height={50}/>
-                        </span>
-                        <span className="customer-img">
-                            <Image src={"/images/customers/customer-2.png"} alt="Customer 2" width={40} height={50}/>
-                        </span>
-                        <span className="customer-img">
-                            <Image src={"/images/customers/customer-3.png"} alt="Customer 3" width={40} height={50}/>
-                        </span>
+                        {
+                            customers.highlights.customers.map((item, i) => (
+                                <span className="customer-img" key={i}>
+                                    <Image
+                                        src={item.avatar.url}
+                                        alt={item.avatar.alt}
+                                        width={item.avatar.width}
+                                        height={item.avatar.height}
+                                    />
+                                </span>
+                            ))
+                        }
 
-                        <b className="label">30+ Customer Reviews</b>
+                        <b className="label">
+                            { customers.highlights.label }
+                        </b>
                     </div>
                 </div>
 
 
                 <div className="card customer-reviews">
-                    <p className="section-h4">Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!</p>
+                    {
+                        customers.reviews.map((item, i) => {
+                            
+                            
+                            
+                            if (!item.review) return;
+                            return (
 
-                    <div className="attribution">
-                        <span className="customer-img">
-                            <Image src={"/images/customers/customer-1.png"} alt="Customer 3" width={40} height={50}/>
-                        </span>
+                            <div key={i} className="review-item">
 
-                        <p>
-                            <b>Johnny Andro</b>
-                            <span>Director, Company</span>
-                        </p>
+                                <p className="section-h4">
+                                    {item.review}
+                                </p>
 
-                        <span
-                            className="customer-logo"
-                            style={{backgroundImage: 'url(/images/clients/logoipsum-3-alt.svg)'}}
-                        />
-                    </div>
+                                <div className="attribution">
+                                    <span className="customer-img">
+                                        <Image
+                                            src={item.avatar.url}
+                                            alt={item.avatar.alt}
+                                            width={item.avatar.width}
+                                            height={item.avatar.height}
+                                        />
+                                    </span>
+
+                                    <p>
+                                        <b>{item.fullname}</b>
+                                        <span>{item.company.position}</span>
+                                    </p>
+
+                                    <span
+                                        className="customer-logo"
+                                        style={{backgroundImage: `url(${item.company.logo})`}}
+                                    />
+                                </div>
+                            </div>
+                        )})
+                    }
+
 
                     <div className="slide-controllers">
-                        <button data-active="true"/>
-                        <button />
-                        <button />
+                        {
+                            [...Array(customers.reviews.length)].map((each, i) => (
+                                <button data-active={i === 0} key={i}/>
+                            ))
+                        }
                     </div>
                 </div>
 
