@@ -26,12 +26,13 @@ const HeroSection = () => {
                     <Button
                         label={hero.cta.label}
                         isLink={!hero.cta.button}
+                        className={hero.cta.className}
                     />
                 </h1>
 
                 <div
                     className="hero_image"
-                    style={{backgroundImage: `url(${hero.image})`}}
+                    style={{backgroundImage: `url(${hero.image.url})`}}
                 />
             </div>
 
@@ -45,11 +46,11 @@ const HeroSection = () => {
 
                 <ul role="list">
                     {
-                        clients.logos.map((link, i) => (
+                        clients.logos.map((imageItem, i) => (
                             
                             <li 
                                 key={i} 
-                                style={{backgroundImage:`url(${link})`}}
+                                style={{backgroundImage:`url(${imageItem.url})`}}
                             />
                         ))
                     }

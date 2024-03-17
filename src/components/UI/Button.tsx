@@ -1,23 +1,27 @@
+import Link from 'next/link'
 import React from 'react'
 
 
 interface ButtonProps {
     label: string,
-    isLink?: boolean
+    link?: string | null,
+    className: string
 }
 
 export default function Button(props: ButtonProps) {
 
-    if (props.isLink) {
+    const classNames =`btn ${props.className || ''}`.trim();
+
+    if (props.link) {
         return (
-            <button className='btn btn-transparent text-active btn-with-arrow'>
+            <Link href={props.link} className={classNames}>
                 {props.label}
-            </button>
+            </Link>
         )
     }
 
     return (
-        <button className="btn btn-with-arrow btn-shape-bg">
+        <button className={classNames}>
             {props.label}
         </button>
     )

@@ -34,27 +34,93 @@
         ],
         "cta": {
             "label": "Clone project",
-            "button": false
+            "link": null,
+            "className": "btn-transparent btn-with-arrow text-active"
         }
     },
     "hero": {
         "mainText": "Transform Your Idea Into Reality with Finsweet",
         "subText": "The entire Finsweet team knows what's good with Webflow and you can too with 1 week and a good attitude.",
-        "image": "/images/hero_Image.png",
+        "image": {
+            "url": "/images/hero_Image.png",
+            "alt": "Hero image"
+        },
         "cta": {
             "label": "Request Quote",
-            "button": true
+            "link": "/",
+            "className": "btn-with-arrow btn-shape-bg"
         }
     },
     "clients": {
         "mainTitle": "Our Clients",
         "subTitle": "We've Worked with",
         "logos": [
-            "/images/clients/logoipsum.svg",
-            "/images/clients/logoipsum-1.svg",
-            "/images/clients/logoipsum-2.svg",
-            "/images/clients/logoipsum-3.svg",
-            "/images/clients/logoipsum-4.svg"
+            {
+                "url": "/images/clients/logoipsum.svg",
+                "alt": "Logo Ipsum"
+            },
+            {
+                "url": "/images/clients/logoipsum-1.svg",
+                "alt": "Logo Ipsum 1"
+            },
+            {
+                "url": "/images/clients/logoipsum-2.svg",
+                "alt": "Logo Ipsum 2"
+            },
+            {
+                "url": "/images/clients/logoipsum-3.svg",
+                "alt": "Logo Ipsum 3"
+            },
+            {
+                "url": "/images/clients/logoipsum-4.svg",
+                "alt": "Logo Ipsum 4"
+            }
         ]
+    },
+    "aboutUs": {
+        "title": "About us",
+        "subTitle1": "The company leads entire webdesign process from concept to delivery.",
+        "subTitle2": "The Era Of Technology.",
+        "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.",
+
+        "featuredImages": [
+            {
+                "url": "/images/about-us/img-1.png",
+                "alt": "Fetured image 1"
+            },
+            {
+                "url": "/images/about-us/img-2.png",
+                "alt": "Fetured image 2"
+            },
+            {
+                "url": "/images/about-us/img-3.png",
+                "alt": "Fetured image 3"
+            }
+        ],
+        "portfolio": {
+            "points": [
+                {
+                    "point": "1560+",
+                    "description": "Project Delivered"
+                },
+                {
+                    "point": "100+",
+                    "description": "Professional"
+                },
+                {
+                    "point": "950+",
+                    "description": "Happy Client"
+                },
+                {
+                    "point": "10 yrs",
+                    "description": "Experience"
+                }
+            ],
+            "cta": {
+                "label": "Read about us",
+                "link": "/about-us",
+                "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+            }
+        }
     }
 }

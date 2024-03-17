@@ -5,7 +5,10 @@ import React from 'react'
 import Logo from './UI/Logo'
 import NavLinks from './UI/NavLink'
 import Button from './UI/Button'
-import {header} from '@/data.json';
+import siteData from '@/data.json';
+
+
+const {header} = siteData;
 
 
 
@@ -22,7 +25,8 @@ function Header() {
                     cta={
                         <Button
                             label='Clone project'
-                            isLink={!header.cta.button}
+                            link={header.cta.link}
+                            className={header.cta.className}
                         />
                     }
                 />
