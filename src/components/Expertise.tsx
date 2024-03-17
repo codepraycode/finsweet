@@ -1,5 +1,7 @@
 import Image from "next/image";
+import siteData from "@/data.json";
 
+const { expertise } = siteData;
 
 const ExpertiseSection = () => {
     return (
@@ -9,54 +11,46 @@ const ExpertiseSection = () => {
 
                 <div>
 
-                    <h2 className="section-header">Our expertise</h2>
+                    <h2 className="section-header">
+                        { expertise.title }
+                    </h2>
                     <p>
-                        <span className="section-h1">We want to get local identification in every corner of the world in this era of global citizenship</span>
+                        <span className="section-h1">
+                            {expertise.main}
+                        </span>
 
                         <div className="section-p">
-                            Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.
+                            {expertise.paragraph}
                         </div>
                     </p>
                 </div>
 
                 <div className="cards">
-                    <article className="card card-margin-bottom">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/rocket.svg'} alt="On Time Delivery" width={50} height={50}/>
-                        </div>
+                    {
+                        expertise.deliverables.map((item, i) => (
 
-                        <div className="float-right">
-                            <h3>On Time Delivery</h3>
-                            <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
-                        </div>
+                            <article
+                                className="card"
+                                key={i}
+                            >
+                                <div className="card-icon float-left">
+                                    <Image
+                                        src={item.icon.url}
+                                        alt={item.icon.alt}
+                                        width={item.icon.width}
+                                        height={item.icon.height}
+                                    />
+                                </div>
 
-
-                    </article>
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/cog.svg'} alt="Best Quality" width={50} height={50}/>
-                        </div>
-
-                        <div className="float-right">
-                            <h3>Best Quality</h3>
-                            <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
-                        </div>
-
-
-                    </article>
-
-                    <article className="card card-margin-top">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/support.svg'} alt="Support Assist" width={50} height={50}/>
-                        </div>
-
-                        <div className="float-right">
-                            <h3>Support Assist</h3>
-                            <p>Through True Rich Attended does no end it his mother since real had half every him.</p>
-                        </div>
+                                <div className="float-right">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
 
 
-                    </article>
+                            </article>
+                        ))
+                    }
                 </div>
 
             </div>

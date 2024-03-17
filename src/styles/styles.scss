@@ -281,6 +281,13 @@
 
     .card {
         overflow: hidden;
+
+        &:nth-child(even) {
+            margin-block: 1rem ;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
     }
 
     
