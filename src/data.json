@@ -392,5 +392,40 @@
             }
             
         ]
+    },
+    "blogHighlight": {
+        "main": "Read our latest blogs & news",
+        "highlights": [
+            {
+                "date": "Jan 19, 2021",
+                "title": "Today's best design trends for digital products",
+                "cta": {
+                    "label": "Read more",
+                    "link": "/",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                },
+                "image": {
+                    "url": "/images/blog/feature-image-1.png",
+                    "alt": "featured image",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "date": "Jan 19, 2021",
+                "title": "A practical guide to building a brand strategy",
+                "cta": {
+                    "label": "Read more",
+                    "link": "/",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                },
+                "image": {
+                    "url": "/images/blog/feature-image-2.png",
+                    "alt": "featured image",
+                    "width": 50,
+                    "height": 50
+                }
+            }
+        ]
     }
 }
