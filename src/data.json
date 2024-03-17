@@ -233,5 +233,77 @@
                 }
             }
         ]
+    },
+    "process": {
+        "title": "Our Process",
+        "main": "The process we are working With Our client Worldwide",
+        "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable.",
+
+        "milestones": [
+            [
+                {
+                    "title": "Discover",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/bulb.svg",
+                        "alt": "Discover",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Designing",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/file-write.svg",
+                        "alt": "Designing",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Development",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/code-negative.svg",
+                        "alt": "Development",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ],
+            [
+                {
+                    "title": "Testing",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/mind.svg",
+                        "alt": "Testing",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Deployment",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/rocket-negative.svg",
+                        "alt": "Deployment",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Maintenance",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/maintainance.svg",
+                        "alt": "Maintenance",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ]
+        ]
     }
 }
