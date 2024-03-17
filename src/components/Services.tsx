@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import siteData from "@/data.json";
+import Button from "./UI/Button";
 
+const {services} = siteData;
 
 const ServicesSection = () => {
     return (
@@ -8,55 +11,48 @@ const ServicesSection = () => {
 
             <div className="container container--padded services">
 
-                <h2 className="section-header">Our Services</h2>
+                <h2 className="section-header">
+                    {services.title}
+                </h2>
                 
-                <p className="section-h1 half-length">We build software solutions that solve client&#39;s business challenges</p>
+                <p className="section-h1 half-length">
+                    {services.main}
+                </p>
 
-                <button className="btn btn-with-arrow btn-shape-bg">
-                    Start a project
-                </button>
+                <Button
+                    className={services.cta.className}
+                    label={services.cta.label}
+                    link={services.cta.link}
+                />
 
                 <div className="cards">
-                    <article className="card">
-                        <div className="card-icon">
-                            <Image src={'/images/icons/contact.svg'} alt="Technical support" width={50} height={50}/>
-                        </div>
+                    {
+                        services.deliverables.map((item, i) => (
+                            <article className="card" key={i}>
+                                <div className="card-icon">
+                                    <Image
+                                        src={item.icon.url}
+                                        alt={item.icon.alt}
+                                        width={item.icon.width}
+                                        height={item.icon.height}
+                                    />
+                                </div>
 
-                        <h3>Technical support</h3>
-                        <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service</p>
+                                <h3>{ item.title }</h3>
+                                <p>
+                                    {item.description}
+                                </p>
 
-                        <br/>
-                        <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
-                            Read more
-                        </Link>
-                    </article>
-                    <article className="card">
-                        <div className="card-icon">
-                            <Image src={'/images/icons/cog.svg'} alt="Testing Management" width={50} height={50}/>
-                        </div>
+                                <br/>
 
-                        <h3>Testing Management</h3>
-                        <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service</p>
-
-                        <br/>
-                        <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
-                            Read more
-                        </Link>
-                    </article>
-
-                    <article className="card">
-                        <div className="card-icon">
-                            <Image src={'/images/icons/code.svg'} alt="Development" width={50} height={50}/>
-                        </div>
-
-                        <h3>Development</h3>
-                        <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service</p>
-
-                        <br/>
-                        <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
-                            Read more
-                        </Link>
-                    </article>
+                                <Button
+                                    link={item.cta.link}
+                                    label={item.cta.label}
+                                    className={item.cta.className}
+                                />
+                            </article>
+                        ))
+                    }
                 </div>
 
             </div>

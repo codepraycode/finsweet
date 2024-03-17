@@ -177,5 +177,61 @@
                 "description": "Through True Rich Attended does no end it his mother since real had half every him."
             }
         ]
+    },
+    "services": {
+        "title": "Our Services",
+        "main": "We build software solutions that solve client's business challenges",
+        "cta": {
+            "label": "Start a project",
+            "link": null,
+            "className": "btn-with-arrow btn-shape-bg"
+        },
+        "deliverables": [
+            {
+                "title": "Technical support",
+                "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                "icon": {
+                    "url": "/images/icons/contact.svg",
+                    "alt": "Technical support",
+                    "width": 50,
+                    "height": 50
+                },
+                "cta": {
+                    "label": "Read more",
+                    "link": "/about-us",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                }
+            },
+            {
+                "title": "Testing Management",
+                "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                "icon": {
+                    "url": "/images/icons/cog.svg",
+                    "alt": "Testing Management",
+                    "width": 50,
+                    "height": 50
+                },
+                "cta": {
+                    "label": "Read more",
+                    "link": "/about-us",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                }
+            },
+            {
+                "title": "Development",
+                "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                "icon": {
+                    "url": "/images/icons/code.svg",
+                    "alt": "Development",
+                    "width": 50,
+                    "height": 50
+                },
+                "cta": {
+                    "label": "Read more",
+                    "link": "/about-us",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                }
+            }
+        ]
     }
 }
