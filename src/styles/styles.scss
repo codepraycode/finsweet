@@ -303,11 +303,11 @@ header {
 }
 
 .expertise {
-        @include mixins.sm {
-            display: none;
-        }
-    @include flex;
-    column-gap:10rem;
+
+    @include mixins.md {
+        @include flex;
+        column-gap:10rem;
+    }
     h3 {
         font-size: 1rem;
         @include mixins.poppins-semibold;
@@ -322,14 +322,25 @@ header {
         }
     }
 
+    .cards {
+        margin-top: 4rem;
+    }
+
     .float-right {
         width: 70%;
         position: relative;
-        right: 4rem;
+        // right: 4rem;
+
+        @include mixins.md {
+            right: 4rem;
+        }
     }
 
     .card {
         overflow: hidden;
+        @include mixins.sm {
+            width: 100%;
+        }
 
         &:nth-child(even) {
             margin-block: 1rem ;
@@ -343,9 +354,9 @@ header {
 }
 
 .services {
-        @include mixins.sm {
-                display: none;
-            }
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     button {
         margin-block: 3rem;
     }
@@ -353,12 +364,18 @@ header {
     
 
     .cards {
+        // @include flex;
         @include flex;
         justify-content: space-between;
+        flex-direction: column;
+
+        row-gap: 2rem;
+        @include mixins.md {
+            flex-direction: row;
+        }
 
         .card {
             width: 25rem;
-
             h3 {
                 margin-block: .7rem;
             }
