@@ -58,6 +58,11 @@
     cursor: pointer;
 
 
+    @include mixins.md {
+        display: none;
+    }
+
+
     &:has(input:checked) {
 
         // top: $menu-height;
