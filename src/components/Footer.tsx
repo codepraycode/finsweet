@@ -1,21 +1,10 @@
 import Link from "next/link"
+import NewsLetter from "./NewsLetter"
+import siteData from "@/data.json";
+import Logo from "./UI/Logo";
 
+const {footer} = siteData;
 
-const NewsLetter = () => {
-    return (
-        <div className="container container--padded container--outer-space newsletter">
-            <h1 >
-                <span className="section-header">NEWSLETTER</span>
-                
-                <span className="section-h1">Subscribe our News Letter to get Latest Updates.</span>
-            </h1>
-
-            <div className="newsletter-input">
-                <input type="text" placeholder="Paresh@Pixeto.com"/>
-            </div>
-        </div>
-    )
-}
 
 const FooterDetails = () => {
     return (
@@ -23,86 +12,52 @@ const FooterDetails = () => {
 
             <div>
                 <h1 className="section-h1">
-                    Let&#39;s make something special
+                    {footer.main}
                 </h1>
 
                 <p className="section-h3 d-block">
-                    Let&#39;s talk! 🤙
+                    {footer.subTitle}
                 </p>
 
 
                 <p className="contact">
-                    <span className="d-block">020 7993 2905</span>
-                    <span className="d-block">hi@finsweet.com</span>
+                    {
+                        footer.contacts.map((item, i) => (
+                            <span
+                                key={i}
+                                className="d-block"
+                            >
+                                {item}
+                            </span>
+                        ))
+                    }
                 </p>
                 <hr />
                 <p className="address">
-                    DLF Cybercity, Bhubaneswar,<br /> India, &52050
+                    {footer.address}
                 </p>
             </div>
 
 
             <nav>
-                <ul>
-                    <li>
-                        <Link href="/" className='active'>Home</Link>
-                    </li>
-                    <li>
-                        <Link href="/services">Service</Link>
-                    </li>
-                    <li>
-                        <Link href="/company">Company</Link>
-                    </li>
-                    <li>
-                        <Link href="/career">Career</Link>
-                    </li>
-                    <li>
-                        <Link href="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact-us">Contact Us</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <Link href="/" className='active'>Home</Link>
-                    </li>
-                    <li>
-                        <Link href="/services">Service</Link>
-                    </li>
-                    <li>
-                        <Link href="/company">Company</Link>
-                    </li>
-                    <li>
-                        <Link href="/career">Career</Link>
-                    </li>
-                    <li>
-                        <Link href="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact-us">Contact Us</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <Link href="/" className='active'>Home</Link>
-                    </li>
-                    <li>
-                        <Link href="/services">Service</Link>
-                    </li>
-                    <li>
-                        <Link href="/company">Company</Link>
-                    </li>
-                    <li>
-                        <Link href="/career">Career</Link>
-                    </li>
-                    <li>
-                        <Link href="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact-us">Contact Us</Link>
-                    </li>
-                </ul>
+                {
+                    footer.links.map((links, i) => (
+                        <ul key={i}>
+                            {
+                                links.map((item, i) => (
+                                    <li key={i}>
+                                        <Link
+                                            href={item.url}
+                                            className={`${item.active} ? 'active':''`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    ))
+                }
             </nav>
             
         </div>
@@ -125,34 +80,29 @@ const FooterSection = () => {
                 <div className="bg-orange">
 
                     <div className="container footer-bottom">
-                        <div className="logo logo--negative" />
+
+                        <Logo negative/>
 
                         <span className="copyright">
-                            ©2021 Finsweet
+                            {footer.copyright}
                         </span>
 
 
                         <ul role="list" className="socials">
-                            <li>
-                                <Link href={"/"} style={{backgroundImage:'url(/images/icons/socials/facebook-negative.svg)'}}>
-                                    facebook
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/"} style={{backgroundImage:'url(/images/icons/socials/twitter-negative.svg)'}}>
-                                    twitter
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/"} style={{backgroundImage:'url(/images/icons/socials/instagram-negative.svg)'}}>
-                                    instagram
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/"} style={{backgroundImage:'url(/images/icons/socials/linkedin-negative.svg)'}}>
-                                    linkedin
-                                </Link>
-                            </li>
+                            {
+                                footer.socials.map((item, i)=>(
+                                    <li key={i}>
+                                        <Link
+                                            href={"/"}
+                                            style={{
+                                                backgroundImage:`url(${item.icon.url})`
+                                            }}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
                         </ul>
 
                     </div>

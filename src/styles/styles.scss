@@ -16,15 +16,10 @@
     width: $logo-size;
     height: calc($logo-size / 4);
 
-    // background-color: red;
-    background-image: url('/images/logo.svg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 
-    &--negative {
-        background-image: url('/images/logo-negative.svg');
-    }
 }
 
 
