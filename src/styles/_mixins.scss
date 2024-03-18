@@ -43,7 +43,7 @@
 }
 
 @mixin md() {
-    @media screen and (max-width: $desktop-bp) {
+    @media screen and (min-width: $desktop-bp) {
         @content;
     }
 }

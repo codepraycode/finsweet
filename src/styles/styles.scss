@@ -99,22 +99,14 @@ header {
 
 .hero {
 
-    @include mixins.sm {
-        display: none;
-    }
-
-    @include flex;
-    justify-content: space-between;
-    height: 80vh;
-
     h1 {
         padding-top: 10rem;
-        width: 50%;
         @include mixins.poppins-semibold;
-        font-size: 3.8rem;
+        font-size: 3rem;
         line-height: 3.9rem;
-
         color: $white;
+
+
         span {
             display: inline-block;
             line-height: 1.5rem;
@@ -123,19 +115,28 @@ header {
             margin-block: 1.54rem;
         }
 
-        
+        @include mixins.sm {
+            padding-top: 4rem;
+            font-size: 2.8rem;
+        }
+
+        @include mixins.md {
+            width: 50%;
+            font-size: 3.8rem;
+        }
+
+
     }
 
     &_image {
-        width: 40%;
-        height: 100%;
-        // background-color: red;
-        // background-image: url('/images/hero_Image.png');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
 
-        // background-color: red;
-        background-size: contain
+        @include mixins.md {
+            width: 40%;
+            height: 100%;
+        }
     }
 
     .btn {
@@ -147,16 +148,37 @@ header {
             --arrow-height: 27%;
         }
     }
+
+    @include mixins.md {
+        @include flex;
+        justify-content: space-between;
+
+        height: 80vh;
+    }
+
+    
+
+    
 }
 
 .hero_client {
-    @include mixins.sm {
-        display: none;
-    }
+
     @include flex;
-    align-items: center;
-    justify-content: space-between;
     padding-block: 2rem 4rem;
+
+    flex-direction: column;
+    
+    @include mixins.md {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include mixins.sm {
+        padding-top: 7rem;
+    }
+
+
     h2 {
         @include mixins.poppins-medium;
         color: $white;
@@ -175,13 +197,12 @@ header {
         // margin-left: auto;
         @include flex;
         width: fit-content;
-        // justify-content: space-evenly;
-        // background-color: red;
-        // column-gap: 4rem;
+        flex-wrap: wrap;
         li {
             display: inline-block;
 
-            $lent: 10rem;
+            --logo-size: 10rem;
+            $lent: var(--logo-size, 10rem);
             width: $lent;
             height: calc($lent / 3);
 
@@ -194,17 +215,22 @@ header {
             &:last-of-type {
                 margin-right: 0;
             }
-        
-    }}
+        }
+    }
 }
 
 .about_us {
-    @include mixins.sm {
-        display: none;
-    }
+
     ._top {
         margin-block: 1rem;
         @include flex;
+        flex-direction: column;
+
+        row-gap: 2rem;
+
+        @include mixins.md {
+            flex-direction: row;
+        }
     }
 
     .img_lineup {
@@ -221,27 +247,44 @@ header {
             background-repeat: no-repeat;
             background-size: cover;
 
-            // &:first-of-type {
-            //     background-image: url('/images/about-us/img-1.png');
-            // }
-            // &:nth-child(2){
-            //     background-image: url('/images/about-us/img-2.png');
-            // }
-            // &:nth-child(3){
-            //     background-image: url('/images/about-us/img-3.png');
-            // }
+            // Show just the first one on mobile
+
+            @include mixins.sm {
+                display: none;
+
+                &:first-of-type {
+                    display: block
+                }
+            }
         }
     }
 
     .info-cta {
-        @include flex;
-        align-items: center;
+        
+        @include mixins.md {
+            
+            @include flex;
+            align-items: center;
+        }
 
         & > div {
-            @include flex;
-            justify-content: space-between;
+            // @include flex;
             // background-color: red;
-            width: 50%;
+            @include flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            row-gap: 2rem;
+
+            
+            @include mixins.sm {
+                margin-bottom: 3rem;
+            }
+
+            @include mixins.md {
+                justify-content: space-between;
+                width: 50%;
+            }
+
             div {
                 span {
                     display: inline-block;
