@@ -384,20 +384,30 @@ header {
 }
 
 .process {
-        @include mixins.sm {
-                display: none;
-            }
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     counter-reset: linkedcard;
     .cards-linked {
         @include flex;
+
+        flex-direction: column;
         column-gap: 3rem;
+        row-gap: 3rem;
+        
+        @include mixins.md {
+            flex-direction: row;
+        }
+
         .card {
             $border-color: $hero-bg-gray;
+            $card-width: 26rem;
+            
             padding:2rem 1.3rem;
             border: 1px solid $border-color;
             position: relative;
 
-            width: 26rem !important;
+            width: $card-width !important;
             counter-increment: linkedcard;
 
             &::after {
@@ -418,28 +428,41 @@ header {
                 content: "";
 
                 position: absolute;
-                right: -20%;
-                bottom: 50%;
+                right: 40%;
+                bottom: -10%;
+
+
+                transform: rotate(90deg);
 
                 width: 20%;
                 height: 0px;
+
                 border: .125rem solid $hero-bg-gray;
                 border-style:dashed;
+                z-index: -1;
+
+
+                @include mixins.md {
+                    right: -20%;
+                    bottom: 50%;
+                    transform: rotate(0deg);
+                }
             }
         }
     }
 }
 
 .customers {
-        @include mixins.sm {
-                display: none;
-            }
-    @include flex;
-    justify-content: space-between;
-    align-items: center;
-    .half-length {
-        width: 40%;
+    
+    @include mixins.md {
+        @include flex;
+        justify-content: space-between;
+        align-items: center;
+        .half-length {
+            width: 40%;
+        }
     }
+
     .section-h3 {
         margin-block: 1.125rem;
     }
@@ -579,19 +602,29 @@ header {
 
 
 .blogs {
-        @include mixins.sm {
-                display: none;
-            }
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     .blog-highlights {
         @include flex;
         // gap: 2rem;
+        flex-direction: column;
+
+        @include mixins.md {
+            flex-direction: row;
+        }
         
         justify-content: space-between;
         gap: 2rem;
 
         article.blog-card {
             @include flex;
+            flex-direction: column;
             background-color: $white;
+
+            @include mixins.md {
+                flex-direction: row;
+            }
             // width: 38rem;
             .feature-img {
                 width: 18rem;
@@ -628,16 +661,27 @@ header {
 
 
 .newsletter {
-        @include mixins.sm {
-                display: none;
-            }
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     @include flex;
+    flex-direction: column;
     column-gap: 5rem;
-    justify-content: space-between;
-    align-items: center;
+    row-gap: 2rem;
+
     background-color: $blue-light;
 
-    padding: 5rem;
+    padding-block: 6rem 5rem;
+    padding-inline: 1.5rem;
+
+
+    @include mixins.md {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5rem;
+    }
+
 
     @include mixins.shape-on-edge($size: 5.2rem, $image: '/images/shapes-2.svg');
 
@@ -650,12 +694,21 @@ header {
     }
     
     .section-h1 {
-        font-size: 2.25rem;
-        width: 90%;
+        font-size: 1.5rem;
+
+        @include mixins.md {
+            font-size: 2.25rem;
+            width: 90%;
+        }
     }    
     .newsletter-input {
-        width: 70%;
+        
         background-color: $white;
+
+        @include mixins.md {
+            width: 70%;
+        }
+
         input {
             width: 100%;
             padding-block: 1.2rem;
@@ -675,17 +728,25 @@ header {
 }
 
 .footer-top {
-        @include mixins.sm {
-                display: none;
-            }
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     @include flex;
-    justify-content: space-between;
+    flex-direction: column;
+    
+    @include mixins.md {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
     padding-top: 4rem;
 
     .section-h1 {
-        width: 65%;
         // background-color: red;
+        
+        @include mixins.md {
+            width: 65%;
+        }
     }
     .section-h3 {
         margin-block: 2rem;
@@ -711,9 +772,20 @@ header {
 
     nav {
         @include flex;
-        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 2rem;
 
-        width: 45%;
+        
+        @include mixins.sm {
+            margin-top: 3rem;
+        }
+
+        @include mixins.md {
+            width: 45%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
         
         ul {
             list-style: none;
@@ -750,25 +822,38 @@ header {
 }
 
 .footer-bottom {
-        @include mixins.sm {
-                display: none;
-            }
     @include flex;
+    flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
+
+    @include mixins.md {
+        align-items: center;
+        flex-direction: row;
+    }
 
     padding-block: 1.5rem;
 
     .copyright {
-        margin-left: 2rem;
+        // margin-left: 2rem;
         font-size: 1rem;
 
         @include mixins.poppins-medium;
+
+        @include mixins.md {
+            margin-left: 2rem;
+        }
     }
     ul {
         @include flex;
-        margin-left: auto;
+        // margin-left: auto;
 
         gap: 1rem;
+
+
+        @include mixins.md {
+            margin-left: auto;
+        }
 
         li a{
             display: inline-block;
