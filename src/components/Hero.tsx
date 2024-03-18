@@ -1,6 +1,7 @@
 import Header from "./Header";
 import data from '@/data.json';
 import Button from "./UI/Button";
+import Section from "./UI/Section";
 
 
 const {hero, clients} = data;
@@ -8,35 +9,44 @@ const {hero, clients} = data;
 
 const HeroSection = () => {
     return (
-        <section className="bg-hero">
+        <>
             <Header />
-            <hr/>
 
-            <div className="hero container">
-                
-                <h1 className="box-cap">
-                    {hero.mainText}
-                    
-                    <span>
-                        {hero.subText}
-                    </span>
-                    <br />
+            {/* <hr/> */}
+
+            <Section
+                wrapperClassName="bg-hero"
+                name="hero"
+
+            >
+
+                    <h1 className="box-cap">
+                        {hero.mainText}
+                        
+                        <span>
+                            {hero.subText}
+                        </span>
+                        <br />
 
 
-                    <Button
-                        label={hero.cta.label}
-                        isLink={!hero.cta.button}
-                        className={hero.cta.className}
+                        <Button
+                            label={hero.cta.label}
+                            link={hero.cta.link}
+                            className={hero.cta.className}
+                        />
+                    </h1>
+
+                    <div
+                        className="hero_image"
+                        style={{backgroundImage: `url(${hero.image.url})`}}
                     />
-                </h1>
+            </Section>
 
-                <div
-                    className="hero_image"
-                    style={{backgroundImage: `url(${hero.image.url})`}}
-                />
-            </div>
+            <Section
+                wrapperClassName="bg-hero"
+                name="hero_client"
 
-            <div className="hero_client container">
+            >
                 <h2>
                     <span>{clients.mainTitle}</span>
                     <br />
@@ -55,8 +65,8 @@ const HeroSection = () => {
                         ))
                     }
                 </ul>
-            </div>
-        </section>
+            </Section>
+        </>
     )
 }
 

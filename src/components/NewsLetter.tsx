@@ -6,7 +6,7 @@ const {newsletter} = siteData;
 
 export default function NewsLetter() {
     return (
-        <div className="container container--padded container--outer-space newsletter">
+        <div className="newsletter">
             <h1 >
                 <span className="section-header">
                     {newsletter.title}

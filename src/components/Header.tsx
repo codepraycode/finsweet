@@ -1,6 +1,4 @@
 
-
-import Link from 'next/link'
 import React from 'react'
 import Logo from './UI/Logo'
 import NavLinks from './UI/NavLink'
@@ -14,8 +12,8 @@ const {header} = siteData;
 
 function Header() {
     return (
-        <div className='bg-hero'>
-            <div className="container header-top text-white">
+        <header className='bg-hero'>
+            <div className="container header-wrapper text-white">
                 <Logo />
 
 
@@ -31,7 +29,7 @@ function Header() {
                     }
                 />
             </div>
-        </div>
+        </header>
     )
 }
 

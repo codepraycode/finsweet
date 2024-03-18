@@ -3,6 +3,26 @@
 @use './mixins' as mixins;
 
 
+.box-cap {
+    &::before {
+        content: "";
+        $box-size: 1.3rem;
+
+        display: block;
+
+        width: $box-size;
+        height: $box-size;
+
+        background-color: $box-cap-deep;
+        border-radius: .2rem;
+        margin-bottom: 1.1rem;
+    }
+
+    &--blue::before {
+        background-color: $box-cap-blue;
+    }
+}
+
 
 // Layout
 .container {
@@ -48,7 +68,10 @@
     }
 
     &-capitalize {
-        text-transform:capitalize !important;
+        text-transform: capitalize !important;
+    }
+    &-uppercase {
+        text-transform: uppercase;
     }
 }
 

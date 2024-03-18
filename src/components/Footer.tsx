@@ -2,13 +2,14 @@ import Link from "next/link"
 import NewsLetter from "./NewsLetter"
 import siteData from "@/data.json";
 import Logo from "./UI/Logo";
+import Section from "./UI/Section";
 
 const {footer} = siteData;
 
 
 const FooterDetails = () => {
     return (
-        <div className="container footer-top shape-on-edge">
+        <div className="footer-top shape-on-edge">
 
             <div>
                 <h1 className="section-h1">
@@ -66,18 +67,20 @@ const FooterDetails = () => {
 
 const FooterSection = () => {
     return (
-        <section >
+        <>
+            <Section 
+                padded
+                name="footer"
+            >
 
-            <NewsLetter />
-            <br/><br/><br/><br/>
-            
-            
-            <footer>
-                {/* <h1>Footer us Section</h1> */}
-
+                <NewsLetter />
+                <br/><br/><br/><br/>
+                
                 <FooterDetails />
+            </Section>
 
-                <div className="bg-orange">
+            <footer className="bg-orange">
+                {/* <h1>Footer us Section</h1> */}
 
                     <div className="container footer-bottom">
 
@@ -107,10 +110,8 @@ const FooterSection = () => {
 
                     </div>
                 
-                </div>
             </footer>
-
-        </section>
+        </>
     )
 }
 

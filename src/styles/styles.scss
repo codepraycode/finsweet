@@ -23,12 +23,18 @@
 }
 
 
-.header-top {
-    @include flex;
+header {
+    .header-wrapper {
+        @include flex;
+    }
+
+    border-bottom: 1px solid $white-gray;
+
 
     .logo {
         align-self: center;
     }
+    
     nav {
         $nav-gap: 2rem;
         margin-left: auto;
@@ -39,27 +45,27 @@
             padding: 0;
             @include flex;
             gap: $nav-gap;
-
+    
             a {
                 display: inline-block;
                 text-decoration: none;
                 position: relative;
-
+    
                 color: $white-darken;
                 
                 padding-block: calc(calc($nav-gap * 1.7)  / 2);
                 @include mixins.poppins-semibold;
-
+    
                 transition: color 300ms ease-in-out;
-
+    
                 &:hover {
                     color: $white;
                 }
-
+    
                 &.active,
                 &:active {
                     color: $white;
-
+    
                     &::before {
                         content: "";
                         position: absolute;
@@ -71,38 +77,18 @@
                         border-radius: .5rem;
                     }
                 }
-
+    
             }
         }
     }
 }
 
 
-.box-cap {
-    &::before {
-        content: "";
-        $box-size: 1.3rem;
-        
-        display: block;
-        
-        width: $box-size;
-        height: $box-size;
-        
-        background-color: $box-cap-deep;
-        border-radius: .2rem;
-        margin-bottom: 1.1rem;
-    }
-    
-    &--blue::before {
-        background-color: $box-cap-blue;
-    }
-}
-
 
 .hero {
     @include flex;
     justify-content: space-between;
-    height: 70vh;
+    height: 80vh;
 
     h1 {
         padding-top: 10rem;
@@ -593,7 +579,7 @@
     @include flex;
     justify-content: space-between;
 
-    padding-block: 4rem;
+    padding-top: 4rem;
 
     .section-h1 {
         width: 65%;

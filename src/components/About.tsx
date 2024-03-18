@@ -2,14 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import siteData from '@/data.json';
 import Button from "./UI/Button";
+import Section from "./UI/Section";
 
 
 const {aboutUs} = siteData;
 
 const AboutSection = () => {
     return (
-        <section className="container container--padded about_us">
-            <h2 className="section-header text-capitalize">{aboutUs.title}</h2>
+        <Section
+            name="about_us"
+            padded
+        >
+            <h2 className="section-header text-uppercase">{aboutUs.title}</h2>
             
             <div className="_top">
                 <p className="section-h1">
@@ -63,7 +67,7 @@ const AboutSection = () => {
                     Read about us
                 </Link> */}
             </div>
-        </section>
+        </Section>
     )
 }
 

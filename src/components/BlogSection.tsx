@@ -1,6 +1,7 @@
 import Link from "next/link";
 import siteData from "@/data.json";
 import Button from "./UI/Button";
+import Section from "./UI/Section";
 
 
 const {blogHighlight} = siteData;
@@ -8,46 +9,44 @@ const {blogHighlight} = siteData;
 
 const BlogSection = () => {
     return (
-        <section className="bg-blue-accent">
+        <Section
+            wrapperClassName="bg-blue-accent"
+            padded
+            name="blogs"
+        >
+            <h1 className="section-h1 box-cap box-cap--blue">
+                {blogHighlight.main}
+            </h1>
+            <br/><br/>
+            <div className="blog-highlights">
 
-            <div className="container container--padded blogs">
+                {
+                    blogHighlight.highlights.map((item, i) => (
 
-                <h1 className="section-h1 box-cap box-cap--blue">
-                    {blogHighlight.main}
-                </h1>
-                <br/><br/>
-                <div className="blog-highlights">
+                        <article className="blog-card" key={i}>
+                            <div
+                                className="feature-img"
+                                style={{backgroundImage:`url(${item.image.url})`}}
+                            />
 
-                    {
-                        blogHighlight.highlights.map((item, i) => (
+                            <div className="details">
+                                <span>{item.date}</span>
 
-                            <article className="blog-card" key={i}>
-                                <div
-                                    className="feature-img"
-                                    style={{backgroundImage:`url(${item.image.url})`}}
+                                <h1>{item.title}</h1>
+                                <br/>
+                                <Button
+                                    label={item.cta.label}
+                                    link={item.cta.link}
+                                    className={item.cta.className}
                                 />
-
-                                <div className="details">
-                                    <span>{item.date}</span>
-
-                                    <h1>{item.title}</h1>
-                                    <br/>
-                                    <Button
-                                        label={item.cta.label}
-                                        link={item.cta.link}
-                                        className={item.cta.className}
-                                    />
-                                </div>
-                            </article>
-                        ))
-                    }                
-
-                </div>
-
+                            </div>
+                        </article>
+                    ))
+                }                
 
             </div>
 
-        </section>
+        </Section>
     )
 }
 

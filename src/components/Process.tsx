@@ -1,81 +1,81 @@
 import Image from "next/image";
 import siteData from "@/data.json";
+import Section from "./UI/Section";
 
 const {process} = siteData;
 
 
 const ProcessSection = () => {
     return (
-        <section>
+        <Section
+            name="process"
+            padded
+        >
 
-            <div className="container container--padded process">
+            <h2 className="section-header">{process.title}</h2>
+            
+            <p className="half-length">
+                <span className="section-h1"> 
+                    {process.main}
+                </span>
 
-                <h2 className="section-header">{process.title}</h2>
-                
-                <p className="half-length">
-                    <span className="section-h1"> 
-                        {process.main}
-                    </span>
+                <span className="section-p half-length--more">
+                    {process.paragraph}
+                </span>
+            </p>
 
-                    <span className="section-p half-length--more">
-                        {process.paragraph}
-                    </span>
-                </p>
+            <br /><br />
 
-                <br /><br />
+            <div className="cards cards-linked">
+                {
+                    process.milestones.at(0)!.map((item, i) => (
 
-                <div className="cards cards-linked">
-                    {
-                        process.milestones.at(0)!.map((item, i) => (
+                        <article key={i} className="card">
+                            <div className="card-icon float-left">
+                                <Image
+                                    src={ item.icon.url}
+                                    alt={item.icon.alt}
+                                    width={item.icon.width}
+                                    height={item.icon.height}
+                                />
+                            </div>
 
-                            <article key={i} className="card">
-                                <div className="card-icon float-left">
-                                    <Image
-                                        src={ item.icon.url}
-                                        alt={item.icon.alt}
-                                        width={item.icon.width}
-                                        height={item.icon.height}
-                                    />
-                                </div>
+                            <div className="float-right">
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
 
-                                <div className="float-right">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-
-                            </article>
-                        ))
-                    }
-                </div>
-
-                <br/><br/>
-                <div className="cards cards-linked">
-                    {
-                        process.milestones.at(1)!.map((item, i) => (
-
-                            <article key={i} className="card">
-                                <div className="card-icon float-left">
-                                    <Image
-                                        src={ item.icon.url}
-                                        alt={item.icon.alt}
-                                        width={item.icon.width}
-                                        height={item.icon.height}
-                                    />
-                                </div>
-
-                                <div className="float-right">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-
-                            </article>
-                        ))
-                    }
-                </div>
-
+                        </article>
+                    ))
+                }
             </div>
 
-        </section>
+            <br/><br/>
+            <div className="cards cards-linked">
+                {
+                    process.milestones.at(1)!.map((item, i) => (
+
+                        <article key={i} className="card">
+                            <div className="card-icon float-left">
+                                <Image
+                                    src={ item.icon.url}
+                                    alt={item.icon.alt}
+                                    width={item.icon.width}
+                                    height={item.icon.height}
+                                />
+                            </div>
+
+                            <div className="float-right">
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
+
+                        </article>
+                    ))
+                }
+            </div>
+
+        </Section>
     )
 }
 
