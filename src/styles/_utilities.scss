@@ -3,6 +3,80 @@
 @use './mixins' as mixins;
 
 
+.hambugger {
+    $menu-bar-width: 2.75rem;
+    $menu-bar-height: 0.5rem;
+    $menu-gap: 0.375rem;
+    $menu-x-margin: 0.4rem;
+    $menu-y-margin: .8rem;
+    $menu-animation-timing: 200ms ease;
+
+    // Calculating for states
+    $menu-height: calc($menu-bar-height * 3  + $menu-gap * 2);
+    $menu-x-width: calc($menu-height * 1.41421356);
+
+
+    &::before,
+    &::after,
+    & input {
+        content: "";
+        width: $menu-bar-width;
+        height: $menu-bar-height;
+        background-color: grey;
+        border-radius: 5rem;
+
+        transition: opacity $menu-animation-timing, 
+            width $menu-animation-timing,
+            rotate $menu-animation-timing,
+            translate $menu-animation-timing;;
+
+        transform-origin: left center;
+    }
+
+    & input {
+        appearance: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        pointer-events: none;
+
+        &:checked {
+            opacity: 0;
+            width: 0;
+        }
+    }
+
+
+    display: flex;
+    flex-direction: column;
+    gap: $menu-gap;
+    width: fit-content;
+    position: absolute;
+    top: $menu-y-margin;
+    right: $menu-x-margin;
+    z-index: 2;
+    cursor: pointer;
+
+
+    &:has(input:checked) {
+
+        // top: $menu-height;
+        // background-color: red;
+        &::before {
+            rotate: 45deg;
+            width: $menu-x-width;
+            translate: 0 calc($menu-bar-height / -2);
+            // translate: 0 0;
+        }
+        &::after {
+            rotate: -45deg;
+            width: $menu-x-width;
+            translate: 0 calc($menu-bar-height / 2);
+        }
+    }
+}
+
+
 .box-cap {
     &::before {
         content: "";
@@ -26,6 +100,8 @@
 
 // Layout
 .container {
+
+    max-width: 90%;
     max-width: $desktop-size;
     margin-inline: auto;
 
@@ -36,6 +112,12 @@
     &--outer-space {
         margin-block: 7rem;
     }
+
+    // @include mixins.md {
+    //     display: none;
+        
+    
+    // }
 }
 
 

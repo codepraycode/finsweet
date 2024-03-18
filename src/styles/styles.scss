@@ -34,7 +34,7 @@ header {
     .logo {
         align-self: center;
     }
-    
+
     nav {
         $nav-gap: 2rem;
         margin-left: auto;
@@ -80,12 +80,29 @@ header {
     
             }
         }
+
+
+        @include mixins.sm {
+            display: none;
+        }
     }
+
+
+    @include mixins.sm {
+        padding: 1rem;
+    }
+
+    
 }
 
 
 
 .hero {
+
+    @include mixins.sm {
+        display: none;
+    }
+
     @include flex;
     justify-content: space-between;
     height: 80vh;
@@ -133,6 +150,9 @@ header {
 }
 
 .hero_client {
+    @include mixins.sm {
+        display: none;
+    }
     @include flex;
     align-items: center;
     justify-content: space-between;
@@ -179,7 +199,9 @@ header {
 }
 
 .about_us {
-
+    @include mixins.sm {
+        display: none;
+    }
     ._top {
         margin-block: 1rem;
         @include flex;
@@ -238,6 +260,9 @@ header {
 }
 
 .expertise {
+        @include mixins.sm {
+            display: none;
+        }
     @include flex;
     column-gap:10rem;
     h3 {
@@ -275,6 +300,9 @@ header {
 }
 
 .services {
+        @include mixins.sm {
+                display: none;
+            }
     button {
         margin-block: 3rem;
     }
@@ -296,6 +324,9 @@ header {
 }
 
 .process {
+        @include mixins.sm {
+                display: none;
+            }
     counter-reset: linkedcard;
     .cards-linked {
         @include flex;
@@ -340,6 +371,9 @@ header {
 }
 
 .customers {
+        @include mixins.sm {
+                display: none;
+            }
     @include flex;
     justify-content: space-between;
     align-items: center;
@@ -485,7 +519,9 @@ header {
 
 
 .blogs {
-    
+        @include mixins.sm {
+                display: none;
+            }
     .blog-highlights {
         @include flex;
         // gap: 2rem;
@@ -532,6 +568,9 @@ header {
 
 
 .newsletter {
+        @include mixins.sm {
+                display: none;
+            }
     @include flex;
     column-gap: 5rem;
     justify-content: space-between;
@@ -576,6 +615,9 @@ header {
 }
 
 .footer-top {
+        @include mixins.sm {
+                display: none;
+            }
     @include flex;
     justify-content: space-between;
 
@@ -648,6 +690,9 @@ header {
 }
 
 .footer-bottom {
+        @include mixins.sm {
+                display: none;
+            }
     @include flex;
     align-items: center;
 
