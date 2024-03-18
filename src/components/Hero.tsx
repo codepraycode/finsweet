@@ -1,48 +1,72 @@
-import Image from "next/image";
 import Header from "./Header";
+import data from '@/data.json';
+import Button from "./UI/Button";
+import Section from "./UI/Section";
+
+
+const {hero, clients} = data;
 
 
 const HeroSection = () => {
     return (
-        <section className="bg-hero">
+        <>
             <Header />
-            <hr/>
 
-            <div className="hero container">
-                
-                <h1 className="box-cap">
-                    Transform Your Idea Into Reality with Finsweet
-                    
-                    <span>
-                        The entire Finsweet team knows what&#39;s good with Webflow and you can too with 1 week and a good attitude.
-                    </span>
-                    <br />
+            {/* <hr/> */}
 
-                    <button className="btn btn-with-arrow btn-shape-bg">
-                        Request Quote
-                    </button>
-                </h1>
+            <Section
+                wrapperClassName="bg-hero"
+                name="hero"
 
-                <div className="hero_image" />
-            </div>
+            >
 
-            <div className="hero_client container">
+                    <h1 className="box-cap">
+                        {hero.mainText}
+                        
+                        <span>
+                            {hero.subText}
+                        </span>
+                        <br />
+
+
+                        <Button
+                            label={hero.cta.label}
+                            link={hero.cta.link}
+                            className={hero.cta.className}
+                        />
+                    </h1>
+
+                    <div
+                        className="hero_image"
+                        style={{backgroundImage: `url(${hero.image.url})`}}
+                    />
+            </Section>
+
+            <Section
+                wrapperClassName="bg-hero"
+                name="hero_client"
+
+            >
                 <h2>
-                    <span>Our Clients</span>
+                    <span>{clients.mainTitle}</span>
                     <br />
-                    We&#39;ve Worked with
+                    {clients.subTitle}
                 </h2>
 
 
                 <ul role="list">
-                    <li style={{backgroundImage:'url(/images/clients/logoipsum-4.svg)'}} />
-                    <li style={{backgroundImage:'url(/images/clients/logoipsum-3.svg)'}} />
-                    <li style={{backgroundImage:'url(/images/clients/logoipsum-2.svg)'}} />
-                    <li style={{backgroundImage:'url(/images/clients/logoipsum-1.svg)'}} />
-                    <li style={{backgroundImage:'url(/images/clients/logoipsum.svg)'}} />
+                    {
+                        clients.logos.map((imageItem, i) => (
+                            
+                            <li 
+                                key={i} 
+                                style={{backgroundImage:`url(${imageItem.url})`}}
+                            />
+                        ))
+                    }
                 </ul>
-            </div>
-        </section>
+            </Section>
+        </>
     )
 }
 

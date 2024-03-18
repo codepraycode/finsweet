@@ -1,107 +1,81 @@
 import Image from "next/image";
-import Link from "next/link";
+import siteData from "@/data.json";
+import Section from "./UI/Section";
+
+const {process} = siteData;
 
 
 const ProcessSection = () => {
     return (
-        <section>
+        <Section
+            name="process"
+            padded
+        >
 
-            <div className="container container--padded process">
+            <h2 className="section-header">{process.title}</h2>
+            
+            <p className="half-length">
+                <span className="section-h1"> 
+                    {process.main}
+                </span>
 
-                <h2 className="section-header">Our Process</h2>
-                
-                <p className="half-length">
-                    <span className="section-h1"> 
-                        The process we are working With Our client Worldwide
-                    </span>
+                <span className="section-p half-length--more">
+                    {process.paragraph}
+                </span>
+            </p>
 
-                    <span className="section-p half-length--more">
-                        Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable.
-                    </span>
-                </p>
+            <br /><br />
 
-                <br /><br />
+            <div className="cards cards-linked">
+                {
+                    process.milestones.at(0)!.map((item, i) => (
 
-                <div className="cards cards-linked">
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/bulb.svg'} alt="Discover" width={50} height={50}/>
-                        </div>
+                        <article key={i} className="card">
+                            <div className="card-icon float-left">
+                                <Image
+                                    src={ item.icon.url}
+                                    alt={item.icon.alt}
+                                    width={item.icon.width}
+                                    height={item.icon.height}
+                                />
+                            </div>
 
-                        <div className="float-right">
-                            <h3>Discover</h3>
-                            <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent.</p>
-                        </div>
+                            <div className="float-right">
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
 
-                    </article>
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/file-write.svg'} alt="Designing" width={50} height={50}/>
-                        </div>
-
-                        <div className="float-right">
-                            <h3>Designing</h3>
-                            <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent.</p>
-                        </div>
-
-                    </article>
-
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/code-negative.svg'} alt="Development" width={50} height={50}/>
-                        </div>
-
-                        <div className="float-right">
-                            <h3>Development</h3>
-                            <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent.</p>
-                        </div>
-
-                    </article>
-                </div>
-
-                <br/><br/>
-                <div className="cards cards-linked">
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/mind.svg'} alt="Testing" width={50} height={50}/>
-                        </div>
-
-                        <div className="float-right">
-
-                            <h3>Testing</h3>
-                            <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent.</p>
-                        </div>
-
-                    </article>
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/rocket-negative.svg'} alt="Deployment" width={50} height={50}/>
-                        </div>
-
-
-                        <div className="float-right">
-                            <h3>Deployment</h3>
-                            <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent.</p>
-                        </div>
-
-                    </article>
-
-                    <article className="card">
-                        <div className="card-icon float-left">
-                            <Image src={'/images/icons/maintainance.svg'} alt="Maintenance" width={50} height={50}/>
-                        </div>
-
-                        <div className="float-right">
-                            <h3>Maintenance</h3>
-                            <p>We aim to attain the greatest satisfaction for our clients and be one of the prominent.</p>
-                        </div>
-
-                    </article>
-                </div>
-
+                        </article>
+                    ))
+                }
             </div>
 
-        </section>
+            <br/><br/>
+            <div className="cards cards-linked">
+                {
+                    process.milestones.at(1)!.map((item, i) => (
+
+                        <article key={i} className="card">
+                            <div className="card-icon float-left">
+                                <Image
+                                    src={ item.icon.url}
+                                    alt={item.icon.alt}
+                                    width={item.icon.width}
+                                    height={item.icon.height}
+                                />
+                            </div>
+
+                            <div className="float-right">
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
+
+                        </article>
+                    ))
+                }
+            </div>
+
+        </Section>
     )
 }
 

@@ -26,7 +26,11 @@ a {
 
 hr {
     border-color: $white-gray;
+    border-width: 1px;
+
+    // border-width: 0.00000004px !important;
 }
+
 
 h1, h2, h3
 p {

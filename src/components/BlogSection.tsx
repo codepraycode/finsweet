@@ -1,56 +1,52 @@
-import Image from "next/image";
 import Link from "next/link";
+import siteData from "@/data.json";
+import Button from "./UI/Button";
+import Section from "./UI/Section";
+
+
+const {blogHighlight} = siteData;
 
 
 const BlogSection = () => {
     return (
-        <section className="bg-blue-accent">
+        <Section
+            wrapperClassName="bg-blue-accent"
+            padded
+            name="blogs"
+        >
+            <h1 className="section-h1 box-cap box-cap--blue">
+                {blogHighlight.main}
+            </h1>
+            <br/><br/>
+            <div className="blog-highlights">
 
-            <div className="container container--padded blogs">
+                {
+                    blogHighlight.highlights.map((item, i) => (
 
-                <h1 className="section-h1 box-cap box-cap--blue">Read our latest blogs & news</h1>
-                <br/><br/>
-                <div className="blog-highlights">
+                        <article className="blog-card" key={i}>
+                            <div
+                                className="feature-img"
+                                style={{backgroundImage:`url(${item.image.url})`}}
+                            />
 
-                    <article className="blog-card">
-                        <div
-                            className="feature-img"
-                            style={{backgroundImage:'url(/images/blog/feature-image-1.png)'}}
-                        />
+                            <div className="details">
+                                <span>{item.date}</span>
 
-                        <div className="details">
-                            <span>Jan 19, 2021</span>
-
-                            <h1>Today&#39;s best design trends for digital products</h1>
-                            <br/>
-                            <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
-                                Read more
-                            </Link>
-                        </div>
-                    </article>
-
-                    <article className="blog-card">
-                        <div
-                            className="feature-img"
-                            style={{backgroundImage:'url(/images/blog/feature-image-2.png)'}}
-                        />
-
-                        <div className="details">
-                            <span className="">Jan 19, 2021</span>
-                            <h1>A practical guide to building a brand strategy</h1>
-                            <br/>
-                            <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
-                                Read more
-                            </Link>
-                        </div>
-                    </article>
-                    
-                </div>
-
+                                <h1>{item.title}</h1>
+                                <br/>
+                                <Button
+                                    label={item.cta.label}
+                                    link={item.cta.link}
+                                    className={item.cta.className}
+                                />
+                            </div>
+                        </article>
+                    ))
+                }                
 
             </div>
 
-        </section>
+        </Section>
     )
 }
 
