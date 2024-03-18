@@ -16,24 +16,25 @@
     width: $logo-size;
     height: calc($logo-size / 4);
 
-    // background-color: red;
-    background-image: url('/images/logo.svg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 
-    &--negative {
-        background-image: url('/images/logo-negative.svg');
-    }
 }
 
 
-.header-top {
-    @include flex;
+header {
+    .header-wrapper {
+        @include flex;
+    }
+
+    border-bottom: 1px solid $white-gray;
+
 
     .logo {
         align-self: center;
     }
+
     nav {
         $nav-gap: 2rem;
         margin-left: auto;
@@ -44,27 +45,27 @@
             padding: 0;
             @include flex;
             gap: $nav-gap;
-
+    
             a {
                 display: inline-block;
                 text-decoration: none;
                 position: relative;
-
+    
                 color: $white-darken;
                 
                 padding-block: calc(calc($nav-gap * 1.7)  / 2);
                 @include mixins.poppins-semibold;
-
+    
                 transition: color 300ms ease-in-out;
-
+    
                 &:hover {
                     color: $white;
                 }
-
+    
                 &.active,
                 &:active {
                     color: $white;
-
+    
                     &::before {
                         content: "";
                         position: absolute;
@@ -76,47 +77,36 @@
                         border-radius: .5rem;
                     }
                 }
-
+    
             }
         }
-    }
-}
 
 
-.box-cap {
-    &::before {
-        content: "";
-        $box-size: 1.3rem;
-        
-        display: block;
-        
-        width: $box-size;
-        height: $box-size;
-        
-        background-color: $box-cap-deep;
-        border-radius: .2rem;
-        margin-bottom: 1.1rem;
+        @include mixins.sm {
+            display: none;
+        }
     }
+
+
+    @include mixins.sm {
+        padding: 1rem;
+    }
+
     
-    &--blue::before {
-        background-color: $box-cap-blue;
-    }
 }
+
 
 
 .hero {
-    @include flex;
-    justify-content: space-between;
-    height: 70vh;
 
     h1 {
         padding-top: 10rem;
-        width: 50%;
         @include mixins.poppins-semibold;
-        font-size: 3.8rem;
+        font-size: 3rem;
         line-height: 3.9rem;
-
         color: $white;
+
+
         span {
             display: inline-block;
             line-height: 1.5rem;
@@ -125,19 +115,28 @@
             margin-block: 1.54rem;
         }
 
-        
+        @include mixins.sm {
+            padding-top: 4rem;
+            font-size: 2.8rem;
+        }
+
+        @include mixins.md {
+            width: 50%;
+            font-size: 3.8rem;
+        }
+
+
     }
 
     &_image {
-        width: 40%;
-        height: 100%;
-        // background-color: red;
-        background-image: url('/images/hero_Image.png');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
 
-        // background-color: red;
-        background-size: contain
+        @include mixins.md {
+            width: 40%;
+            height: 100%;
+        }
     }
 
     .btn {
@@ -149,13 +148,37 @@
             --arrow-height: 27%;
         }
     }
+
+    @include mixins.md {
+        @include flex;
+        justify-content: space-between;
+
+        height: 80vh;
+    }
+
+    
+
+    
 }
 
 .hero_client {
+
     @include flex;
-    align-items: center;
-    justify-content: space-between;
     padding-block: 2rem 4rem;
+
+    flex-direction: column;
+    
+    @include mixins.md {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include mixins.sm {
+        padding-top: 7rem;
+    }
+
+
     h2 {
         @include mixins.poppins-medium;
         color: $white;
@@ -174,13 +197,12 @@
         // margin-left: auto;
         @include flex;
         width: fit-content;
-        // justify-content: space-evenly;
-        // background-color: red;
-        // column-gap: 4rem;
+        flex-wrap: wrap;
         li {
             display: inline-block;
 
-            $lent: 10rem;
+            --logo-size: 10rem;
+            $lent: var(--logo-size, 10rem);
             width: $lent;
             height: calc($lent / 3);
 
@@ -193,8 +215,8 @@
             &:last-of-type {
                 margin-right: 0;
             }
-        
-    }}
+        }
+    }
 }
 
 .about_us {
@@ -202,6 +224,13 @@
     ._top {
         margin-block: 1rem;
         @include flex;
+        flex-direction: column;
+
+        row-gap: 2rem;
+
+        @include mixins.md {
+            flex-direction: row;
+        }
     }
 
     .img_lineup {
@@ -218,27 +247,44 @@
             background-repeat: no-repeat;
             background-size: cover;
 
-            &:first-of-type {
-                background-image: url('/images/about-us/img-1.png');
-            }
-            &:nth-child(2){
-                background-image: url('/images/about-us/img-2.png');
-            }
-            &:nth-child(3){
-                background-image: url('/images/about-us/img-3.png');
+            // Show just the first one on mobile
+
+            @include mixins.sm {
+                display: none;
+
+                &:first-of-type {
+                    display: block
+                }
             }
         }
     }
 
     .info-cta {
-        @include flex;
-        align-items: center;
+        
+        @include mixins.md {
+            
+            @include flex;
+            align-items: center;
+        }
 
         & > div {
-            @include flex;
-            justify-content: space-between;
+            // @include flex;
             // background-color: red;
-            width: 50%;
+            @include flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            row-gap: 2rem;
+
+            
+            @include mixins.sm {
+                margin-bottom: 3rem;
+            }
+
+            @include mixins.md {
+                justify-content: space-between;
+                width: 50%;
+            }
+
             div {
                 span {
                     display: inline-block;
@@ -257,8 +303,11 @@
 }
 
 .expertise {
-    @include flex;
-    column-gap:10rem;
+
+    @include mixins.md {
+        @include flex;
+        column-gap:10rem;
+    }
     h3 {
         font-size: 1rem;
         @include mixins.poppins-semibold;
@@ -273,20 +322,41 @@
         }
     }
 
+    .cards {
+        margin-top: 4rem;
+    }
+
     .float-right {
         width: 70%;
         position: relative;
-        right: 4rem;
+        // right: 4rem;
+
+        @include mixins.md {
+            right: 4rem;
+        }
     }
 
     .card {
         overflow: hidden;
+        @include mixins.sm {
+            width: 100%;
+        }
+
+        &:nth-child(even) {
+            margin-block: 1rem ;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
     }
 
     
 }
 
 .services {
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     button {
         margin-block: 3rem;
     }
@@ -294,12 +364,18 @@
     
 
     .cards {
+        // @include flex;
         @include flex;
         justify-content: space-between;
+        flex-direction: column;
+
+        row-gap: 2rem;
+        @include mixins.md {
+            flex-direction: row;
+        }
 
         .card {
             width: 25rem;
-
             h3 {
                 margin-block: .7rem;
             }
@@ -308,17 +384,30 @@
 }
 
 .process {
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     counter-reset: linkedcard;
     .cards-linked {
         @include flex;
+
+        flex-direction: column;
         column-gap: 3rem;
+        row-gap: 3rem;
+        
+        @include mixins.md {
+            flex-direction: row;
+        }
+
         .card {
             $border-color: $hero-bg-gray;
+            $card-width: 26rem;
+            
             padding:2rem 1.3rem;
             border: 1px solid $border-color;
             position: relative;
 
-            width: 26rem !important;
+            width: $card-width !important;
             counter-increment: linkedcard;
 
             &::after {
@@ -339,25 +428,41 @@
                 content: "";
 
                 position: absolute;
-                right: -20%;
-                bottom: 50%;
+                right: 40%;
+                bottom: -10%;
+
+
+                transform: rotate(90deg);
 
                 width: 20%;
                 height: 0px;
+
                 border: .125rem solid $hero-bg-gray;
                 border-style:dashed;
+                z-index: -1;
+
+
+                @include mixins.md {
+                    right: -20%;
+                    bottom: 50%;
+                    transform: rotate(0deg);
+                }
             }
         }
     }
 }
 
 .customers {
-    @include flex;
-    justify-content: space-between;
-    align-items: center;
-    .half-length {
-        width: 40%;
+    
+    @include mixins.md {
+        @include flex;
+        justify-content: space-between;
+        align-items: center;
+        .half-length {
+            width: 40%;
+        }
     }
+
     .section-h3 {
         margin-block: 1.125rem;
     }
@@ -497,17 +602,29 @@
 
 
 .blogs {
-    
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     .blog-highlights {
         @include flex;
         // gap: 2rem;
+        flex-direction: column;
+
+        @include mixins.md {
+            flex-direction: row;
+        }
         
         justify-content: space-between;
         gap: 2rem;
 
         article.blog-card {
             @include flex;
+            flex-direction: column;
             background-color: $white;
+
+            @include mixins.md {
+                flex-direction: row;
+            }
             // width: 38rem;
             .feature-img {
                 width: 18rem;
@@ -544,13 +661,27 @@
 
 
 .newsletter {
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     @include flex;
+    flex-direction: column;
     column-gap: 5rem;
-    justify-content: space-between;
-    align-items: center;
+    row-gap: 2rem;
+
     background-color: $blue-light;
 
-    padding: 5rem;
+    padding-block: 6rem 5rem;
+    padding-inline: 1.5rem;
+
+
+    @include mixins.md {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5rem;
+    }
+
 
     @include mixins.shape-on-edge($size: 5.2rem, $image: '/images/shapes-2.svg');
 
@@ -563,12 +694,21 @@
     }
     
     .section-h1 {
-        font-size: 2.25rem;
-        width: 90%;
+        font-size: 1.5rem;
+
+        @include mixins.md {
+            font-size: 2.25rem;
+            width: 90%;
+        }
     }    
     .newsletter-input {
-        width: 70%;
+        
         background-color: $white;
+
+        @include mixins.md {
+            width: 70%;
+        }
+
         input {
             width: 100%;
             padding-block: 1.2rem;
@@ -588,14 +728,25 @@
 }
 
 .footer-top {
+        // @include mixins.sm {
+        //         display: none;
+        //     }
     @include flex;
-    justify-content: space-between;
+    flex-direction: column;
+    
+    @include mixins.md {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-    padding-block: 4rem;
+    padding-top: 4rem;
 
     .section-h1 {
-        width: 65%;
         // background-color: red;
+        
+        @include mixins.md {
+            width: 65%;
+        }
     }
     .section-h3 {
         margin-block: 2rem;
@@ -621,9 +772,20 @@
 
     nav {
         @include flex;
-        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 2rem;
 
-        width: 45%;
+        
+        @include mixins.sm {
+            margin-top: 3rem;
+        }
+
+        @include mixins.md {
+            width: 45%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
         
         ul {
             list-style: none;
@@ -661,21 +823,37 @@
 
 .footer-bottom {
     @include flex;
+    flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
+
+    @include mixins.md {
+        align-items: center;
+        flex-direction: row;
+    }
 
     padding-block: 1.5rem;
 
     .copyright {
-        margin-left: 2rem;
+        // margin-left: 2rem;
         font-size: 1rem;
 
         @include mixins.poppins-medium;
+
+        @include mixins.md {
+            margin-left: 2rem;
+        }
     }
     ul {
         @include flex;
-        margin-left: auto;
+        // margin-left: auto;
 
         gap: 1rem;
+
+
+        @include mixins.md {
+            margin-left: auto;
+        }
 
         li a{
             display: inline-block;
