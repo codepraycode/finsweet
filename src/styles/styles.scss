@@ -454,8 +454,11 @@ header {
 
 .customers {
     
+    @include flex;
+    flex-direction: column;
+    row-gap: 4rem;
     @include mixins.md {
-        @include flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         .half-length {
