@@ -29,12 +29,6 @@ function Header() {
                     }
                 />
 
-                <label className="hambugger" htmlFor='menu-toggle'>
-                    <input type="checkbox"
-                        name="menu-toggle"
-                        id="menu-toggle"
-                    />
-                </label>
             </div>
         </header>
     )

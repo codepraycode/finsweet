@@ -35,7 +35,7 @@
         "cta": {
             "label": "Clone project",
             "link": null,
-            "className": "btn-transparent btn-with-arrow text-active"
+            "className": "btn-transparent btn-with-arrow text-active nav-cta"
         }
     },
     "hero": {
