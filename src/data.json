@@ -379,16 +379,44 @@
                 }
             },
             {
-                "avatar": null,
-                "fullname": null,
-                "review": null,
-                "company": null
+                "avatar": {
+                    "url": "/images/customers/customer-1.png",
+                    "alt": "Customer 1",
+                    "width": 50,
+                    "height": 50
+                },
+                "fullname": "Johnny Andro",
+                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "company": {
+                    "name": "Logo Ipsum",
+                    "position": "Director, Company",
+                    "logo": {
+                        "url": "/images/clients/logoipsum-3-alt.svg",
+                        "alt": "Logo Ipsum",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
             },
             {
-                "avatar": null,
-                "fullname": null,
-                "review": null,
-                "company": null
+                "avatar": {
+                    "url": "/images/customers/customer-1.png",
+                    "alt": "Customer 1",
+                    "width": 50,
+                    "height": 50
+                },
+                "fullname": "Johnny Andro",
+                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "company": {
+                    "name": "Logo Ipsum",
+                    "position": "Director, Company",
+                    "logo": {
+                        "url": "/images/clients/logoipsum-3-alt.svg",
+                        "alt": "Logo Ipsum",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
             }
             
         ]

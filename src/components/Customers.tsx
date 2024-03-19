@@ -1,10 +1,20 @@
+'use client';
 import Image from "next/image";
 import siteData from "@/data.json";
 import Section from "./UI/Section";
+import Slider from "react-slick";
 
 const { customers } = siteData;
 
 const CustomerSection = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+
     return (
         <Section
             wrapperClassName="bg-light-blue"
@@ -45,52 +55,48 @@ const CustomerSection = () => {
 
 
             <div className="card customer-reviews">
-                {
-                    customers.reviews.map((item, i) => {
-                        
-                        
-                        
-                        if (!item.review) return;
-                        return (
 
-                        <div key={i} className="review-item">
+                <Slider {...settings}>
 
-                            <p className="section-h4">
-                                {item.review}
-                            </p>
+                    {
+                        customers.reviews.map((item, i) => {
+                            
+                            
+                            
+                            if (!item.review) return;
+                            return (
 
-                            <div className="attribution">
-                                <span className="customer-img">
-                                    <Image
-                                        src={item.avatar.url}
-                                        alt={item.avatar.alt}
-                                        width={item.avatar.width}
-                                        height={item.avatar.height}
-                                    />
-                                </span>
+                            <div key={i} className="review-item">
 
-                                <p>
-                                    <b>{item.fullname}</b>
-                                    <span>{item.company.position}</span>
+                                <p className="section-h4">
+                                    {item.review}
                                 </p>
 
-                                <span
-                                    className="customer-logo"
-                                    style={{backgroundImage: `url(${item.company.logo})`}}
-                                />
+                                <div className="attribution">
+                                    <span className="customer-img">
+                                        <Image
+                                            src={item.avatar.url}
+                                            alt={item.avatar.alt}
+                                            width={item.avatar.width}
+                                            height={item.avatar.height}
+                                        />
+                                    </span>
+
+                                    <p>
+                                        <b>{item.fullname}</b>
+                                        <span>{item.company.position}</span>
+                                    </p>
+
+                                    <span
+                                        className="customer-logo"
+                                        style={{backgroundImage: `url(${item.company.logo})`}}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    )})
-                }
-
-
-                <div className="slide-controllers">
-                    {
-                        [...Array(customers.reviews.length)].map((each, i) => (
-                            <button data-active={i === 0} key={i}/>
-                        ))
+                        )})
                     }
-                </div>
+                </Slider>
+
             </div>
 
         </Section>

@@ -530,34 +530,19 @@ header {
             background-size: contain;
             background-position: center;
         }
-        .slide-controllers {
 
-            text-align: center;
-            width: 100%;
-
-            position: absolute;
-            bottom: -2.4rem;
-            left: 0;
-
+        .slick-dots {
+            // background-color: red;
+            bottom: -5.4rem;
             $btn-size: .66rem;
 
-            button {
-                display: inline-block;
+            & button::before {
                 width: $btn-size;
                 height: $btn-size;
-                
-                cursor: pointer;
+                background-color: $hero-bg;
+                content: "";
                 border: 0;
                 border-radius: 50%;
-                background-color: $hero-bg;
-                
-                &:not([data-active="true"]) {
-                    opacity: .2;
-                }
-
-                &:nth-child(even) {
-                    margin-inline: .5rem;
-                }
             }
         }
     }
