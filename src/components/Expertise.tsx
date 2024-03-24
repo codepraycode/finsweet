@@ -16,7 +16,7 @@ const ExpertiseSection = () => {
                 <h2 className="section-header">
                     { expertise.title }
                 </h2>
-                <p>
+                <div>
                     <span className="section-h1">
                         {expertise.main}
                     </span>
@@ -24,7 +24,7 @@ const ExpertiseSection = () => {
                     <div className="section-p">
                         {expertise.paragraph}
                     </div>
-                </p>
+                </div>
             </div>
 
             <div className="cards">

@@ -67,6 +67,7 @@
 
         // top: $menu-height;
         // background-color: red;
+        position: fixed;
         &::before {
             rotate: 45deg;
             width: $menu-x-width;

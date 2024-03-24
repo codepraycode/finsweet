@@ -17,22 +17,32 @@ interface NavLinksProps {
 export default function NavLinks({ links, cta }: NavLinksProps ) {
   return (
     <nav>
-        <ul>
-            {
-                links.map((item, i) => (
-                    <li key={i}>
-                        <Link
-                            href={item.url}
-                            className={`${item.active ? 'active' : ''}`}
-                        >
-                            {item.label}
-                        </Link>
-                    </li>
-                ))
-            }
-        </ul>
+        <label className="hambugger" htmlFor='menu-toggle'>
+            <input type="checkbox"
+                name="menu-toggle"
+                id="menu-toggle"
+            />
+        </label>
 
-        { cta }
+        <div className="nav-wrapper">
+
+            <ul>
+                {
+                    links.map((item, i) => (
+                        <li key={i}>
+                            <Link
+                                href={item.url}
+                                className={`${item.active ? 'active' : ''}`}
+                            >
+                                {item.label}
+                            </Link>
+                        </li>
+                    ))
+                }
+            </ul>
+
+            { cta }
+        </div>
     </nav>
   )
 }
