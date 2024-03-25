@@ -2,6 +2,7 @@ import Header from "./Header";
 import data from '@/data.json';
 import Button from "./UI/Button";
 import Section from "./UI/Section";
+import Input from "./UI/Input";
 
 
 const {hero, clients} = data;
@@ -53,7 +54,13 @@ const HeroSection = () => {
                     {clients.subTitle}
                 </h2>
 
+                <Input
+                    wrapperClassname="search-input"
+                    type="text"
+                    placeholder="Search for aviation businesses"
+                />
 
+{/* 
                 <ul role="list">
                     {
                         clients.logos.map((imageItem, i) => (
@@ -64,7 +71,7 @@ const HeroSection = () => {
                             />
                         ))
                     }
-                </ul>
+                </ul> */}
             </Section>
         </>
     )

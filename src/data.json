@@ -54,8 +54,8 @@
         }
     },
     "clients": {
-        "mainTitle": "Our Clients",
-        "subTitle": "We've Worked with",
+        "mainTitle": "Aviation",
+        "subTitle": "Find aviation businesses",
         "logos": [
             {
                 "url": "/images/clients/logoipsum.svg",

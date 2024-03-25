@@ -290,6 +290,20 @@ header {
             }
         }
     }
+
+
+    .search-input {
+        background-color: $white-gray;
+
+        @include mixins.md {
+            width: 70%;
+        }
+
+        &:has(input:not(:placeholder-shown)) {
+            background-color: $blue-accent;
+        }
+
+    }
 }
 
 .about_us {
@@ -767,29 +781,14 @@ header {
     }    
     .newsletter-input {
         
-        background-color: $white;
+        --input-background: hsla(0, 0%, 100%, 1);
 
         @include mixins.md {
             width: 70%;
         }
-
-        input {
-            width: 100%;
-            padding-block: 1.2rem;
-            padding-inline: 1.4rem .5rem;
-
-            size: 1rem;
-            @include mixins.poppins-medium;
-            background-color: transparent;
-
-            border: 0;
-
-            outline-color: $white-darken;
-            // &:hover {
-            // }
-        }
     }
 }
+
 
 .footer-top {
         // @include mixins.sm {
