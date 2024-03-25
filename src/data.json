@@ -92,9 +92,17 @@
     "aboutUs": {
         "title": "About us",
         "subTitle1": "The company leads entire webdesign process from concept to delivery.",
-        "subTitle2": "The Era Of Technology.",
-        "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.",
 
+        "sections": [
+            {
+                "title": "Our Vision.",
+                "paragraph": "To be the Hub in aviation  Services and the customers' craving that will patronise us based on the feedback they have gotten from the customers we have served well and are still serving. Above all, to be the timely Solution to our Customers' problems."
+            },
+            {
+                "title": "Our Mission.",
+                "paragraph": "To Develop  lasting client relationships by providing exceptional value in the aviation industry with Smart work, Respect and Trust."
+            }
+        ],
         "featuredImages": [
             {
                 "url": "/images/about-us/img-1.png",
@@ -142,7 +150,7 @@
         }
     },
     "expertise": {
-        "title": "Our expertise",
+        "title": "Our Core Values",
         "main": "We want to get local identification in every corner of the world in this era of global citizenship",
         "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.",
         "deliverables": [
@@ -453,6 +461,21 @@
                     "width": 50,
                     "height": 50
                 }
+            },
+            {
+                "title": "Discover the Power of Relaxation: Luxurious Spa Day Packages Await!",
+                "description": "Indulge in pure bliss with our rejuvenating spa day packages! Treat yourself or a loved one to a day of tranquility and pampering with our expertly crafted treatments. From soothing massages to revitalizing facials, our experienced therapists ensure a serene and revitalizing experience. Book your escape today and immerse yourself in ultimate relaxation!",
+                "cta": {
+                    "label": "See more",
+                    "link": "/",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                },
+                "image": {
+                    "url": "/images/blog/feature-image-2.png",
+                    "alt": "featured image",
+                    "width": 50,
+                    "height": 50
+                }
             }
         ]
     },
@@ -468,8 +491,8 @@
         "main": "Let's make something special",
         "subTitle": "Let's talk! 🤙",
         "contacts":[
-            "020 7993 2905",
-            "hi@finsweet.com"
+            "Registration Number: RC1093505",
+            "Motto: Service without Boundary"
         ],
         "address": "DLF Cybercity, Bhubaneswar,\nIndia, &52050",
         "links": [

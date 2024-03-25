@@ -13,20 +13,38 @@ const AboutSection = () => {
             name="about_us"
             padded
         >
-            <h2 className="section-header text-uppercase">{aboutUs.title}</h2>
+            <h1 className="section-header text-uppercase">{aboutUs.title}</h1>
             
             <div className="_top">
-                <p className="section-h1">
-                    {aboutUs.subTitle1}
-                </p>
-                <p>
-                    <span className="section-h2">
-                        {aboutUs.subTitle2}
-                    </span> <br />
-                    <span className="section-p">
-                        {aboutUs.paragraph}
-                    </span>
-                </p>
+
+                <div>
+
+                    <h2 className="section-h1">
+                        {aboutUs.subTitle1}
+                    </h2>
+
+                    <p className="section-p">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae inventore ipsum quidem doloribus quibusdam quod quos corrupti sunt. Quisquam odit expedita, sint veniam alias sequi natus quae labore soluta temporibus.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae inventore ipsum quidem doloribus quibusdam quod quos corrupti sunt. Quisquam odit expedita, sint veniam alias sequi natus quae labore soluta temporibus.
+                    </p>
+                </div>
+
+
+                <div className="sections">
+
+                    {
+                        aboutUs.sections.map((item, i)=>(
+                            <p key={i}>
+                                <span className="section-h2">
+                                    {item.title}
+                                </span> <br />
+                                <span className="section-p">
+                                    {item.paragraph}
+                                </span>
+                            </p>
+                        ))
+                    }
+                </div>
             </div>
 
 
