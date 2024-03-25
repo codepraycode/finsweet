@@ -1,5 +1,5 @@
 import AboutSection from "@/components/About";
-import BlogSection from "@/components/BlogSection";
+import AddSection from "@/components/AddSection";
 import CustomerSection from "@/components/Customers";
 import ExpertiseSection from "@/components/Expertise";
 import FooterSection from "@/components/Footer";
@@ -17,7 +17,7 @@ export default function Home() {
             <ServicesSection />
             <ProcessSection />
             <CustomerSection />
-            <BlogSection />
+            <AddSection />
             <FooterSection />
         </main>
     );

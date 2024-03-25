@@ -4,24 +4,24 @@ import Button from "./UI/Button";
 import Section from "./UI/Section";
 
 
-const {blogHighlight} = siteData;
+const {adsHighlight} = siteData;
 
 
-const BlogSection = () => {
+const AddSection = () => {
     return (
         <Section
             wrapperClassName="bg-blue-accent"
             padded
-            name="blogs"
+            name="ads"
         >
             <h1 className="section-h1 box-cap box-cap--blue">
-                {blogHighlight.main}
+                {adsHighlight.main}
             </h1>
             <br/><br/>
-            <div className="blog-highlights">
+            <div className="ads-highlights">
 
                 {
-                    blogHighlight.highlights.map((item, i) => (
+                    adsHighlight.highlights.map((item, i) => (
 
                         <article className="blog-card" key={i}>
                             <div
@@ -30,9 +30,9 @@ const BlogSection = () => {
                             />
 
                             <div className="details">
-                                <span>{item.date}</span>
-
                                 <h1>{item.title}</h1>
+                                <br/>
+                                <p>{item.description}</p>
                                 <br/>
                                 <Button
                                     label={item.cta.label}
@@ -50,4 +50,4 @@ const BlogSection = () => {
     )
 }
 
-export default BlogSection;
+export default AddSection;

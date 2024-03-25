@@ -421,14 +421,14 @@
             
         ]
     },
-    "blogHighlight": {
-        "main": "Read our latest blogs & news",
+    "adsHighlight": {
+        "main": "Other services you may be interested in",
         "highlights": [
             {
-                "date": "Jan 19, 2021",
-                "title": "Today's best design trends for digital products",
+                "title": "Unleash Your Creativity with Our Innovative Art Supplies!",
+                "description": "Elevate your artistic journey with our premium art supplies! From vibrant acrylic paints to high-quality brushes and canvas, we provide everything you need to express your creativity. Whether you're a seasoned artist or just starting out, our diverse range of products caters to all skill levels. Explore our collection today and unleash your imagination!",
                 "cta": {
-                    "label": "Read more",
+                    "label": "See more",
                     "link": "/",
                     "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
                 },
@@ -440,10 +440,10 @@
                 }
             },
             {
-                "date": "Jan 19, 2021",
-                "title": "A practical guide to building a brand strategy",
+                "title": "Discover the Power of Relaxation: Luxurious Spa Day Packages Await!",
+                "description": "Indulge in pure bliss with our rejuvenating spa day packages! Treat yourself or a loved one to a day of tranquility and pampering with our expertly crafted treatments. From soothing massages to revitalizing facials, our experienced therapists ensure a serene and revitalizing experience. Book your escape today and immerse yourself in ultimate relaxation!",
                 "cta": {
-                    "label": "Read more",
+                    "label": "See more",
                     "link": "/",
                     "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
                 },
