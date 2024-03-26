@@ -27,6 +27,11 @@
                 "label": "Blog"
             },
             {
+                "url": "/ads",
+                "active": false,
+                "label": "Other services"
+            },
+            {
                 "url": "/contact-us",
                 "active": false,
                 "label": "Contact Us"
@@ -437,7 +442,7 @@
                 "description": "Elevate your artistic journey with our premium art supplies! From vibrant acrylic paints to high-quality brushes and canvas, we provide everything you need to express your creativity. Whether you're a seasoned artist or just starting out, our diverse range of products caters to all skill levels. Explore our collection today and unleash your imagination!",
                 "cta": {
                     "label": "See more",
-                    "link": "/",
+                    "link": "/ads",
                     "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
                 },
                 "image": {
@@ -452,7 +457,7 @@
                 "description": "Indulge in pure bliss with our rejuvenating spa day packages! Treat yourself or a loved one to a day of tranquility and pampering with our expertly crafted treatments. From soothing massages to revitalizing facials, our experienced therapists ensure a serene and revitalizing experience. Book your escape today and immerse yourself in ultimate relaxation!",
                 "cta": {
                     "label": "See more",
-                    "link": "/",
+                    "link": "/ads",
                     "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
                 },
                 "image": {
@@ -467,7 +472,7 @@
                 "description": "Indulge in pure bliss with our rejuvenating spa day packages! Treat yourself or a loved one to a day of tranquility and pampering with our expertly crafted treatments. From soothing massages to revitalizing facials, our experienced therapists ensure a serene and revitalizing experience. Book your escape today and immerse yourself in ultimate relaxation!",
                 "cta": {
                     "label": "See more",
-                    "link": "/",
+                    "link": "/ads",
                     "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
                 },
                 "image": {

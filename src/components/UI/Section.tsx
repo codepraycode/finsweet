@@ -11,13 +11,13 @@ interface SectionProps {
 
 export default function Section(props: SectionProps) {
 
-    let containerClassName = props.name + " container ";
+    let containerClassName =  "container " + props.containerClassName;
 
-    if (props.padded) containerClassName += "container--padded ";
+    if (props.padded) containerClassName += " container--padded ";
     
     return (
-        <section className={`${props.wrapperClassName}`}>
-            <div className={containerClassName.trim()}>
+        <section className={`${props.name} ${props.wrapperClassName}`}>
+            <div className={`${containerClassName}`.trim()}>
                 { props.children }
             </div>
         </section>
