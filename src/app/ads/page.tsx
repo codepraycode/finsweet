@@ -22,7 +22,7 @@ const AdsPage = () => {
                 </h1>
 
                 <p className="section-p">
-                    Welcome to our vibrant marketplace, where opportunities abound and treasures await discovery! Whether you're hunting for that perfect item, seeking to sell your goods, or simply exploring what's out there, you've come to the right place. Dive into our extensive collection of ads listings and uncover a world of possibilities. From electronics to fashion, real estate to services, our platform connects buyers and sellers, making transactions seamless and exciting. Join our community today and embark on your journey to find or showcase that special something.
+                    Welcome to our vibrant marketplace, where opportunities abound and treasures await discovery! Whether you&#39;re hunting for that perfect item, seeking to sell your goods, or simply exploring what&#39;s out there, you&#39;ve come to the right place. Dive into our extensive collection of ads listings and uncover a world of possibilities. From electronics to fashion, real estate to services, our platform connects buyers and sellers, making transactions seamless and exciting. Join our community today and embark on your journey to find or showcase that special something.
                 </p>
             </Section>
 
