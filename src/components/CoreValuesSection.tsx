@@ -2,13 +2,14 @@ import Image from "next/image";
 import siteData from "@/data.json";
 import Section from "./UI/Section";
 
-const { expertise } = siteData;
+const { coreValues:expertise } = siteData;
 
-const ExpertiseSection = () => {
+const CoreValuesSection = () => {
     return (
         <Section
             wrapperClassName="bg-blue-accent"
-            name="expertise"
+            name="coreVal"
+            containerClassName="coreVal_wrapper"
             padded
         >
             <div>
@@ -59,4 +60,4 @@ const ExpertiseSection = () => {
     )
 }
 
-export default ExpertiseSection;
+export default CoreValuesSection;

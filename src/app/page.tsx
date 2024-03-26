@@ -1,7 +1,7 @@
 import AboutSection from "@/components/About";
 import AdsSection from "@/components/AdsSection";
 import CustomerSection from "@/components/Customers";
-import ExpertiseSection from "@/components/Expertise";
+import CoreValuesSection from "@/components/CoreValuesSection";
 import FooterSection from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import ProcessSection from "@/components/Process";
@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <HeroSection />
             <AboutSection />
-            <ExpertiseSection />
+            <CoreValuesSection />
             <ServicesSection />
             <ProcessSection />
             <CustomerSection />

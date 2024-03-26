@@ -18,7 +18,7 @@ const HeroSection = () => {
             <Section
                 wrapperClassName="bg-hero"
                 name="hero"
-
+                containerClassName="hero-wrapper"
             >
 
                     <h1 className="box-cap">
@@ -46,6 +46,7 @@ const HeroSection = () => {
             <Section
                 wrapperClassName="bg-hero"
                 name="hero_client"
+                containerClassName="hero_client_wrapper"
 
             >
                 <h2>

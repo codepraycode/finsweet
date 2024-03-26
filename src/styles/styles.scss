@@ -171,7 +171,7 @@ header {
 
 
 
-.hero {
+.hero-wrapper {
 
     h1 {
         padding-top: 10rem;
@@ -202,7 +202,7 @@ header {
 
     }
 
-    &_image {
+    .hero_image {
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -235,7 +235,7 @@ header {
     
 }
 
-.hero_client {
+.hero_client_wrapper {
 
     @include flex;
     padding-block: 2rem 4rem;
@@ -420,7 +420,7 @@ header {
     }
 }
 
-.expertise {
+.coreVal_wrapper {
 
     @include mixins.md {
         @include flex;
@@ -570,7 +570,7 @@ header {
     }
 }
 
-.customers {
+.customers_wrapper {
     
     @include flex;
     flex-direction: column;
@@ -608,7 +608,7 @@ header {
         }
     }
 
-    &-highlight {
+    .customers-highlight {
         margin-top: 1.5rem;
 
         b {

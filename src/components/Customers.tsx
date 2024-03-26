@@ -20,6 +20,7 @@ const CustomerSection = () => {
             wrapperClassName="bg-light-blue"
             padded
             name="customers"
+            containerClassName="customers_wrapper"
         >
 
             <div className="half-length">
