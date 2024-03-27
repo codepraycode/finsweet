@@ -2,6 +2,8 @@ import { AdsListItems } from "@/components/AdsSection";
 import FooterSection from "@/components/Footer";
 import Header from "@/components/Header";
 import Section from "@/components/UI/Section";
+import adsSiteData from "@/data/ads.json";
+
 
 const AdsPage = () => {
     return (
@@ -15,21 +17,21 @@ const AdsPage = () => {
 
             >
                 <h1>
-                    <span className="section-header">Our Other services</span><br/>
+                    <span className="section-header">{adsSiteData.title}</span><br/>
                     <span className="section-h1">
-                        Discover Your Next Treasure: Browse Our Ads Listings Today!
+                        {adsSiteData.header1}
                     </span>
                 </h1>
 
                 <p className="section-p">
-                    Welcome to our vibrant marketplace, where opportunities abound and treasures await discovery! Whether you&#39;re hunting for that perfect item, seeking to sell your goods, or simply exploring what&#39;s out there, you&#39;ve come to the right place. Dive into our extensive collection of ads listings and uncover a world of possibilities. From electronics to fashion, real estate to services, our platform connects buyers and sellers, making transactions seamless and exciting. Join our community today and embark on your journey to find or showcase that special something.
+                    {adsSiteData.paragraph}
                 </p>
             </Section>
 
-            <h2 className="grand-title">Our Other Services</h2>
+            <h2 className="grand-title">{adsSiteData.grandTitle}</h2>
 
             <p className="anchor text-center">
-                <a>Services you may be intersted in <br/> 👇</a>
+                <span>{adsSiteData.grandSubTitle} <br/> 👇</span>
             </p>
 
 

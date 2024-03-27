@@ -1,6 +1,6 @@
 import Link from "next/link"
 import NewsLetter from "./NewsLetter"
-import siteData from "@/data.json";
+import siteData from "@/data/common.json";
 import Logo from "./UI/Logo";
 import Section from "./UI/Section";
 

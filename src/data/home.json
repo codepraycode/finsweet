@@ -1,0 +1,440 @@
+{
+    "hero": {
+        "mainText": "Transform Your Idea Into Reality with Finsweet",
+        "subText": "The entire Finsweet team knows what's good with Webflow and you can too with 1 week and a good attitude.",
+        "image": {
+            "url": "/images/hero_Image.png",
+            "alt": "Hero image",
+            "width": 50,
+            "height": 50
+        },
+        "cta": {
+            "label": "Request Quote",
+            "link": null,
+            "className": "btn-with-arrow btn-shape-bg"
+        }
+    },
+    "clients": {
+        "mainTitle": "Aviation",
+        "subTitle": "Find aviation businesses",
+        "logos": [
+            {
+                "url": "/images/clients/logoipsum.svg",
+                "alt": "Logo Ipsum",
+                "width": 50,
+                "height": 50
+            },
+            {
+                "url": "/images/clients/logoipsum-1.svg",
+                "alt": "Logo Ipsum 1",
+                "width": 50,
+                "height": 50
+            },
+            {
+                "url": "/images/clients/logoipsum-2.svg",
+                "alt": "Logo Ipsum 2",
+                "width": 50,
+                "height": 50
+            },
+            {
+                "url": "/images/clients/logoipsum-3.svg",
+                "alt": "Logo Ipsum 3",
+                "width": 50,
+                "height": 50
+            },
+            {
+                "url": "/images/clients/logoipsum-4.svg",
+                "alt": "Logo Ipsum 4",
+                "width": 50,
+                "height": 50
+            }
+        ]
+    },
+    "aboutUs": {
+        "title": "About us",
+        "subTitle1": "The company leads entire webdesign process from concept to delivery.",
+        "sections": [
+            {
+                "title": "Our Vision.",
+                "paragraph": "To be the Hub in aviation  Services and the customers' craving that will patronise us based on the feedback they have gotten from the customers we have served well and are still serving. Above all, to be the timely Solution to our Customers' problems."
+            },
+            {
+                "title": "Our Mission.",
+                "paragraph": "To Develop  lasting client relationships by providing exceptional value in the aviation industry with Smart work, Respect and Trust."
+            }
+        ],
+        "featuredImages": [
+            {
+                "url": "/images/about-us/img-1.png",
+                "alt": "Fetured image 1",
+                "width": 50,
+                "height": 50
+            },
+            {
+                "url": "/images/about-us/img-2.png",
+                "alt": "Fetured image 2",
+                "width": 50,
+                "height": 50
+            },
+            {
+                "url": "/images/about-us/img-3.png",
+                "alt": "Fetured image 3",
+                "width": 50,
+                "height": 50
+            }
+        ],
+        "portfolio": {
+            "points": [
+                {
+                    "point": "1560+",
+                    "description": "Project Delivered"
+                },
+                {
+                    "point": "100+",
+                    "description": "Professional"
+                },
+                {
+                    "point": "950+",
+                    "description": "Happy Client"
+                },
+                {
+                    "point": "10 yrs",
+                    "description": "Experience"
+                }
+            ],
+            "cta": {
+                "label": "Read about us",
+                "link": "/about-us",
+                "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+            }
+        }
+    },
+    "coreValues": {
+        "title": "Our Core Values",
+        "main": "We want to get local identification in every corner of the world in this era of global citizenship",
+        "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.",
+        "deliverables": [
+            {
+                "title": "On Time Delivery",
+                "icon": {
+                    "url": "/images/icons/rocket.svg",
+                    "alt": "On Time Delivery",
+                    "width": 50,
+                    "height": 50
+                },
+                "description": "Through True Rich Attended does no end it his mother since real had half every him."
+            },
+            {
+                "title": "Best Quality",
+                "icon": {
+                    "url": "/images/icons/cog.svg",
+                    "alt": "Best Quality",
+                    "width": 50,
+                    "height": 50
+                },
+                "description": "Through True Rich Attended does no end it his mother since real had half every him."
+            },
+            {
+                "title": "Support Assist",
+                "icon": {
+                    "url": "/images/icons/support.svg",
+                    "alt": "Support Assist",
+                    "width": 50,
+                    "height": 50
+                },
+                "description": "Through True Rich Attended does no end it his mother since real had half every him."
+            }
+        ]
+    },
+    "services": {
+        "title": "Our Services",
+        "main": "We build software solutions that solve client's business challenges",
+        "cta": {
+            "label": "Start a project",
+            "link": null,
+            "className": "btn-with-arrow btn-shape-bg"
+        },
+        "deliverables": [
+            {
+                "title": "Technical support",
+                "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                "icon": {
+                    "url": "/images/icons/contact.svg",
+                    "alt": "Technical support",
+                    "width": 50,
+                    "height": 50
+                },
+                "cta": {
+                    "label": "Read more",
+                    "link": "/about-us",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                }
+            },
+            {
+                "title": "Testing Management",
+                "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                "icon": {
+                    "url": "/images/icons/cog.svg",
+                    "alt": "Testing Management",
+                    "width": 50,
+                    "height": 50
+                },
+                "cta": {
+                    "label": "Read more",
+                    "link": "/about-us",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                }
+            },
+            {
+                "title": "Development",
+                "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                "icon": {
+                    "url": "/images/icons/code.svg",
+                    "alt": "Development",
+                    "width": 50,
+                    "height": 50
+                },
+                "cta": {
+                    "label": "Read more",
+                    "link": "/about-us",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                }
+            }
+        ]
+    },
+    "process": {
+        "title": "Our Process",
+        "main": "The process we are working With Our client Worldwide",
+        "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable.",
+        "milestones": [
+            [
+                {
+                    "title": "Discover",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/bulb.svg",
+                        "alt": "Discover",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Designing",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/file-write.svg",
+                        "alt": "Designing",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Development",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/code-negative.svg",
+                        "alt": "Development",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ],
+            [
+                {
+                    "title": "Testing",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/mind.svg",
+                        "alt": "Testing",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Deployment",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/rocket-negative.svg",
+                        "alt": "Deployment",
+                        "width": 50,
+                        "height": 50
+                    }
+                },
+                {
+                    "title": "Maintenance",
+                    "description": "We aim to attain the greatest satisfaction for our clients and be one of the prominent names when it comes to world-class service.",
+                    "icon": {
+                        "url": "/images/icons/maintainance.svg",
+                        "alt": "Maintenance",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ]
+        ]
+    },
+    "customers": {
+        "main": "The process we are working With Our client Worldwide",
+        "subTitle": "Transform your idea into reality with finsweet",
+        "paragraph": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        "highlights": {
+            "label": "30+ Customer Reviews",
+            "customers": [
+                {
+                    "avatar": {
+                        "url": "/images/customers/customer-1.png",
+                        "alt": "Customer 1",
+                        "width": 50,
+                        "height": 50
+                    },
+                    "review": null,
+                    "company": {
+                        "name": null,
+                        "position": null,
+                        "logo": null
+                    }
+                },
+                {
+                    "avatar": {
+                        "url": "/images/customers/customer-2.png",
+                        "alt": "Customer 2",
+                        "width": 50,
+                        "height": 50
+                    },
+                    "review": null,
+                    "company": {
+                        "name": null,
+                        "position": null,
+                        "logo": null
+                    }
+                },
+                {
+                    "avatar": {
+                        "url": "/images/customers/customer-3.png",
+                        "alt": "Customer 3",
+                        "width": 50,
+                        "height": 50
+                    },
+                    "review": null,
+                    "company": {
+                        "name": null,
+                        "position": null,
+                        "logo": null
+                    }
+                }
+            ]
+        },
+        "reviews": [
+            {
+                "avatar": {
+                    "url": "/images/customers/customer-1.png",
+                    "alt": "Customer 1",
+                    "width": 50,
+                    "height": 50
+                },
+                "fullname": "Johnny Andro",
+                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "company": {
+                    "name": "Logo Ipsum",
+                    "position": "Director, Company",
+                    "logo": {
+                        "url": "/images/clients/logoipsum-3-alt.svg",
+                        "alt": "Logo Ipsum",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            },
+            {
+                "avatar": {
+                    "url": "/images/customers/customer-1.png",
+                    "alt": "Customer 1",
+                    "width": 50,
+                    "height": 50
+                },
+                "fullname": "Johnny Andro",
+                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "company": {
+                    "name": "Logo Ipsum",
+                    "position": "Director, Company",
+                    "logo": {
+                        "url": "/images/clients/logoipsum-3-alt.svg",
+                        "alt": "Logo Ipsum",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            },
+            {
+                "avatar": {
+                    "url": "/images/customers/customer-1.png",
+                    "alt": "Customer 1",
+                    "width": 50,
+                    "height": 50
+                },
+                "fullname": "Johnny Andro",
+                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "company": {
+                    "name": "Logo Ipsum",
+                    "position": "Director, Company",
+                    "logo": {
+                        "url": "/images/clients/logoipsum-3-alt.svg",
+                        "alt": "Logo Ipsum",
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            }
+        ]
+    },
+    "adsHighlight": {
+        "main": "Other services you may be interested in",
+        "highlights": [
+            {
+                "title": "Unleash Your Creativity with Our Innovative Art Supplies!",
+                "description": "Elevate your artistic journey with our premium art supplies! From vibrant acrylic paints to high-quality brushes and canvas, we provide everything you need to express your creativity. Whether you're a seasoned artist or just starting out, our diverse range of products caters to all skill levels. Explore our collection today and unleash your imagination!",
+                "cta": {
+                    "label": "See more",
+                    "link": "/ads",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                },
+                "image": {
+                    "url": "/images/blog/feature-image-1.png",
+                    "alt": "featured image",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "title": "Discover the Power of Relaxation: Luxurious Spa Day Packages Await!",
+                "description": "Indulge in pure bliss with our rejuvenating spa day packages! Treat yourself or a loved one to a day of tranquility and pampering with our expertly crafted treatments. From soothing massages to revitalizing facials, our experienced therapists ensure a serene and revitalizing experience. Book your escape today and immerse yourself in ultimate relaxation!",
+                "cta": {
+                    "label": "See more",
+                    "link": "/ads",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                },
+                "image": {
+                    "url": "/images/blog/feature-image-2.png",
+                    "alt": "featured image",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "title": "Discover the Power of Relaxation: Luxurious Spa Day Packages Await!",
+                "description": "Indulge in pure bliss with our rejuvenating spa day packages! Treat yourself or a loved one to a day of tranquility and pampering with our expertly crafted treatments. From soothing massages to revitalizing facials, our experienced therapists ensure a serene and revitalizing experience. Book your escape today and immerse yourself in ultimate relaxation!",
+                "cta": {
+                    "label": "See more",
+                    "link": "/ads",
+                    "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+                },
+                "image": {
+                    "url": "/images/blog/feature-image-2.png",
+                    "alt": "featured image",
+                    "width": 50,
+                    "height": 50
+                }
+            }
+        ]
+    }
+}

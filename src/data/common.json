@@ -1,0 +1,211 @@
+{
+    "header": {
+        "nav": [
+            {
+                "url": "/",
+                "active": true,
+                "label": "Home"
+            },
+            {
+                "url": "/services",
+                "active": false,
+                "label": "Services"
+            },
+            {
+                "url": "/company",
+                "active": false,
+                "label": "Company"
+            },
+            {
+                "url": "/career",
+                "active": false,
+                "label": "Career"
+            },
+            {
+                "url": "/blog",
+                "active": false,
+                "label": "Blog"
+            },
+            {
+                "url": "/ads",
+                "active": false,
+                "label": "Other services"
+            },
+            {
+                "url": "/contact-us",
+                "active": false,
+                "label": "Contact Us"
+            }
+        ],
+        "cta": {
+            "label": "Clone project",
+            "link": null,
+            "className": "btn-transparent btn-with-arrow text-active nav-cta"
+        }
+    },
+    "newsletter": {
+        "title": "NEWSLETTER",
+        "subTitle": "Subscribe our News Letter to get Latest Updates.",
+        "input": {
+            "placeholder": "Paresh@Pixeto.com",
+            "type": "text"
+        }
+    },
+    "footer": {
+        "main": "Let's make something special",
+        "subTitle": "Let's talk! 🤙",
+        "contacts": [
+            "Registration Number: RC1093505",
+            "Motto: Service without Boundary"
+        ],
+        "address": "DLF Cybercity, Bhubaneswar,\nIndia, &52050",
+        "links": [
+            [
+                {
+                    "url": "/",
+                    "active": true,
+                    "label": "Home"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Service"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Company"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Career"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "News"
+                }
+            ],
+            [
+                {
+                    "url": "/",
+                    "active": true,
+                    "label": "Service"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Technical support"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Testing"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Development"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "AWS/Azure"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Consulting"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Information Technology"
+                }
+            ],
+            [
+                {
+                    "url": "/",
+                    "active": true,
+                    "label": "Resourses"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "About Us"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Testimonial"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Privacy Policy"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Terms of use"
+                },
+                {
+                    "url": "/",
+                    "active": false,
+                    "label": "Blog"
+                }
+            ]
+        ],
+        "cta": {
+            "label": "Contact Us",
+            "link": "/",
+            "className": "btn-transparent btn-with-arrow text-active"
+        },
+        "logo": {
+            "url": "/images/logo-negative.svg",
+            "alt": "Finsweet",
+            "width": 50,
+            "height": 50
+        },
+        "copyright": "©2021 Finsweet",
+        "socials": [
+            {
+                "name": "Facebook",
+                "icon": {
+                    "url": "/images/icons/socials/facebook-negative.svg",
+                    "alt": "Facebook",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "name": "twitter",
+                "icon": {
+                    "url": "/images/icons/socials/twitter-negative.svg",
+                    "alt": "Twitter",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "name": "instagram",
+                "icon": {
+                    "url": "/images/icons/socials/instagram-negative.svg",
+                    "alt": "Instagram",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "name": "linkedin",
+                "icon": {
+                    "url": "/images/icons/socials/linkedin-negative.svg",
+                    "alt": "Linkedin",
+                    "width": 50,
+                    "height": 50
+                }
+            }
+        ]
+    }
+}

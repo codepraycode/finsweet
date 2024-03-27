@@ -1,5 +1,5 @@
 import React from 'react';
-import siteData from "@/data.json";
+import siteData from "@/data/common.json";
 import Input from './UI/Input';
 
 const {newsletter} = siteData;

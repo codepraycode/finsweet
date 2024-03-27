@@ -1,5 +1,5 @@
 import Image from "next/image";
-import siteData from "@/data.json";
+import siteData from '@/data/home.json';
 import Section from "./UI/Section";
 
 const { coreValues:expertise } = siteData;

@@ -1,5 +1,5 @@
 import Header from "./Header";
-import data from '@/data.json';
+import data from '@/data/home.json';
 import Button from "./UI/Button";
 import Section from "./UI/Section";
 import Input from "./UI/Input";

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import siteData from "@/data.json";
+import siteData from '@/data/home.json';
 import Button from "./UI/Button";
 import Section from "./UI/Section";
 
