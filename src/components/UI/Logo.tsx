@@ -9,9 +9,10 @@ interface LogoProps {
 export default function Logo({ negative }: LogoProps) {
 
     const style = {
-        backgroundImage: negative ?
-            "url('/images/logo-negative.svg')":
-            "url('/images/logo.svg')"
+        // backgroundImage: negative ?
+        //     "url('/images/logo-negative.svg')":
+        //     "url('/images/logo.svg')"
+        backgroundImage: "url('/images/logo.png')"
     }
 
     return (

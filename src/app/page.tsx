@@ -5,7 +5,7 @@ import CoreValuesSection from "@/components/CoreValuesSection";
 import FooterSection from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import ProcessSection from "@/components/Process";
-import ServicesSection from "@/components/Services";
+import Subsidiaries from "@/components/Subsidiaries";
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
             <HeroSection />
             <AboutSection />
             <CoreValuesSection />
-            <ServicesSection />
+            <Subsidiaries />
             {/* <ServicesSection /> */}
             {/* <ProcessSection /> */}
             {/* <CustomerSection /> */}

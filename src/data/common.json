@@ -7,38 +7,13 @@
                 "label": "Home"
             },
             {
-                "url": "/services",
+                "url": "/subsidiaries",
                 "active": false,
-                "label": "Services"
-            },
-            {
-                "url": "/company",
-                "active": false,
-                "label": "Company"
-            },
-            {
-                "url": "/career",
-                "active": false,
-                "label": "Career"
-            },
-            {
-                "url": "/blog",
-                "active": false,
-                "label": "Blog"
-            },
-            {
-                "url": "/ads",
-                "active": false,
-                "label": "Other services"
-            },
-            {
-                "url": "/contact-us",
-                "active": false,
-                "label": "Contact Us"
+                "label": "Subsidiaries"
             }
         ],
         "cta": {
-            "label": "Clone project",
+            "label": "Other Services",
             "link": null,
             "className": "btn-transparent btn-with-arrow text-active nav-cta"
         }
@@ -52,111 +27,22 @@
         }
     },
     "footer": {
-        "main": "Let's make something special",
-        "subTitle": "Let's talk! 🤙",
-        "contacts": [
-            "Registration Number: RC1093505",
-            "Motto: Service without Boundary"
-        ],
-        "address": "DLF Cybercity, Bhubaneswar,\nIndia, &52050",
-        "links": [
-            [
-                {
-                    "url": "/",
-                    "active": true,
-                    "label": "Home"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Service"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Company"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Career"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "News"
-                }
+        "main": "DonManuel Group",
+        "subTitle": "with subsidiaries",
+        "subsidiaries": [ "DonManuel Concept Ltd", "DonBryan Logistics Ltd"],
+
+        "registrationNo":"RC1093505",
+        "motto": "Service without Boundary",
+
+        "address": "Behind NCAA head office, Airside, N.A.I.A ABUJA AIRPORT",
+        "contacts": {
+            
+            "phone": [
+                "+2347068886283",
+                "2348094906968"
             ],
-            [
-                {
-                    "url": "/",
-                    "active": true,
-                    "label": "Service"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Technical support"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Testing"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Development"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "AWS/Azure"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Consulting"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Information Technology"
-                }
-            ],
-            [
-                {
-                    "url": "/",
-                    "active": true,
-                    "label": "Resourses"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "About Us"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Testimonial"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Privacy Policy"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Terms of use"
-                },
-                {
-                    "url": "/",
-                    "active": false,
-                    "label": "Blog"
-                }
-            ]
-        ],
+            "email": "donbryanlogisticsltd@gmail.com"
+        },
         "cta": {
             "label": "Contact Us",
             "link": "/",

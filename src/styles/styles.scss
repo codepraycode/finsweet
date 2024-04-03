@@ -14,10 +14,14 @@ $menu-animation-timing: 120ms ease;
 }
 
 .logo {
-    $logo-size: 7rem;
+    $logo-size: 10rem;
     display: block;
     width: $logo-size;
-    height: calc($logo-size / 4);
+    height: calc($logo-size / 1);
+
+    position: absolute;
+
+    top: -1rem;
 
     background-position: center;
     background-size: contain;
@@ -512,6 +516,33 @@ header {
         }
 
 
+        .section-h4 {
+            margin-block: 5rem 2.5rem;
+            padding-left: 1rem;
+
+            font-size: 1.2rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+
+            
+            // background-color: red;
+
+            gap: 1rem;
+
+            .card {
+                background-color: transparent;
+                width: 45%;
+                padding: 1rem;
+                p{
+                    font-size: .9rem;
+                }
+            }
+        }
+
+
         &-logo {
             width: 130rem;
             height: 20rem;
@@ -854,20 +885,23 @@ header {
     @include mixins.md {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
 
     padding-top: 4rem;
 
     .section-h1 {
-        // background-color: red;
+        // background-color: red;    
+
+        font-size: 2.5rem;
         
         @include mixins.md {
-            width: 65%;
+            // width: 75%;
         }
     }
     .section-h3 {
         margin-block: 2rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
         @include mixins.poppins-semibold;
     }
 
@@ -935,6 +969,47 @@ header {
             }
         }
 
+    }
+
+    div.info {
+        // background-color: red;
+        width: 50%;
+
+        p {
+            text-align: end;
+            // background-color: red
+        }
+
+        ul {
+            @include flex;
+            // margin-left: auto;
+            justify-content: flex-end;
+    
+            gap: 1rem;
+    
+    
+            @include mixins.md {
+                margin-left: auto;
+            }
+    
+            li a {
+                display: inline-block;
+                $icon-size: 2.4rem;
+    
+                width: $icon-size;
+                height: $icon-size;
+                overflow: hidden;
+    
+    
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 65%;
+    
+                border-radius: 50%;
+    
+                text-indent: -500%;
+            }
+        }
     }
 }
 
