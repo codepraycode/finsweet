@@ -22,8 +22,9 @@ const AboutSection = () => {
                     </h2>
 
                     <p className="section-p">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae inventore ipsum quidem doloribus quibusdam quod quos corrupti sunt. Quisquam odit expedita, sint veniam alias sequi natus quae labore soluta temporibus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae inventore ipsum quidem doloribus quibusdam quod quos corrupti sunt. Quisquam odit expedita, sint veniam alias sequi natus quae labore soluta temporibus.
+                        {
+                            aboutUs.paragraph
+                        }
                     </p>
                 </div>
 
@@ -46,7 +47,7 @@ const AboutSection = () => {
             </div>
 
 
-            <div className="img_lineup">
+            {/* <div className="img_lineup">
                 {
                     aboutUs.featuredImages.map((item, i) => (
                         <div
@@ -66,7 +67,7 @@ const AboutSection = () => {
                             <div key={i}>
                                 <span>{item.point}</span> 
                                 <br />
-                                {/* Border design */}
+
                                 <span>{item.description}</span>
                             </div>
                         ))
@@ -78,11 +79,7 @@ const AboutSection = () => {
                     className={aboutUs.portfolio.cta.className}
                     link={aboutUs.portfolio.cta.link}
                 />
-
-                {/* <Link href={"/about-us"} className="btn btn-transparent btn-with-arrow arrow-dark nav-cta">
-                    Read about us
-                </Link> */}
-            </div>
+            </div> */}
         </Section>
     )
 }

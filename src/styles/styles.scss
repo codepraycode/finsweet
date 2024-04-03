@@ -173,8 +173,10 @@ header {
 
 .hero-wrapper {
 
+    
+
     h1 {
-        padding-top: 10rem;
+        padding-top: 12rem;
         @include mixins.poppins-semibold;
         font-size: 3rem;
         line-height: 3.9rem;
@@ -423,7 +425,7 @@ header {
 .coreVal_wrapper {
 
     @include mixins.md {
-        @include flex;
+        // @include flex;
         column-gap:10rem;
     }
     h3 {
@@ -442,6 +444,27 @@ header {
 
     .cards {
         margin-top: 4rem;
+        // background-color: red;
+        @include mixins.md {
+            @include flex;
+            // column-gap: 10rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 1rem;
+        }
+
+
+        & .exceptional {
+            background-color: transparent;
+
+            text-align: center;
+
+            padding-top: 3rem;
+
+            font-size: 1.5rem;
+
+            // padding-block: 50%;
+        }
     }
 
     .float-right {
@@ -461,7 +484,7 @@ header {
         }
 
         &:nth-child(even) {
-            margin-block: 1rem ;
+            // margin-block: 1rem ;
             &:last-of-type {
                 margin-bottom: 0;
             }
@@ -472,31 +495,30 @@ header {
 }
 
 .services {
-        // @include mixins.sm {
-        //         display: none;
-        //     }
-    button {
-        margin-block: 3rem;
-    }
 
-    
 
-    .cards {
-        // @include flex;
-        @include flex;
-        justify-content: space-between;
-        flex-direction: column;
-
-        row-gap: 2rem;
+    .sub{
+        margin-block: 2rem 5rem;
         @include mixins.md {
-            flex-direction: row;
+            display: flex;
+            align-items: center;
+
+            gap: 10rem;
+
+
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+            }
         }
 
-        .card {
-            width: 25rem;
-            h3 {
-                margin-block: .7rem;
-            }
+
+        &-logo {
+            width: 130rem;
+            height: 20rem;
+            // background-color: red;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
         }
     }
 }

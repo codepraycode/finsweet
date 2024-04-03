@@ -30,11 +30,11 @@ const HeroSection = () => {
                         <br />
 
 
-                        <Button
+                        {/* <Button
                             label={hero.cta.label}
                             link={hero.cta.link}
                             className={hero.cta.className}
-                        />
+                        /> */}
                     </h1>
 
                     <div

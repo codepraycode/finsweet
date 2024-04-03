@@ -15,8 +15,9 @@ export default function Home() {
             <AboutSection />
             <CoreValuesSection />
             <ServicesSection />
-            <ProcessSection />
-            <CustomerSection />
+            {/* <ServicesSection /> */}
+            {/* <ProcessSection /> */}
+            {/* <CustomerSection /> */}
             <AdsSection />
             <FooterSection />
         </>

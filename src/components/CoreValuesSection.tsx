@@ -2,7 +2,7 @@ import Image from "next/image";
 import siteData from '@/data/home.json';
 import Section from "./UI/Section";
 
-const { coreValues:expertise } = siteData;
+const { coreValues } = siteData;
 
 const CoreValuesSection = () => {
     return (
@@ -12,25 +12,28 @@ const CoreValuesSection = () => {
             containerClassName="coreVal_wrapper"
             padded
         >
-            <div>
+            {/* <div>
 
                 <h2 className="section-header">
-                    { expertise.title }
+                    { coreValues.title }
                 </h2>
                 <div>
                     <span className="section-h1">
-                        {expertise.main}
+                        {coreValues.main}
                     </span>
 
                     <div className="section-p">
-                        {expertise.paragraph}
+                        {coreValues.paragraph}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="cards">
+                <h2 className="card exceptional section-header">
+                    { coreValues.title }
+                </h2>
                 {
-                    expertise.deliverables.map((item, i) => (
+                    coreValues.deliverables.map((item, i) => (
 
                         <article
                             className="card"
