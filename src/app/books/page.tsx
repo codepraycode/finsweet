@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Section from "@/components/UI/Section";
 import books from "@/data/books.json";
 import { slugify } from "@/utils";
-import Image from "next/image";
 import Link from "next/link";
 
 
@@ -14,7 +13,7 @@ const BookListItems = () => {
             {
                 books.bookItems.map((item, i) => {
 
-                    const author = books.authors.find((e)=>e.id === item.authorId);
+                    const author = item.author;
 
                     if (!author) return null;
                     
@@ -40,7 +39,7 @@ const BookListItems = () => {
                                     <span className="author-img" style={{backgroundImage:`url(${author.image.url})`}}/>
                                     <p>
                                         <b>{author.name}</b>
-                                        <span>{author.date}</span>
+                                        <span>{author.about}</span>
                                     </p>
                                 </div>
                             </div>

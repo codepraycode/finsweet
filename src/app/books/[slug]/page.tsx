@@ -8,7 +8,6 @@ const BookItemPage = () => {
     return (
         <>
             <Header />
-
                 <BookDetail />
             <FooterSection />
         </>

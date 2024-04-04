@@ -27,7 +27,8 @@ const SubsidiariesSection = () => {
                             <h2 className="section-header">
                                 {subsidiaries.title}
                             </h2>
-                            <div className="sub" key={i}>
+
+                            <div className={`sub ${i % 2 !== 0 ? 'reverse' : ''}`}>
                                 <div>
                                     <h2 className="section-h2">{info.name}</h2>
                                     <br/>
@@ -69,7 +70,6 @@ const SubsidiariesSection = () => {
 
                                 <div  className="sub-logo" style={{backgroundImage:`url('${info.logo.url}')`}}/>
                             </div>
-    
                         </Section>
                     ))
                 }
