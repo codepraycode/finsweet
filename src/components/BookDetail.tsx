@@ -11,8 +11,6 @@ const BookDetail = () => {
 
     const book = books.bookItems.find((e)=>slugify(e.title) === slug);
 
-    console.log(book);
-
     if (!book) return (
         <Section
             name="no-book"

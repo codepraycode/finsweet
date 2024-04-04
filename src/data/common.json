@@ -20,7 +20,8 @@
         "cta": {
             "label": "Other Services",
             "link": null,
-            "className": "btn-transparent btn-with-arrow text-active nav-cta"
+            "className": "btn-transparent btn-with-arrow text-active nav-cta",
+            "navTo": "/ads"
         }
     },
     "newsletter": {

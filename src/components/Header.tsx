@@ -9,7 +9,6 @@ import siteData from '@/data/common.json';
 const {header} = siteData;
 
 
-
 function Header() {
     return (
         <header className='bg-hero'>
@@ -25,6 +24,7 @@ function Header() {
                             label={header.cta.label}
                             link={header.cta.link}
                             className={header.cta.className}
+                            navTo={header.cta.navTo}
                         />
                     }
                 />

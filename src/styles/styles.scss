@@ -14,20 +14,28 @@ $menu-animation-timing: 120ms ease;
 }
 
 .logo {
-    $logo-size: 10rem;
+    --logo-size: 10rem;
+    $logo-size: var(--logo-size, 4rem);
     display: block;
     width: $logo-size;
     height: calc($logo-size / 1);
 
-    position: absolute;
-
+    $logo-size: 10rem;
     top: -1rem;
+    position: absolute;
+    
 
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 
     z-index: 2;
+
+    @include mixins.sm {
+        --logo-size: 5rem;
+        top: -.3rem;
+        // position: relative;
+    }
 
 }
 
@@ -69,15 +77,9 @@ header {
                 position: fixed;
                 top: 5rem;
                 right: 0;
-                // padding-inline: 3rem;
                 width: 60%;
                 height: 100%;
                 flex-direction: column;
-                // background-color: red;
-
-
-                // padding-top: 5rem;
-
                 text-align: center;
 
                 &::before {
