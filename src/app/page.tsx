@@ -6,18 +6,20 @@ import FooterSection from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import ProcessSection from "@/components/Process";
 import Subsidiaries from "@/components/Subsidiaries";
+import Header from "@/components/Header";
+import SearchComponent from "@/components/Search";
 
 
 export default function Home() {
     return (
         <>
+            {/* <Header /> */}
             <HeroSection />
+            <SearchComponent />
             <AboutSection />
             <CoreValuesSection />
-            <Subsidiaries />
-            {/* <ServicesSection /> */}
-            {/* <ProcessSection /> */}
-            {/* <CustomerSection /> */}
+            {/* <Subsidiaries /> */}
+            
             <AdsSection />
             <FooterSection />
         </>

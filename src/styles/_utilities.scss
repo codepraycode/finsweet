@@ -115,18 +115,17 @@
     margin-inline: auto;
 
     &--padded {
-        padding-block: 7rem;
+        padding-block: 3rem 7rem;
     }
 
     &--outer-space {
         margin-block: 7rem;
     }
+}
 
-    // @include mixins.md {
-    //     display: none;
-        
-    
-    // }
+
+.border-radius {
+    border-radius: .3rem;
 }
 
 

@@ -175,14 +175,19 @@ header {
     
 }
 
-
+.hero {
+    overflow: hidden;
+    padding-block: 6rem 10rem;
+    @include mixins.md {
+        padding-block: 17rem 24rem;
+    }
+}
 
 .hero-wrapper {
-
     
 
     h1 {
-        padding-top: 12rem;
+        // padding-top: 12rem;
         @include mixins.poppins-semibold;
         font-size: 3rem;
         line-height: 3.9rem;
@@ -216,8 +221,8 @@ header {
         background-size: contain;
 
         @include mixins.md {
-            width: 40%;
-            height: 100%;
+            width: 40rem;
+            height: 40rem;
         }
     }
 
@@ -234,8 +239,11 @@ header {
     @include mixins.md {
         @include flex;
         justify-content: space-between;
+        align-items: center;
 
-        height: 80vh;
+        height: 30rem;
+
+        // background-color: red
     }
 
     
@@ -243,7 +251,33 @@ header {
     
 }
 
-.hero_client_wrapper {
+
+.searcher {
+    // background-color: red;
+
+
+    width: 60rem;
+    max-width: 90%;
+    margin-inline: auto;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: .3rem;
+
+    position: relative;
+
+    top: -9rem;
+    
+    
+    @include mixins.md {
+        top: -5.5rem;
+    }
+
+}
+
+.search_wrapper {
+
+
+    overflow: hidden;
 
     @include flex;
     padding-block: 2rem 4rem;
