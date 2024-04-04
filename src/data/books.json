@@ -1,0 +1,162 @@
+{
+    "title": "Our Books",
+    "header1": "Discover Our Literary World: Explore Our Collection of Captivating Books",
+    "paragraph": "Welcome to our world of literature, where every page holds a new adventure and every story invites you to embark on a journey of imagination. Here at [Your Company Name], we are passionate about storytelling and are thrilled to present our curated collection of captivating books. From gripping thrillers to heartwarming romances, thought-provoking non-fiction to enchanting children's tales, there's something for every reader to discover and enjoy. Take a moment to browse through our selection, immerse yourself in the world of words, and let the magic of storytelling transport you to new and exciting realms. Whether you're seeking an escape from reality, a new perspective on life, or simply a page-turning adventure, we invite you to explore our literary treasures and find your next great read. Welcome to a world of endless possibilities, where the only limit is your imagination.",
+
+    "bookItems": [
+        {
+            "id":1,
+            "images": {
+                "thumbmail": {
+                    "url": "https://public-files.gumroad.com/qkbo8niet2hd431pkxqb46h20gp3",
+                    "alt": "A book",
+                    "width": 100,
+                    "height": 100
+                },
+                "banner": {
+                    "url": "https://public-files.gumroad.com/jm1x8eqcvivlsqmljkz25wf9wtur",
+                    "alt": "A book",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "title": "Illustration",
+            "description": "",
+            "authorId": 1,
+            "price": "15k",
+            "rating": {
+                "total": 9,
+                "rate": 4.5,
+                "metric": [
+                    {
+                        "label": "5 stars",
+                        "value": 7
+                    },
+                    {
+                        "label": "4 stars",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 stars",
+                        "value": 0
+                    },
+                    {
+                        "label": "2 stars",
+                        "value": 2
+                    },
+                    {
+                        "label": "1 stars",
+                        "value": 0
+                    }
+                ]           
+            }
+        },
+        {
+            "id":2,
+            "images": {
+                "thumbmail": {
+                    "url": "https://public-files.gumroad.com/qkbo8niet2hd431pkxqb46h20gp3",
+                    "alt": "A book",
+                    "width": 100,
+                    "height": 100
+                },
+                "banner": {
+                    "url": "https://public-files.gumroad.com/jm1x8eqcvivlsqmljkz25wf9wtur",
+                    "alt": "A book",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "title": "Illustration",
+            "description": "",
+            "authorId": 1,
+            "price": "15k",
+            "rating": {
+                "total": 9,
+                "rate": 4.5,
+                "metric": [
+                    {
+                        "label": "5 stars",
+                        "value": 7
+                    },
+                    {
+                        "label": "4 stars",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 stars",
+                        "value": 0
+                    },
+                    {
+                        "label": "2 stars",
+                        "value": 2
+                    },
+                    {
+                        "label": "1 stars",
+                        "value": 0
+                    }
+                ]           
+            }
+        },
+        {
+            "id":3,
+            "images": {
+                "thumbmail": {
+                    "url": "https://public-files.gumroad.com/qkbo8niet2hd431pkxqb46h20gp3",
+                    "alt": "A book",
+                    "width": 100,
+                    "height": 100
+                },
+                "banner": {
+                    "url": "https://public-files.gumroad.com/jm1x8eqcvivlsqmljkz25wf9wtur",
+                    "alt": "A book",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "title": "Illustration",
+            "description": "",
+            "authorId": 1,
+            "price": "15k",
+            "rating": {
+                "total": 9,
+                "rate": 4.5,
+                "metric": [
+                    {
+                        "label": "5 stars",
+                        "value": 7
+                    },
+                    {
+                        "label": "4 stars",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 stars",
+                        "value": 0
+                    },
+                    {
+                        "label": "2 stars",
+                        "value": 2
+                    },
+                    {
+                        "label": "1 stars",
+                        "value": 0
+                    }
+                ]           
+            }
+        }
+    ],
+    "authors": [
+        {
+            "id": 1,
+            "name": "Andrew Jason",
+            "date": "January 8, 2023",
+            "image": {
+                "url": "/images/authors/author-1.jpeg",
+                "alt": "Author 1",
+                "width": 100,
+                "height": 100
+            }
+        }
+    ]
+}

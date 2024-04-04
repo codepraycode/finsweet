@@ -101,6 +101,9 @@
     &--blue::before {
         background-color: $box-cap-blue;
     }
+    &--orange::before {
+        background-color: $box-cap-orange;
+    }
 }
 
 
@@ -133,6 +136,9 @@
     }
     &-blue-accent {
         background-color: $blue-accent;
+    }
+    &-gray {
+        background-color: $bg-grey;
     }
     &-orange {
         background-color: $active-bg;

@@ -10,6 +10,11 @@
                 "url": "/subsidiaries",
                 "active": false,
                 "label": "Subsidiaries"
+            },
+            {
+                "url": "/books",
+                "active": false,
+                "label": "Books"
             }
         ],
         "cta": {

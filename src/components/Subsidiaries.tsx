@@ -5,7 +5,7 @@ import Section from "./UI/Section";
 
 const {subsidiaries} = siteData;
 
-const colors = ['bg-orange', '']
+const colors = ['bg-orange', 'bg-gray']
 const SubsidiariesSection = () => {
     return (
         <>
