@@ -12,7 +12,7 @@ export const AdsListItems = () => {
             {
                 adsHighlight.highlights.map((item, i) => (
 
-                    <article className="blog-card" key={i}>
+                    <article className="blog-card border-radius" key={i}>
                         <div
                             className="feature-img"
                             style={{backgroundImage:`url(${item.image.url})`}}

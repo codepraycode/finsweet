@@ -18,7 +18,7 @@ export default function Home() {
             <SearchComponent />
             <AboutSection />
             <CoreValuesSection />
-            {/* <Subsidiaries /> */}
+            <Subsidiaries />
             
             <AdsSection />
             <FooterSection />

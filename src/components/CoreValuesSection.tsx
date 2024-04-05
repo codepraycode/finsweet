@@ -12,21 +12,6 @@ const CoreValuesSection = () => {
             containerClassName="coreVal_wrapper"
             padded
         >
-            {/* <div>
-
-                <h2 className="section-header">
-                    { coreValues.title }
-                </h2>
-                <div>
-                    <span className="section-h1">
-                        {coreValues.main}
-                    </span>
-
-                    <div className="section-p">
-                        {coreValues.paragraph}
-                    </div>
-                </div>
-            </div> */}
 
             <div className="cards">
                 <h2 className="card exceptional section-header">
@@ -36,7 +21,7 @@ const CoreValuesSection = () => {
                     coreValues.deliverables.map((item, i) => (
 
                         <article
-                            className="card"
+                            className="card border-radius"
                             key={i}
                         >
                             <div className="card-icon float-left">
