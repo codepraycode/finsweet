@@ -13,7 +13,7 @@ import SearchComponent from "@/components/Search";
 export default function Home() {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <HeroSection />
             <SearchComponent />
             <AboutSection />

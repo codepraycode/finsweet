@@ -14,7 +14,7 @@ $menu-animation-timing: 120ms ease;
 }
 
 .logo {
-    --logo-size: 10rem;
+    --logo-size: 8rem;
     $logo-size: var(--logo-size, 4rem);
     display: block;
     width: $logo-size;
@@ -45,15 +45,18 @@ header {
         @include flex;
     }
 
+    
     border-bottom: 1px solid $white-gray;
 
 
-    .logo {
+    .logo,
+    .hambugger {
         align-self: center;
-    }
+    }    
 
     @include mixins.sm {
         padding: 1rem;
+        padding-bottom: 2.5rem;
     }
 
     nav {
@@ -172,7 +175,7 @@ header {
             }
         }
     }
-    
+
 }
 
 .hero {

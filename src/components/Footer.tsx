@@ -1,7 +1,6 @@
 import Link from "next/link"
-import NewsLetter from "./NewsLetter"
 import siteData from "@/data/common.json";
-import Logo from "./UI/Logo";
+
 import Section from "./UI/Section";
 
 const {footer} = siteData;
@@ -35,28 +34,6 @@ const FooterDetails = () => {
                     {footer.address}
                 </p>
             </div>
-
-
-            {/* <nav>
-                {
-                    footer.links.map((links, i) => (
-                        <ul key={i}>
-                            {
-                                links.map((item, i) => (
-                                    <li key={i}>
-                                        <Link
-                                            href={item.url}
-                                            className={`${item.active} ? 'active':''`}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    ))
-                }
-            </nav> */}
 
 
             <div className="info">
