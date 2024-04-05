@@ -50,7 +50,8 @@ const BookDetail = () => {
                     <div>
                         <p className="book-meta">
                             <span className="price">{book.price}</span>
-                            <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span>
+                            {/* <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span> */}
+                            <span className="rating">{book.date}</span>
                         </p>
 
                         <div className="attribution">
