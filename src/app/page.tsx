@@ -7,7 +7,7 @@ import HeroSection from "@/components/Hero";
 import ProcessSection from "@/components/Process";
 import Subsidiaries from "@/components/Subsidiaries";
 import Header from "@/components/Header";
-import SearchComponent from "@/components/Search";
+import SearchComponent from "@/components/SearchComponent";
 
 
 export default function Home() {

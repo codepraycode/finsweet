@@ -13,11 +13,12 @@ export default function Input(props: InputProps) {
     return (
         <div className={`form-input ${props.wrapperClassname}`.trim()}>
 
-            <form action="/search/" method='get'>
+            <form action="/aviation/search/" method='get'>
                 <input
                     type={props.type}
                     placeholder={props.placeholder}
                     name='query'
+                    autoComplete='off'
                 />
             </form>
         </div>

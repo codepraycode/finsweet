@@ -1457,3 +1457,94 @@ header {
         background-color: $blue;
     }
 }
+
+
+// .go-back {
+//     display: inline-block;
+//     margin-right: .5rem;
+// }
+
+.search-item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    gap: 2rem;
+}
+
+.search-item {
+    $b-radius: .5rem;
+    background-color: $bg-grey;
+
+    padding: 0;
+
+    display: flex;
+    min-height: 10rem;
+
+    height: 13rem;
+
+    box-shadow: rgba(105, 85, 85, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+
+    border-radius: $b-radius;
+
+    .section-p {
+        display: block;
+        margin: .6rem 0;
+    }
+
+    .item-image {
+        border-radius: $b-radius 0 0 $b-radius;
+
+        position: relative;
+
+        width: 15rem;
+        min-height: 10rem;
+        height: 100% !important;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .item-detail {
+        padding-left: 1.5rem;
+    }
+
+
+    .routes {
+        display: flex;
+        flex-wrap: wrap;
+
+        column-gap: .5rem;
+        row-gap: .5rem;
+    }
+
+    .route {
+        background-color: $active-bg;
+        display: inline-block;
+        padding: .2rem .8rem;
+        border-radius: .8rem;
+        font-size: .9rem;
+
+        span {
+            display: inline-block;
+
+            &:first-of-type::after {
+                content: ">";
+
+                margin-inline: .4rem;
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+        // margin-top: 1.2rem;
+
+        @include mixins.poppins-medium;
+        color: $box-cap-blue;
+
+        text-decoration: none;
+    }
+}
