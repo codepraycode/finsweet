@@ -108,37 +108,6 @@ const FooterSection = () => {
                 
                 <FooterDetails />
             </Section>
-
-            <footer className="bg-orange">
-                    {/* <div className="container footer-bottom">
-
-                        <Logo negative/>
-
-                        <span className="copyright">
-                            {footer.copyright}
-                        </span>
-
-
-                        <ul role="list" className="socials">
-                            {
-                                footer.socials.map((item, i)=>(
-                                    <li key={i}>
-                                        <Link
-                                            href={"/"}
-                                            style={{
-                                                backgroundImage:`url(${item.icon.url})`
-                                            }}
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-
-                    </div> */}
-                
-            </footer>
         </>
     )
 }

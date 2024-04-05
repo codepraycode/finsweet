@@ -928,6 +928,7 @@ header {
         //     }
     @include flex;
     flex-direction: column;
+        row-gap: 5rem;
     
     @include mixins.md {
         flex-direction: row;
@@ -1020,23 +1021,28 @@ header {
 
     div.info {
         // background-color: red;
-        width: 50%;
+        width: 50rem;
+        max-width: 100%;
 
         p {
             text-align: end;
             // background-color: red
+            
+            @include mixins.sm {
+                text-align: center
+            }
         }
 
         ul {
             @include flex;
             // margin-left: auto;
-            justify-content: flex-end;
+            justify-content: center;
     
-            gap: 1rem;
-    
+            gap: 1rem;    
     
             @include mixins.md {
-                margin-left: auto;
+                justify-content: flex-end;
+                // margin-left: auto;
             }
     
             li a {
