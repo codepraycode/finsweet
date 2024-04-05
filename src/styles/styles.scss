@@ -569,23 +569,20 @@ header {
             display: flex;
             flex-wrap: wrap;
 
-            
-            // background-color: red;
-
             gap: 1rem;
 
             .card {
                 background-color: transparent;
-                
+
                 padding: 1rem;
                 p{
                     font-size: .9rem;
                 }
+                @include mixins.md {
+                    width: 45%;
+                }
             }
-
-            @include mixins.md {
-                width: 45%;
-            }
+            
         }
 
 
