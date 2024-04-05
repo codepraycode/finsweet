@@ -1467,7 +1467,7 @@ header {
 .search-item-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    // justify-content: space-around;
 
     gap: 2rem;
 }
@@ -1475,20 +1475,25 @@ header {
 .search-item {
     $b-radius: .5rem;
     background-color: $bg-grey;
+    margin: 0 !important;
 
     padding: 0;
 
     display: flex;
     flex-direction: column;
+
     box-shadow: rgba(105, 85, 85, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     border-radius: $b-radius;
 
-    padding-bottom: 1rem;
+
+    width: 40rem;
+    max-width: 100%;
+    
     
     @include mixins.md {
         flex-direction: row;
-        height: 13rem;
-        min-height: 10rem;
+        // height: 13rem;
+        // min-height: 10rem;
     }
 
     .section-p {
@@ -1501,17 +1506,17 @@ header {
 
         position: relative;
 
-        width: 150rem;
+        width: 30rem;
+        
         max-width: 100%;
         
-        min-height: 10rem;
-        height: 100% !important;
-
+        @include mixins.sm {
+            height: 10rem;
+        }
         @include mixins.md {
             border-radius: $b-radius 0 0 $b-radius;
             flex-direction: row;
-            width: 15rem;
-            height: 13rem !important;
+            width: 40% !important;
         }
 
 
@@ -1522,6 +1527,17 @@ header {
 
     .item-detail {
         padding-left: 1.5rem;
+        padding-bottom: 1rem;
+
+        @include mixins.md {
+            width: 60% !important;
+            margin-left: auto;
+        }
+
+    }
+
+    .section-p {
+        width: 100%;
     }
 
 
@@ -1552,7 +1568,7 @@ header {
     }
 
     a {
-        display: inline-block;
+        // display: inline-block;
         // margin-top: 1.2rem;
 
         @include mixins.poppins-medium;
