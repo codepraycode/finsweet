@@ -1479,14 +1479,17 @@ header {
     padding: 0;
 
     display: flex;
-    min-height: 10rem;
-
-    height: 13rem;
-
+    flex-direction: column;
     box-shadow: rgba(105, 85, 85, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-
-
     border-radius: $b-radius;
+
+    padding-bottom: 1rem;
+    
+    @include mixins.md {
+        flex-direction: row;
+        height: 13rem;
+        min-height: 10rem;
+    }
 
     .section-p {
         display: block;
@@ -1494,13 +1497,23 @@ header {
     }
 
     .item-image {
-        border-radius: $b-radius 0 0 $b-radius;
+        border-radius: $b-radius $b-radius 0 0;
 
         position: relative;
 
-        width: 15rem;
+        width: 150rem;
+        max-width: 100%;
+        
         min-height: 10rem;
         height: 100% !important;
+
+        @include mixins.md {
+            border-radius: $b-radius 0 0 $b-radius;
+            flex-direction: row;
+            width: 15rem;
+            height: 13rem !important;
+        }
+
 
         background-position: center;
         background-repeat: no-repeat;
