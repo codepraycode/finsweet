@@ -1,0 +1,18 @@
+import { _setKeyValues, _getKeyValues } from '../calls/key-group-calls';
+import { CObject, Config, NoboxResponse, Space } from '../types';
+
+export const getKeyGroupSchemaCreator =
+  (config: Config) =>
+    <T extends CObject>(spaceModel: Space<T>) =>
+      createKeyGroupSchema(spaceModel, config);
+
+export type KeyGroupSchemaModel<T extends CObject> = ReturnType<typeof createKeyGroupSchema<T>>;
+
+const createKeyGroupSchema = <T extends CObject>(spaceModel: Space<T>, config: Config) => ({
+  async setKeys(body: Partial<T>): Promise<Array<NoboxResponse<T>>> {
+    return _setKeyValues({ spaceModel, body, config });
+  },
+  async getKeys(): Promise<Array<NoboxResponse<T>>> {
+    return _getKeyValues({ spaceModel, config });
+  },
+});
