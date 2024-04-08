@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import books from "@/data/books.json";
 import Section from "./UI/Section";
 import Button from "./UI/Button";
+import PayStackButton from "./PayStackButton";
 
 
 const BookDetail = () => {
@@ -65,9 +66,10 @@ const BookDetail = () => {
                     </div>
 
 
-                    <Button
+                    <PayStackButton
                         className="add-to-cart"
-                        label="Add to Cart"
+                        label="Buy Book"
+                        price={15000}
                     />
                 </div>
 
