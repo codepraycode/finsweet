@@ -3,6 +3,7 @@
 import { PaystackButton } from 'react-paystack';
 import Input from "./UI/Input";
 import { useState } from "react";
+import { PaymentModel, PaymentStructure } from '@/lib/nobox/structures';
 
 
 
@@ -37,10 +38,25 @@ interface PayStackButtonProps {
 
 export default function PayStackButton(props: PayStackButtonProps) {
   
-    const handlePaystackSuccessAction = (reference:any) => {
-        // Implementation for whatever you want to do with reference and after success call.
+    const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
         console.log(reference);
+        const payment = {
+            reference: reference.reference,
+            email,
+        }
+
+        // * Store reference, send mail
         setPaid(true);
+
+        PaymentModel.insertOne(payment)
+        .then(()=>{
+            // Send Mail
+            console.log("Send mail")
+        }).catch((error)=>{
+            console.error(error);
+        })
+
+        
     };
 
     const [email, setEmail] = useState("");

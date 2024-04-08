@@ -1,6 +1,6 @@
-import { Space } from "../../nobox-client";
-import { createRowSchema } from "./config";
-import aviation from "./initialData.ts/aviation";
+import { Space } from "../../../nobox-client";
+import { createRowSchema } from "../config";
+import aviation from "../initialData/aviation";
 
 type Route = {
     from: string,
