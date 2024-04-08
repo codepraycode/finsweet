@@ -4,11 +4,12 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 
 
-interface ButtonProps {
+export interface ButtonProps {
     label: string,
     link?: string | null,
     className: string,
     navTo?:string,
+    onClick?: ()=>void
 }
 
 export default function Button(props: ButtonProps) {
@@ -27,6 +28,7 @@ export default function Button(props: ButtonProps) {
     return (
         <button className={classNames} onClick={()=>{
             if (props.navTo) route.push(props.navTo);
+            if (props.onClick) props.onClick();
         }}>
             {props.label}
         </button>

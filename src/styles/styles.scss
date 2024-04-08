@@ -1578,3 +1578,20 @@ header {
         text-decoration: none;
     }
 }
+
+
+
+.pay-wrapper {
+    button {
+        width: 20rem;
+        max-width: 100%;
+    }
+    .paystack-input {
+        border: 1px solid $blue-light !important;
+    }
+
+    .paid-text {
+        padding: 2rem;
+        color: $gray;
+    }
+}
