@@ -5,8 +5,7 @@ import NavLinks from './UI/NavLink'
 import Button from './UI/Button'
 import siteData from '@/data/common.json';
 
-
-const {header} = siteData;
+const { header } = siteData;
 
 
 function Header() {
@@ -14,8 +13,6 @@ function Header() {
         <header className='bg-hero'>
             <div className="container header-wrapper text-white">
                 <Logo />
-
-
                 <NavLinks
                     links={header.nav}
 
