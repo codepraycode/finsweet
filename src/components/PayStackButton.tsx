@@ -6,13 +6,10 @@ import { useState } from "react";
 
 
 
-// const publicKey = process.env.NEXT_CLIENT_PAYSTACK_PUBLIC_KEY || "null";
-const publicKey = "pk_test_0914ddd244295bc761338dffe2409486128cda4b";
+const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "null";
 
 const config = {
     reference: (new Date()).getTime().toString(),
-    // email: "user@example.com",
-    // amount: 20000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: publicKey,
 };
 
@@ -47,7 +44,7 @@ export default function PayStackButton(props: PayStackButtonProps) {
     };
 
     const [email, setEmail] = useState("");
-    const [paid, setPaid] = useState(true);
+    const [paid, setPaid] = useState(false);
 
 
     let template = <p className='paid-text'>A copy has been sent to your email</p>;
