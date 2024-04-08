@@ -4,24 +4,6 @@
 import { Aviation } from "@/lib/nobox/structures";
 
 
-// const params = {
-//   name: 'peace',
-// };
-
-// // Define the options for the find operation
-// const options = {
-//   paramRelationship: "And",
-//   pagination: {
-//     limit: 10,
-//     page: 1,
-//   },
-//   sort: {
-//     // by: 'name',
-//     // order: 'asc',
-//   },
-// };
-
-
 export default function SearchItems({item}: {item: Aviation}) {
 
     const breakPoint = 150;
