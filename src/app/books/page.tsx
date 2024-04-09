@@ -1,17 +1,18 @@
 import FooterSection from "@/components/Footer";
 import Header from "@/components/Header";
 import Section from "@/components/UI/Section";
-import books from "@/data/books.json";
+import bookPage from "@/data/books.json";
+import { Book, BookModel } from "@/lib/nobox/structures/book.structure";
 import { slugify } from "@/utils";
 import Link from "next/link";
 
 
 
-const BookListItems = () => {
+const BookListItems = ({items}:{items: Book[]}) => {
     return (
         <div className="books-highlights">
             {
-                books.bookItems.map((item, i) => {
+                items.length < 1 ? <h3 className="text-center text-gray w-full">No Book available for now</h3>: items.map((item, i) => {
 
                     const author = item.author;
 
@@ -24,7 +25,7 @@ const BookListItems = () => {
                         <Link href={`/books/${slugify(item.title)}`}>
                             <div
                                 className="feature-img"
-                                style={{backgroundImage:`url(${item.images.thumbmail.url})`}}
+                                style={{backgroundImage:`url(${item.image.thumbmail})`}}
                             />
 
                             <div className="details">
@@ -32,11 +33,12 @@ const BookListItems = () => {
 
                                 <p className="book-meta">
                                     <span className="price">{item.price}</span>
-                                    <span className="rating star">{item.rating.rate}({item.rating.total})</span>
+                                    {/* <span className="rating star">{item.rating.rate}({item.rating.total})</span> */}
+                                    <span className="rating star">{item.date_released}</span>
                                 </p>
 
                                 <div className="attribution">
-                                    <span className="author-img" style={{backgroundImage:`url(${author.image.url})`}}/>
+                                    <span className="author-img" style={{backgroundImage:`url(${author.image})`}}/>
                                     <p>
                                         <b>{author.name}</b>
                                         <span>{author.about}</span>
@@ -52,7 +54,9 @@ const BookListItems = () => {
     )
 }
 
-const BooksPage = () => {
+const BooksPage = async () => {
+    const books = await getData();
+
     return (
         <>
             <Header />
@@ -64,14 +68,14 @@ const BooksPage = () => {
 
             >
                 <h1 className="box-cap box-cap--orange">
-                    <span className="section-header">{books.title}</span><br/>
+                    <span className="section-header">{bookPage.title}</span><br/>
                     <span className="section-h1">
-                        {books.header1}
+                        {bookPage.header1}
                     </span>
                 </h1>
 
                 <p className="section-p">
-                    {books.paragraph}
+                    {bookPage.paragraph}
                 </p>                
             </Section>
 
@@ -82,7 +86,7 @@ const BooksPage = () => {
                 wrapperClassName="bg-gray"
             >
 
-                <BookListItems />
+                <BookListItems items={books}/>
             </Section>
 
 
@@ -92,3 +96,11 @@ const BooksPage = () => {
 };
 
 export default BooksPage;
+
+
+export const getData = async (): Promise<Book[]> => {
+    // Fetch data from external API
+    const books = await BookModel.find();
+    // Pass data to the page via props
+    return books;
+}

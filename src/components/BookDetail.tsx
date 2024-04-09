@@ -1,16 +1,19 @@
 'use client'
-import { slugify } from "@/utils";
-import { useParams } from "next/navigation";
-import books from "@/data/books.json";
+
 import Section from "./UI/Section";
-import PayStackButton from "./PayStackButton";
 import DownloadBook from "./DownloadBook";
+import { Book } from "@/lib/nobox/structures/book.structure";
+import { usePathname } from "next/navigation";
 
 
-const BookDetail = () => {
-    const {slug} = useParams();
+interface BookDetailProps {
+    item: Book | null
+}
 
-    const book = books.bookItems.find((e)=>slugify(e.title) === slug);
+const BookDetail = ({item: book}: BookDetailProps) => {
+    // const {slug} = useParams();
+
+    // const book = books.bookItems.find((e)=>slugify(e.title) === slug);
 
     if (!book) return (
         <Section
@@ -30,7 +33,7 @@ const BookDetail = () => {
                 name="book-banner"
                 padded
                 containerClassName="image-container"
-                containerImage={book.images.banner.url}
+                containerImage={book.image.banner}
             >
                 <></>
             </Section>
@@ -52,11 +55,11 @@ const BookDetail = () => {
                         <p className="book-meta">
                             <span className="price">{book.price}</span>
                             {/* <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span> */}
-                            <span className="rating">{book.date}</span>
+                            <span className="rating">{book.date_released}</span>
                         </p>
 
                         <div className="attribution">
-                            <span className="author-img" style={{backgroundImage:`url(${book.author.image.url})`}}/>
+                            <span className="author-img" style={{backgroundImage:`url(${book.author.image})`}}/>
                             <p>
                                 <b>{book.author.name}</b>
                                 <br/>
@@ -69,7 +72,7 @@ const BookDetail = () => {
                     <DownloadBook
                         className="add-to-cart"
                         label="Buy Book"
-                        price={15000}
+                        price={book.price}
                         title={book.title}
                     />
                 </div>
@@ -78,10 +81,10 @@ const BookDetail = () => {
                 <br/><br/>
 
                 <p className="book-description">
-                    <span>{book.synopsis.summary}</span>
+                    {/* <span>{book.summary}</span> */}
 
                     {
-                        book.synopsis.details.highlights.map((e, i)=>(
+                        book.summary.map((e, i)=>(
                             <span key={i}>
                                 {e}
                             </span>

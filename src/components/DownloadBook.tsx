@@ -1,13 +1,12 @@
 'use client';
 
-import { PaystackButton } from 'react-paystack';
-import Input from "./UI/Input";
+
 import { useEffect, useState } from "react";
 import { Payment, PaymentModel } from '@/lib/nobox/structures';
 import PayStackButton, { PayStackButtonProps } from './PayStackButton';
-import Button from './UI/Button';
-import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import {bookDownloadLink} from "@/data/common.json";
+
 
 
 
@@ -44,8 +43,6 @@ export default function DownloadBook(props: PayStackButtonProps) {
             if (action === "download" && token) {
                 const payRecord = await validateToken(token);
 
-                // if (!payRecord) return;
-
                 setPaymentData(payRecord);
             }
         })()
@@ -63,7 +60,7 @@ export default function DownloadBook(props: PayStackButtonProps) {
         template = (
             <>
                 <a
-                    href={"http://localhost:3000/book.pdf"}
+                    href={bookDownloadLink}
                     download
                     onClick={(e)=>{
                         inValidateToken(paymentData.reference)

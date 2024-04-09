@@ -170,6 +170,13 @@
         text-align: center;
         // background-color: red;
     }
+    &-gray {
+        color: $gray;
+    }
+}
+
+.w-full {
+    width: 100%;
 }
 
 

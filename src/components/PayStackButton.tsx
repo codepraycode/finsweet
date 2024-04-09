@@ -4,6 +4,7 @@ import { PaystackButton } from 'react-paystack';
 import Input from "./UI/Input";
 import { useState } from "react";
 import { PaymentModel } from '@/lib/nobox/structures';
+import { usePathname } from 'next/navigation';
 
 
 
@@ -59,9 +60,10 @@ const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 
 export default function PayStackButton(props: PayStackButtonProps) {
 
+    const pathname = usePathname();
     
     const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
-        const url = `${appUrl}/books/download?token=${reference.reference}`;
+        const url = `${appUrl}/${pathname}/?action=download&token=${reference.reference}`;
         
         const payment = {
             reference: reference.reference,
@@ -76,7 +78,6 @@ export default function PayStackButton(props: PayStackButtonProps) {
         PaymentModel.insertOne(payment)
         .then(()=>{
             // Send Mail
-            console.log("Send mail")
             sendMail(payment.email, "Obtain your copy", url);
         }).catch((error)=>{
             console.error(error);
@@ -87,8 +88,6 @@ export default function PayStackButton(props: PayStackButtonProps) {
 
     const [email, setEmail] = useState("");
     const [paid, setPaid] = useState(false);
-
-    // useEffect(()=>{sendMail("preciousolusola16@gmail.com", "Obtain your copy", appUrl || '')}, []);
 
 
     let template = <p className='paid-text'>A copy has been sent to your email</p>;
