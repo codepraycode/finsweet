@@ -5,6 +5,7 @@ export interface Payment {
     reference: string,
     email: string,
     title: string,
+    used?: boolean,
 }
 
 export const PaymentStructure: Space<Payment> = {
@@ -16,6 +17,12 @@ export const PaymentStructure: Space<Payment> = {
             type: String,
             required: true,
             unique: true,
+        },
+        used: {
+            description: "Payment reference used",
+            type: Boolean,
+            required: false,
+            defaultValue: false,
         },
         email: {
             description: "Email of the buyer",
