@@ -1,11 +1,14 @@
-import { AdsListItems } from "@/components/AdsSection";
+import { AdsListItems, getAdsData } from "@/components/AdsSection";
 import FooterSection from "@/components/Footer";
 import Header from "@/components/Header";
 import Section from "@/components/UI/Section";
 import adsSiteData from "@/data/ads.json";
 
 
-const AdsPage = () => {
+const AdsPage = async () => {
+
+    const ads = await getAdsData();
+
     return (
         <>
             <Header />
@@ -41,7 +44,12 @@ const AdsPage = () => {
                 wrapperClassName="bg-blue-accent"
             >
 
-                <AdsListItems/>
+                {
+                    ads.length < 1 ? 
+                        <h3 className="text-center text-gray w-full">No ads for now</h3> :
+                        <AdsListItems items={ads}/>
+                }
+
             </Section>
 
 

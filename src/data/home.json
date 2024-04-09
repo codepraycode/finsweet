@@ -477,6 +477,10 @@
     },
     "adsHighlight": {
         "main": "Other services you may be interested in",
+        "cta": {
+            "label": "See more",
+            "className": "btn-transparent btn-with-arrow arrow-dark nav-cta"
+        },
         "highlights": [
             {
                 "title": "Swift Solutions for Urban Delivery Challenges",
