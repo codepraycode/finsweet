@@ -2,8 +2,11 @@
 
 import { PaystackButton } from 'react-paystack';
 import Input from "./UI/Input";
-import { useState } from "react";
-import { PaymentModel, PaymentStructure } from '@/lib/nobox/structures';
+import { useEffect, useState } from "react";
+import { PaymentModel } from '@/lib/nobox/structures';
+import { sendEmail } from '@/lib/mail/config';
+import { GetBookMailTemplate } from '@/lib/mail/templates';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -34,24 +37,50 @@ interface PayStackButtonProps {
     label: string,
     className: string,
     price: number,
+    title: string
 }
 
+const sendMail = (email:string, subject:string, link:string) => {
+    fetch("/api/mail", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            mail_to: email,
+            subject,
+            link
+        })
+    }).then((res)=>res.json())
+    .then(data=>console.log(data))
+    .catch((error)=>{
+        console.error(error);
+    })
+}
+
+const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+
 export default function PayStackButton(props: PayStackButtonProps) {
-  
+
+    
     const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
-        console.log(reference);
+        const url = `${appUrl}/books/download?token=${reference.reference}`;
+        
         const payment = {
             reference: reference.reference,
             email,
+            title: props.title,
         }
 
         // * Store reference, send mail
         setPaid(true);
 
+
         PaymentModel.insertOne(payment)
         .then(()=>{
             // Send Mail
             console.log("Send mail")
+            sendMail(payment.email, "Obtain your copy", url);
         }).catch((error)=>{
             console.error(error);
         })
@@ -61,6 +90,8 @@ export default function PayStackButton(props: PayStackButtonProps) {
 
     const [email, setEmail] = useState("");
     const [paid, setPaid] = useState(false);
+
+    // useEffect(()=>{sendMail("preciousolusola16@gmail.com", "Obtain your copy", appUrl || '')}, []);
 
 
     let template = <p className='paid-text'>A copy has been sent to your email</p>;

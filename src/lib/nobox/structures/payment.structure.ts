@@ -4,6 +4,7 @@ import { createRowSchema } from "../config";
 export interface Payment {
     reference: string,
     email: string,
+    title: string,
 }
 
 export const PaymentStructure: Space<Payment> = {
@@ -18,6 +19,11 @@ export const PaymentStructure: Space<Payment> = {
         },
         email: {
             description: "Email of the buyer",
+            type: String,
+            required: true,
+        },
+        title: {
+            description: "Book title",
             type: String,
             required: true,
         },
