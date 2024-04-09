@@ -1,32 +1,33 @@
 import siteData from '@/data/home.json';
 import Button from "./UI/Button";
 import Section from "./UI/Section";
+import { Ads, AdsModel } from '@/lib/nobox/structures/ads.structure';
 
 
 const {adsHighlight} = siteData;
 
 
-export const AdsListItems = () => {
+export const AdsListItems = ({items}:{items: Ads[]}) => {
     return (
         <div className="ads-highlights">
             {
-                adsHighlight.highlights.map((item, i) => (
+                items.map((item, i) => (
 
                     <article className="blog-card border-radius" key={i}>
                         <div
                             className="feature-img"
-                            style={{backgroundImage:`url(${item.image.url})`}}
+                            style={{backgroundImage:`url(${item.image})`}}
                         />
 
                         <div className="details">
                             <h1>{item.title}</h1>
                             <br/>
-                            <p>{item.description}</p>
+                            <p>{item.about}</p>
                             <br/>
                             <Button
-                                label={item.cta.label}
-                                link={item.cta.link}
-                                className={item.cta.className}
+                                label={adsHighlight.cta.label}
+                                link={item.link}
+                                className={adsHighlight.cta.className}
                             />
                         </div>
                     </article>
@@ -37,7 +38,10 @@ export const AdsListItems = () => {
     )
 }
 
-const AdsSection = () => {
+const AdsSection = async () => {
+    const ads = await getAdsData();
+
+    if (ads.length < 1) return null;
     return (
         <Section
             wrapperClassName="bg-blue-accent"
@@ -49,10 +53,17 @@ const AdsSection = () => {
             </h1>
             <br/><br/>
 
-            <AdsListItems />
+            <AdsListItems items={ads}/>
 
         </Section>
     )
 }
 
 export default AdsSection;
+
+
+export async function getAdsData(): Promise<Ads[]> {
+    const data = await AdsModel.find();
+
+    return data;
+}

@@ -25,7 +25,7 @@ const BookItemPage = async ({ params }: { params: { slug: string } }) => {
 
 export default BookItemPage;
  
-export const getData = async (slug:string): Promise<Book | null> => {
+const getData = async (slug:string): Promise<Book | null> => {
     // Fetch data from external API
     const book = await BookModel.findOne({ slug });
 
