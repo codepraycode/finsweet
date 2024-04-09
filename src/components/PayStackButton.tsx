@@ -2,11 +2,8 @@
 
 import { PaystackButton } from 'react-paystack';
 import Input from "./UI/Input";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PaymentModel } from '@/lib/nobox/structures';
-import { sendEmail } from '@/lib/mail/config';
-import { GetBookMailTemplate } from '@/lib/mail/templates';
-import { useRouter } from 'next/navigation';
 
 
 
@@ -33,7 +30,7 @@ const componentProps = {
 
 
 
-interface PayStackButtonProps {
+export interface PayStackButtonProps {
     label: string,
     className: string,
     price: number,

@@ -1582,10 +1582,21 @@ header {
 
 
 .pay-wrapper {
-    button {
+    button, a.btn {
         width: 20rem;
         max-width: 100%;
     }
+
+    a.btn {
+        display: inline-block;
+        background-color: $blue-light;
+        text-align: center;
+        text-decoration: none;
+        padding-block: 1.2rem;
+        color: $white;
+        border-radius: .3rem;
+    }
+
     .paystack-input {
         border: 1px solid $blue-light !important;
     }
