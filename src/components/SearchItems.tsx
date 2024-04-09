@@ -1,7 +1,7 @@
 'use client';
 
 
-import { Aviation } from "@/lib/nobox/AvitaionStructure";
+import { Aviation } from "@/lib/nobox/structures";
 
 
 export default function SearchItems({item}: {item: Aviation}) {

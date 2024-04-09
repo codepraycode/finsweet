@@ -4,7 +4,7 @@ const endpoint = process.env.NEXT_PUBLIC_CLIENT_NOBOX_API || "https://api.nobox.
 const project = process.env.NEXT_PUBLIC_CLIENT_NOBOX_PROJECT || "nobox-forms";
 const token = process.env.NEXT_PUBLIC_CLIENT_NOBOX_TOKEN || "b4hgbdmjpma_galnmur_jiddmm4dnmpymo43aigb";
 
-console.log({ endpoint, a: process.env.NEXT_PUBLIC_CLIENT_NOBOX_API })
+// console.log({ endpoint, a: process.env.NEXT_PUBLIC_CLIENT_NOBOX_API })
 
 if (!project) throw new Error("Nobox project is not given");
 if (!token) throw new Error("Nobox token is not given")

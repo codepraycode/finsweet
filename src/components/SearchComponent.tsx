@@ -1,6 +1,8 @@
 import Input from "./UI/Input";
 import Section from "./UI/Section"
-import {clients} from "@/data/home.json";
+import homeData from "@/data/home.json";
+
+const {clients} = homeData;
 
 
 const SearchComponent = () => {
@@ -22,6 +24,8 @@ const SearchComponent = () => {
                 wrapperClassname="search-input"
                 type="text"
                 placeholder="Search for aviation businesses"
+                action="/aviation/search"
+                name="query"
             />
         </Section>
     )

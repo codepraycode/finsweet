@@ -2,7 +2,7 @@ import Link from "next/link";
 import Section from "../UI/Section";
 import SearchItems from "../SearchItems";
 import { useEffect, useState } from "react";
-import { Aviation, AviationModel } from "@/lib/nobox/AvitaionStructure";
+import { Aviation, AviationModel } from "@/lib/nobox/structures";
 import { NoboxResponse } from "../../nobox-client";
 
 const SearchContent = ({ query }: any) => {

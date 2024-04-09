@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 import { Payment, PaymentModel } from '@/lib/nobox/structures';
 import PayStackButton, { PayStackButtonProps } from './PayStackButton';
 import { useSearchParams } from 'next/navigation';
-import {bookDownloadLink} from "@/data/common.json";
+import commonData from "@/data/common.json";
+
+const {bookDownloadLink} = commonData
 
 
 

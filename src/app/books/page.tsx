@@ -98,7 +98,7 @@ const BooksPage = async () => {
 export default BooksPage;
 
 
-export const getData = async (): Promise<Book[]> => {
+const getData = async (): Promise<Book[]> => {
     // Fetch data from external API
     const books = await BookModel.find();
     // Pass data to the page via props
