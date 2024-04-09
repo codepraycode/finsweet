@@ -3,7 +3,6 @@ import { slugify } from "@/utils";
 import { useParams } from "next/navigation";
 import books from "@/data/books.json";
 import Section from "./UI/Section";
-import Button from "./UI/Button";
 import PayStackButton from "./PayStackButton";
 
 
@@ -70,6 +69,7 @@ const BookDetail = () => {
                         className="add-to-cart"
                         label="Buy Book"
                         price={15000}
+                        title={book.title}
                     />
                 </div>
 
