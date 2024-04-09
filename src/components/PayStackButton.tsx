@@ -35,7 +35,8 @@ export interface PayStackButtonProps {
     label: string,
     className: string,
     price: number,
-    title: string
+    title: string,
+    baseUrl: string
 }
 
 const sendMail = (email:string, subject:string, link:string) => {
@@ -56,14 +57,12 @@ const sendMail = (email:string, subject:string, link:string) => {
     })
 }
 
-const appUrl = process.env.NEXT_PUBLIC_APP_URL;
-
 export default function PayStackButton(props: PayStackButtonProps) {
 
     const pathname = usePathname();
     
     const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
-        const url = `${appUrl}/${pathname}/?action=download&token=${reference.reference}`;
+        const url = `${props.baseUrl}/${pathname}/?action=download&token=${reference.reference}`;
         
         const payment = {
             reference: reference.reference,

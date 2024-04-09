@@ -7,10 +7,11 @@ import { usePathname } from "next/navigation";
 
 
 interface BookDetailProps {
-    item: Book | null
+    item: Book | null,
+    baseUrl: string,
 }
 
-const BookDetail = ({item: book}: BookDetailProps) => {
+const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
     // const {slug} = useParams();
 
     // const book = books.bookItems.find((e)=>slugify(e.title) === slug);
@@ -74,6 +75,7 @@ const BookDetail = ({item: book}: BookDetailProps) => {
                         label="Buy Book"
                         price={book.price}
                         title={book.title}
+                        baseUrl={baseUrl}
                     />
                 </div>
 

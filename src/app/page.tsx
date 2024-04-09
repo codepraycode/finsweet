@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import SearchComponent from "@/components/SearchComponent";
 
 export default function Home() {
+
     return (
         <>
             <Header />

@@ -3,12 +3,19 @@ import BookDetail from "@/components/BookDetail";
 import FooterSection from "@/components/Footer";
 import Header from "@/components/Header";
 import { Book, BookModel } from "@/lib/nobox/structures/book.structure";
-import { slugify } from "@/utils";
+import { headers } from "next/headers";
+
 
 const BookItemPage = async ({ params }: { params: { slug: string } }) => {
 
     // console.log("Params", params);
+    const headerList = headers();
+    let baseUrl = headerList.get("referer");
 
+    if (baseUrl) {
+        baseUrl = baseUrl.slice(0, baseUrl.length - 1)
+    }
+    
     const {slug} = params;
 
     const book = await getData(slug);
@@ -17,7 +24,7 @@ const BookItemPage = async ({ params }: { params: { slug: string } }) => {
     return (
         <>
             <Header />
-                <BookDetail item={book}/>
+                <BookDetail item={book} baseUrl={baseUrl as string}/>
             <FooterSection />
         </>
     )
