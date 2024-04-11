@@ -1,5 +1,5 @@
 
-import BookDetail from "@/components/BookDetail";
+import BookDetail from "@/components/Books/BookDetail";
 import FooterSection from "@/components/Footer";
 import Header from "@/components/Header";
 import { Book, BookModel } from "@/lib/nobox/structures/book.structure";

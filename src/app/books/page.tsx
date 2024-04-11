@@ -102,5 +102,5 @@ const getData = async (): Promise<Book[]> => {
     // Fetch data from external API
     const books = await BookModel.find();
     // Pass data to the page via props
-    return books;
+    return books || [];
 }

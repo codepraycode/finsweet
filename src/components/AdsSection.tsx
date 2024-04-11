@@ -1,6 +1,6 @@
 import siteData from '@/data/home.json';
-import Button from "../UI/Button";
-import Section from "../UI/Section";
+import Button from "./UI/Button";
+import Section from "./UI/Section";
 import { Ads, AdsModel } from '@/lib/nobox/structures/ads.structure';
 
 

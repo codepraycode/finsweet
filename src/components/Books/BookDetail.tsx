@@ -3,7 +3,6 @@
 import Section from "../UI/Section";
 import DownloadBook from "./DownloadBook";
 import { Book } from "@/lib/nobox/structures/book.structure";
-import { usePathname } from "next/navigation";
 
 
 interface BookDetailProps {
@@ -56,7 +55,7 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
                         <p className="book-meta">
                             <span className="price">{book.price}</span>
                             {/* <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span> */}
-                            <span className="rating">{book.date_released}</span>
+                            {/* <span className="rating">{book.date_released}</span> */}
                         </p>
 
                         <div className="attribution">

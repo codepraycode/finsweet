@@ -52,7 +52,7 @@ export const BookStructure: Space<Book> = {
         },
         summary: {
             description: "Book's summary",
-            type: String,
+            type: Array,
             required: true,
         },
         date_released: {
