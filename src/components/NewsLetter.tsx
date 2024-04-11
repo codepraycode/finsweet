@@ -1,5 +1,6 @@
 import React from 'react';
-import siteData from "@/data.json";
+import siteData from "@/data/common.json";
+import Input from './UI/Input';
 
 const {newsletter} = siteData;
 
@@ -17,12 +18,11 @@ export default function NewsLetter() {
                 </span>
             </h1>
 
-            <div className="newsletter-input">
-                <input
-                    type={newsletter.input.type}
-                    placeholder={newsletter.input.placeholder}
-                />
-            </div>
+            <Input
+                wrapperClassname='newsletter-input'
+                placeholder={newsletter.input.placeholder}
+                type={newsletter.input.type}
+            />
         </div>
     )
 }

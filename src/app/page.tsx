@@ -1,24 +1,24 @@
 import AboutSection from "@/components/About";
-import BlogSection from "@/components/BlogSection";
-import CustomerSection from "@/components/Customers";
-import ExpertiseSection from "@/components/Expertise";
+import AdsSection from "@/components/AdsSection";
+import CoreValuesSection from "@/components/CoreValuesSection";
 import FooterSection from "@/components/Footer";
 import HeroSection from "@/components/Hero";
-import ProcessSection from "@/components/Process";
-import ServicesSection from "@/components/Services";
-
+import Subsidiaries from "@/components/Subsidiaries";
+import Header from "@/components/Header";
+import SearchComponent from "@/components/SearchComponent";
 
 export default function Home() {
+
     return (
-        <main>
+        <>
+            <Header />
             <HeroSection />
+            <SearchComponent />
             <AboutSection />
-            <ExpertiseSection />
-            <ServicesSection />
-            <ProcessSection />
-            <CustomerSection />
-            <BlogSection />
+            <CoreValuesSection />
+            <Subsidiaries />
+            <AdsSection />
             <FooterSection />
-        </main>
+        </>
     );
 }

@@ -1,6 +1,7 @@
+'use client';
 import Link from 'next/link';
 import React from 'react';
-import Button from './Button';
+import { usePathname } from 'next/navigation';
 
 type NavLink = {
     url: string,
@@ -14,35 +15,45 @@ interface NavLinksProps {
     cta?: React.ReactNode
 }
 
+
+function isPathActive(urlPath: string, link: string) {
+
+    if ((urlPath === '/') && (link !== '/') ) return false;
+
+    return link.includes(urlPath);
+}
+
 export default function NavLinks({ links, cta }: NavLinksProps ) {
-  return (
-    <nav>
-        <label className="hambugger" htmlFor='menu-toggle'>
-            <input type="checkbox"
-                name="menu-toggle"
-                id="menu-toggle"
-            />
-        </label>
+    const path = usePathname();
 
-        <div className="nav-wrapper">
+    return (
+        <nav>
+            <label className="hambugger" htmlFor='menu-toggle'>
+                <input type="checkbox"
+                    name="menu-toggle"
+                    id="menu-toggle"
+                />
+            </label>
 
-            <ul>
-                {
-                    links.map((item, i) => (
-                        <li key={i}>
-                            <Link
-                                href={item.url}
-                                className={`${item.active ? 'active' : ''}`}
-                            >
-                                {item.label}
-                            </Link>
-                        </li>
-                    ))
-                }
-            </ul>
+            <div className="nav-wrapper">
 
-            { cta }
-        </div>
-    </nav>
-  )
+                <ul>
+                    {
+                        links.map((item, i) => (
+                            <li key={i}>
+                                <Link
+                                    href={item.url}
+                                    className={`${isPathActive(path, item.url) ? 'active' : ''}`}
+                                >
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                { cta }
+            </div>
+        </nav>
+    )
 }

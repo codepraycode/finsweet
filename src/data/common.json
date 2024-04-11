@@ -1,0 +1,104 @@
+{
+    "bookDownloadLink": "http://localhost:3000/book.pdf",
+    "header": {
+        "nav": [
+            {
+                "url": "/",
+                "active": true,
+                "label": "Home"
+            },
+            {
+                "url": "/subsidiaries",
+                "active": false,
+                "label": "Subsidiaries"
+            },
+            {
+                "url": "/books",
+                "active": false,
+                "label": "Books"
+            }
+        ],
+        "cta": {
+            "label": "Other Services",
+            "link": null,
+            "className": "btn-transparent btn-with-arrow text-active nav-cta",
+            "navTo": "/ads"
+        }
+    },
+    "newsletter": {
+        "title": "NEWSLETTER",
+        "subTitle": "Subscribe our News Letter to get Latest Updates.",
+        "input": {
+            "placeholder": "Paresh@Pixeto.com",
+            "type": "text"
+        }
+    },
+    "footer": {
+        "main": "DonManuel Group",
+        "subTitle": "with subsidiaries",
+        "subsidiaries": [ "DonManuel Concept Ltd", "DonBryan Logistics Ltd"],
+
+        "registrationNo":"RC1093505",
+        "motto": "Service without Boundary",
+
+        "address": "Behind NCAA head office, Airside, N.A.I.A ABUJA AIRPORT",
+        "contacts": {
+            
+            "phone": [
+                "+2347068886283",
+                "2348094906968"
+            ],
+            "email": "donbryanlogisticsltd@gmail.com"
+        },
+        "cta": {
+            "label": "Contact Us",
+            "link": "/",
+            "className": "btn-transparent btn-with-arrow text-active"
+        },
+        "logo": {
+            "url": "/images/logo-negative.svg",
+            "alt": "Finsweet",
+            "width": 50,
+            "height": 50
+        },
+        "copyright": "©2021 Finsweet",
+        "socials": [
+            {
+                "name": "Facebook",
+                "icon": {
+                    "url": "/images/icons/socials/facebook-negative.svg",
+                    "alt": "Facebook",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "name": "twitter",
+                "icon": {
+                    "url": "/images/icons/socials/twitter-negative.svg",
+                    "alt": "Twitter",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "name": "instagram",
+                "icon": {
+                    "url": "/images/icons/socials/instagram-negative.svg",
+                    "alt": "Instagram",
+                    "width": 50,
+                    "height": 50
+                }
+            },
+            {
+                "name": "linkedin",
+                "icon": {
+                    "url": "/images/icons/socials/linkedin-negative.svg",
+                    "alt": "Linkedin",
+                    "width": 50,
+                    "height": 50
+                }
+            }
+        ]
+    }
+}

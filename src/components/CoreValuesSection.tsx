@@ -1,38 +1,27 @@
 import Image from "next/image";
-import siteData from "@/data.json";
+import siteData from '@/data/home.json';
 import Section from "./UI/Section";
 
-const { expertise } = siteData;
+const { coreValues } = siteData;
 
-const ExpertiseSection = () => {
+const CoreValuesSection = () => {
     return (
         <Section
             wrapperClassName="bg-blue-accent"
-            name="expertise"
+            name="coreVal"
+            containerClassName="coreVal_wrapper"
             padded
         >
-            <div>
-
-                <h2 className="section-header">
-                    { expertise.title }
-                </h2>
-                <div>
-                    <span className="section-h1">
-                        {expertise.main}
-                    </span>
-
-                    <div className="section-p">
-                        {expertise.paragraph}
-                    </div>
-                </div>
-            </div>
 
             <div className="cards">
+                <h2 className="card exceptional section-header">
+                    { coreValues.title }
+                </h2>
                 {
-                    expertise.deliverables.map((item, i) => (
+                    coreValues.deliverables.map((item, i) => (
 
                         <article
-                            className="card"
+                            className="card border-radius"
                             key={i}
                         >
                             <div className="card-icon float-left">
@@ -59,4 +48,4 @@ const ExpertiseSection = () => {
     )
 }
 
-export default ExpertiseSection;
+export default CoreValuesSection;

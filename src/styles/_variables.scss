@@ -6,6 +6,8 @@ $active-bar: hsla(27, 100%, 67%, 1);
 $active-text: hsla(27, 100%, 84%, 1);
 $active-bg: hsla(27, 100%, 91%, 1);
 
+$bg-grey:hsla(0, 0%, 98%, 1);
+
 $white: hsla(0, 0%, 100%, 1);
 $white-gray: hsla(0, 0%, 100%, 0.05);
 $white-darken: darken($color: $white, $amount: 30%);
@@ -17,13 +19,14 @@ $blue-accent: hsla(185, 52%, 95%, 1);
 $gray: hsla(234, 8%, 40%, 1);
 $box-cap-deep: hsla(0, 0%, 100%, 0.06);
 $box-cap-blue:hsla(237, 100%, 70%, 1);
+$box-cap-orange:hsla(27, 100%, 84%, 1);
 // Fonts
 $base-font: 16px;
 
 
 
 // Screen size
-$desktop-size: 1300px;
+$desktop-size: 1350px;
 
 // breakpoints
 $mobile-bp: 800px;
