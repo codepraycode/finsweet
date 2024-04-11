@@ -29,12 +29,17 @@ async function inValidateToken(token: string) {
 }
 
 export default function DownloadBook(props: PayStackButtonProps) {
-
-    const [paymentData, setPaymentData] = useState<Payment & {id: string} | null | undefined>(undefined);
-
     const searchParams = useSearchParams();
     const action = searchParams.get("action");
     const token = searchParams.get("token")
+
+
+    const [paymentData, setPaymentData] = useState<Payment & {id: string} | null | undefined>(()=>{
+        if (!token) return null;
+
+        return undefined
+    });
+
 
 
     
@@ -44,19 +49,20 @@ export default function DownloadBook(props: PayStackButtonProps) {
         (async()=>{
             if (action === "download" && token) {
                 const payRecord = await validateToken(token);
-
+                
                 setPaymentData(payRecord);
             }
         })()
     }, [action, token])
 
+    console.log(paymentData);
+
     let template;
     
     
     if (paymentData === undefined) template = <p>Loading....</p>;
-
-    if (!paymentData || paymentData.used) template = <PayStackButton {...props}/>;
-
+    
+    else if (!paymentData || paymentData.used) template = <PayStackButton {...props}/>;
 
     else {
         template = (

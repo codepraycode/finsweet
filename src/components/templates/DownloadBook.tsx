@@ -29,7 +29,7 @@ export function DownloadBookTemplate({link}:{link:string}) {
             or use this link:
             <br/><br/>
 
-            <a href={link}>${link}</a>
+            <a href={link}>{link}</a>
         </>
     )
 }

@@ -13,6 +13,7 @@ const resend = new Resend(api_key);
 export async function POST(req:NextRequest, res: NextResponse) {
 
     const {mail_to, subject, link} = await req.json();
+    const url = req.headers.get('origin');
 
     if (!mail_from) return Response.json({message:"No sender mail given"}, {status: 500});
     
@@ -21,7 +22,7 @@ export async function POST(req:NextRequest, res: NextResponse) {
             from: mail_from,
             to: [mail_to],
             subject,
-            react: DownloadBookTemplate({ link }),
+            react: DownloadBookTemplate({ link: `${url}${link}` }),
         });
 
         return Response.json(data);

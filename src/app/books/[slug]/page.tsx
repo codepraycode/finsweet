@@ -13,13 +13,12 @@ const BookItemPage = async ({ params }: { params: { slug: string } }) => {
     let baseUrl = headerList.get("referer");
 
     if (baseUrl) {
-        baseUrl = baseUrl.slice(0, baseUrl.length - 1)
+        baseUrl = new URL(baseUrl).origin;
     }
     
     const {slug} = params;
 
     const book = await getData(slug);
-
 
     return (
         <>

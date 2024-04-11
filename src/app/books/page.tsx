@@ -34,7 +34,7 @@ const BookListItems = ({items}:{items: Book[]}) => {
                                 <p className="book-meta">
                                     <span className="price">{item.price}</span>
                                     {/* <span className="rating star">{item.rating.rate}({item.rating.total})</span> */}
-                                    <span className="rating star">{item.date_released}</span>
+                                    {/* <span className="rating">{item.date_released}</span> */}
                                 </p>
 
                                 <div className="attribution">
