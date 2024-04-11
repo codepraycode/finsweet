@@ -1,4 +1,4 @@
-import { Space } from "../../../nobox-client";
+import { Space } from "../../nobox-client";
 import { createRowSchema } from "../config";
 import aviation from "../initialData/aviation";
 
@@ -7,6 +7,7 @@ type Route = {
     to: string,
 }
 export interface Aviation {
+    logo: string,
     name: string,
     detail: string,
     routes: Route[],
@@ -18,6 +19,11 @@ export const AviationStructure: Space<Aviation> = {
     description: "A Record Space for Aviation companies",
     initialData: aviation,
     structure: {
+        logo: {
+            description: "Company's logo",
+            type: String,
+            required: true
+        },
         name: {
             description: "Company's name",
             type: String,

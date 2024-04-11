@@ -1,5 +1,5 @@
-import Input from "./UI/Input";
-import Section from "./UI/Section"
+import Input from "../UI/Input";
+import Section from "../UI/Section"
 import homeData from "@/data/home.json";
 
 const {clients} = homeData;

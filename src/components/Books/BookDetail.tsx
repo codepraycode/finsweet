@@ -1,6 +1,6 @@
 'use client'
 
-import Section from "./UI/Section";
+import Section from "../UI/Section";
 import DownloadBook from "./DownloadBook";
 import { Book } from "@/lib/nobox/structures/book.structure";
 import { usePathname } from "next/navigation";

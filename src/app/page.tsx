@@ -1,11 +1,12 @@
-import AboutSection from "@/components/About";
-import AdsSection from "@/components/AdsSection";
-import CoreValuesSection from "@/components/CoreValuesSection";
+
 import FooterSection from "@/components/Footer";
-import HeroSection from "@/components/Hero";
-import Subsidiaries from "@/components/Subsidiaries";
 import Header from "@/components/Header";
-import SearchComponent from "@/components/SearchComponent";
+import AboutSection from "@/components/Home/About";
+import AdsSection from "@/components/Home/AdsSection";
+import CoreValuesSection from "@/components/Home/CoreValues";
+import HeroSection from "@/components/Home/Hero";
+import SearchComponent from "@/components/Home/SearchComponent";
+import SubsidiariesSection from "@/components/Home/Subsidiaries";
 
 export default function Home() {
 
@@ -16,7 +17,7 @@ export default function Home() {
             <SearchComponent />
             <AboutSection />
             <CoreValuesSection />
-            <Subsidiaries />
+            <SubsidiariesSection />
             <AdsSection />
             <FooterSection />
         </>

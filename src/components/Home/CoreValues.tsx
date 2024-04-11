@@ -1,6 +1,6 @@
 import Image from "next/image";
 import siteData from '@/data/home.json';
-import Section from "./UI/Section";
+import Section from "../UI/Section";
 
 const { coreValues } = siteData;
 

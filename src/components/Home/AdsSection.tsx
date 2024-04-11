@@ -1,6 +1,6 @@
 import siteData from '@/data/home.json';
-import Button from "./UI/Button";
-import Section from "./UI/Section";
+import Button from "../UI/Button";
+import Section from "../UI/Section";
 import { Ads, AdsModel } from '@/lib/nobox/structures/ads.structure';
 
 
@@ -65,5 +65,5 @@ export default AdsSection;
 export async function getAdsData(): Promise<Ads[]> {
     const data = await AdsModel.find();
 
-    return data;
+    return data || [];
 }

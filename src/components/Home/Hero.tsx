@@ -1,10 +1,9 @@
 'use client'
 import data from '@/data/home.json';
-import Section from "./UI/Section";
-import Input from "./UI/Input";
+import Section from "../UI/Section";
 
 
-const {hero, clients} = data;
+const { hero } = data;
 
 
 const HeroSection = () => {

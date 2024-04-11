@@ -1,6 +1,5 @@
 import siteData from '@/data/home.json';
-import Button from "./UI/Button";
-import Section from "./UI/Section";
+import Section from "../UI/Section";
 
 
 const {aboutUs} = siteData;

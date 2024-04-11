@@ -12,7 +12,7 @@ export default function SearchItems({item}: {item: Aviation}) {
 
     return (
         <div className="search-item card">
-            <div className="item-image" style={{backgroundImage:`url(https://images-platform.99static.com//gME9hTDL1oxGnWMUyN-fAFAexOo=/76x99:1588x1611/fit-in/500x500/99designs-contests-attachments/108/108601/attachment_108601871)`}}/>
+            <div className="item-image" style={{backgroundImage:`url(${item.logo})`}}/>
 
             <div className="item-detail">
                 <h2 className="section-h3">{item.name}</h2>

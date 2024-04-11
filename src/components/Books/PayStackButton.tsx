@@ -1,7 +1,7 @@
 'use client';
 
 import { PaystackButton } from 'react-paystack';
-import Input from "./UI/Input";
+import Input from "../UI/Input";
 import { useState } from "react";
 import { PaymentModel } from '@/lib/nobox/structures';
 import { usePathname } from 'next/navigation';
