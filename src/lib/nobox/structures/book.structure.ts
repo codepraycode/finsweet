@@ -1,5 +1,6 @@
 import { Space } from "../../nobox-client";
 import { createRowSchema } from "../config";
+import books from "../initialData/book";
 
 export interface Book {
     image: {
@@ -22,6 +23,7 @@ export interface Book {
 export const BookStructure: Space<Book> = {
     space: "Books",
     description: "A Record Space for Books",
+    initialData: books,
     structure: {
         image: {
             description: "Book featured images",

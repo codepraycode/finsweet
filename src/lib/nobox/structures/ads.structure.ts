@@ -1,5 +1,6 @@
 import { Space } from "../../nobox-client";
 import { createRowSchema } from "../config";
+import ads from "../initialData/ads";
 
 export interface Ads {
     image: string,
@@ -11,6 +12,7 @@ export interface Ads {
 export const AdsStructure: Space<Ads> = {
     space: "Ads",
     description: "A Record Space for Ads",
+    initialData: ads,
     structure: {
         image: {
             description: "Ads featured images",
