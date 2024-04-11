@@ -53,7 +53,10 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
 
                     <div>
                         <p className="book-meta">
-                            <span className="price">{book.price}</span>
+                            <span className="price">
+                                {/* {book.price} */}
+                                {book.price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                            </span>
                             {/* <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span> */}
                             {/* <span className="rating">{book.date_released}</span> */}
                         </p>

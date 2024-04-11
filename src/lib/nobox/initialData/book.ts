@@ -9,7 +9,7 @@ const books: Book[] = [
     title: "The Hitchhiker's Guide to the Galaxy",
     slug: "hitchhikers-guide",
     genre: ["Science Fiction", "Comedy"],
-    price: 12.99,
+    price: 10000.99,
     summary: [
       "Douglas Adams' comedic masterpiece.",
       "Follow Arthur Dent on his wacky adventures through space.",
@@ -29,7 +29,7 @@ const books: Book[] = [
     title: "Pride and Prejudice",
     slug: "pride-and-prejudice",
     genre: ["Romance", "Classic Literature"],
-    price: 7.99,
+    price: 3500.99,
     summary: [
       "Jane Austen's timeless tale of love and society.",
       "Follow Elizabeth Bennet as she navigates love and life.",
@@ -49,7 +49,7 @@ const books: Book[] = [
     title: "To Kill a Mockingbird",
     slug: "to-kill-a-mockingbird",
     genre: ["Drama", "Coming-of-Age"],
-    price: 9.99,
+    price: 900.99,
     summary: [
       "Harper Lee's Pulitzer Prize-winning novel about racial injustice in the American South.",
       "Follow Scout Finch as she learns valuable life lessons.",
