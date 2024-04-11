@@ -77,6 +77,7 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
                         label="Buy Book"
                         price={book.price}
                         title={book.title}
+                        bookId={book.id as string}
                         baseUrl={baseUrl}
                     />
                 </div>

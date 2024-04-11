@@ -3,6 +3,7 @@ import { createRowSchema } from "../config";
 import books from "../initialData/book";
 
 export interface Book {
+    id?:string,
     image: {
         thumbmail: string,
         banner: string,

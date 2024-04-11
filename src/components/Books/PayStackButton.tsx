@@ -3,7 +3,7 @@
 import { PaystackButton } from 'react-paystack';
 import Input from "../UI/Input";
 import { useEffect, useState } from "react";
-import { PaymentModel } from '@/lib/nobox/structures';
+import { Payment, PaymentModel } from '@/lib/nobox/structures';
 import { usePathname } from 'next/navigation';
 
 
@@ -36,6 +36,7 @@ export interface PayStackButtonProps {
     className: string,
     price: number,
     title: string,
+    bookId: string,
     baseUrl: string
 }
 
@@ -64,10 +65,11 @@ export default function PayStackButton(props: PayStackButtonProps) {
     const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
         const url = `${pathname}/?action=download&token=${reference.reference}`;
         
-        const payment = {
+        const payment: Payment = {
             reference: reference.reference,
             email,
             title: props.title,
+            bookId: props.bookId
         }
 
         // * Store reference, send mail
