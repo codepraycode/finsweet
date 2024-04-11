@@ -35,7 +35,7 @@ const SearchContent = ({ query }: any) => {
                 data === null ? <h1 className="section-h3 text-center">Loading search...</h1> : <div className="search-item-list">
 
                     {
-                        !data ? <h3>No rresult</h3> : data.map((item, i) => (
+                        !data ? <h3>No result</h3> : data.map((item, i) => (
 
                             <SearchItems key={i} item={item} />
                         ))

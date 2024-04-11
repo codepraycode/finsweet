@@ -2,16 +2,26 @@ import { Space } from "../../nobox-client";
 import { createRowSchema } from "../config";
 import aviation from "../initialData/aviation";
 
+
+type Place = {
+    short: string,
+    full: string
+}
 type Route = {
-    from: string,
-    to: string,
+    from: Place,
+    to: Place,
 }
 export interface Aviation {
-    logo: string,
+    logo?: string,
     name: string,
-    detail: string,
+    company_name: string,
+    details: string,
     routes: Route[],
     link: string,
+    fleet_size?: number | string,
+    headoffice?: string,
+    hub?:string,
+    base?:string,
 }
 
 export const AviationStructure: Space<Aviation> = {
@@ -22,14 +32,19 @@ export const AviationStructure: Space<Aviation> = {
         logo: {
             description: "Company's logo",
             type: String,
-            required: true
+            required: false
         },
         name: {
+            description: "Company's regular name",
+            type: String,
+            required: true
+        },
+        company_name: {
             description: "Company's name",
             type: String,
             required: true
         },
-        detail: {
+        details: {
             description: "Company's detail",
             required: true,
             type: String,
@@ -42,6 +57,22 @@ export const AviationStructure: Space<Aviation> = {
         link: {
             description: "Company's page",
             required: true,
+            type: String,
+        },
+        fleet_size: {
+            description: "Company's fleet size",
+            type: String,
+        },
+        headoffice: {
+            description: "Company's head office",
+            type: String,
+        },
+        hub: {
+            description: "Company's hub",
+            type: String,
+        },
+        base: {
+            description: "Company's base",
             type: String,
         },
     }
