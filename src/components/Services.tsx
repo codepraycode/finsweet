@@ -1,10 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
 import siteData from "@/data.json";
 import Button from "./UI/Button";
 import Section from "./UI/Section";
+import { LargeCard } from "./UI/LargeCard";
 
-const {services} = siteData;
+const { services } = siteData;
 
 const ServicesSection = () => {
     return (
@@ -17,7 +16,7 @@ const ServicesSection = () => {
             <h2 className="section-header">
                 {services.title}
             </h2>
-            
+
             <p className="section-h1 half-length">
                 {services.main}
             </p>
@@ -27,33 +26,13 @@ const ServicesSection = () => {
                 label={services.cta.label}
                 link={services.cta.link}
             />
-
-            <div className="cards">
+            <div className="x-cards">
                 {
                     services.deliverables.map((item, i) => (
-                        <article className="card" key={i}>
-                            <div className="card-icon">
-                                <Image
-                                    src={item.icon.url}
-                                    alt={item.icon.alt}
-                                    width={item.icon.width}
-                                    height={item.icon.height}
-                                />
-                            </div>
-
-                            <h3>{ item.title }</h3>
-                            <p>
-                                {item.description}
-                            </p>
-
-                            <br/>
-
-                            <Button
-                                link={item.cta.link}
-                                label={item.cta.label}
-                                className={item.cta.className}
-                            />
-                        </article>
+                        <LargeCard
+                            key={i}
+                            {...item}
+                        />
                     ))
                 }
             </div>
@@ -61,5 +40,7 @@ const ServicesSection = () => {
         </Section>
     )
 }
+
+
 
 export default ServicesSection;

@@ -5,21 +5,15 @@ import NavLinks from './UI/NavLink'
 import Button from './UI/Button'
 import siteData from '@/data.json';
 
-
-const {header} = siteData;
-
-
+const { header } = siteData;
 
 function Header() {
     return (
-        <header className='bg-hero'>
+        <header className='bg-one'>
             <div className="container header-wrapper text-white">
                 <Logo />
-
-
                 <NavLinks
                     links={header.nav}
-
                     cta={
                         <Button
                             label='Clone project'
@@ -28,7 +22,6 @@ function Header() {
                         />
                     }
                 />
-
                 <label className="hambugger" htmlFor='menu-toggle'>
                     <input type="checkbox"
                         name="menu-toggle"

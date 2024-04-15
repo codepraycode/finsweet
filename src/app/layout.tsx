@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/styles.scss";
+import Header from "@/components/Header";
+import FooterSection from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "FinSweet",
@@ -10,10 +12,14 @@ export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
-    }>) {
+}>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <Header />
+                {children}
+                <FooterSection />
+            </body>
         </html>
     );
 }

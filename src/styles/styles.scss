@@ -7,28 +7,96 @@
 
 @mixin flex {
     display: flex;
-    // align-items: center;
 }
 
-.logo {
-    $logo-size: 7rem;
-    display: block;
-    width: $logo-size;
-    height: calc($logo-size / 4);
+.text-logo {
+    display: inline-block;
 
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    color: $white-darken;
+    $nav-gap: 1.5rem;
+
+    padding-block: calc(calc($nav-gap * 1.7) / 2);
+    font-size: 1.5rem;
+    @include mixins.poppins-semibold;
+    color: hsl(27, 100%, 84%);
+}
+
+.bg-one {
+    background-color: hsl(229, 38%, 23%);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.x-cards {
+
+
+    color: #000;
+
+    h3 {
+        font-size: 1rem;
+        @include mixins.poppins-semibold;
+    }
+
+    p {
+        @include mixins.poppins-regular;
+        font-size: .87rem;
+        margin-top: .5rem;
+
+        .section-p {
+            margin-top: 2rem;
+        }
+    }
+
+
+    .float-right {
+        position: relative;
+        // right: 4rem;
+
+        @include mixins.md {
+            right: 4rem;
+        }
+    }
+
+    .card {
+        overflow: hidden;
+        width: 100% !important;
+
+
+        &:nth-child(even) {
+            margin-block: 1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
 
 }
 
+.input {
+    width: 100%;
+    height: 40px;
+    padding: 30px;
+    border: 1px solid #fff;
+    color: hsl(30, 1%, 39%);
+    font-size: large;
+
+    &:focus {
+        outline: none;
+    }
+}
 
 header {
     .header-wrapper {
         @include flex;
     }
 
-    border-bottom: 1px solid $white-gray;
+    border-bottom: 1px solid #fff;
 
 
     .logo {
@@ -40,44 +108,46 @@ header {
         margin-left: auto;
         @include flex;
         gap: $nav-gap;
+
         ul {
             list-style: none;
             padding: 0;
             @include flex;
             gap: $nav-gap;
-    
-            a {
+
+            a,
+            .text-logo {
                 display: inline-block;
                 text-decoration: none;
                 position: relative;
-    
+
                 color: $white-darken;
-                
-                padding-block: calc(calc($nav-gap * 1.7)  / 2);
+
+                padding-block: calc(calc($nav-gap * 1.7) / 2);
                 @include mixins.poppins-semibold;
-    
+
                 transition: color 300ms ease-in-out;
-    
+
                 &:hover {
                     color: $white;
                 }
-    
+
                 &.active,
                 &:active {
                     color: $white;
-    
+
                     &::before {
                         content: "";
                         position: absolute;
                         top: 0;
-                    
+
                         background-color: $active-bar;
                         width: 100%;
                         height: 2px;
                         border-radius: .5rem;
                     }
                 }
-    
+
             }
         }
 
@@ -92,27 +162,50 @@ header {
         padding: 1rem;
     }
 
-    
+
+}
+
+
+.bg-sky {
+    background-image: url('/images/bgs/sky.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
 }
 
 
 
 .hero {
 
-    h1 {
-        padding-top: 10rem;
-        @include mixins.poppins-semibold;
-        font-size: 3rem;
-        line-height: 3.9rem;
-        color: $white;
+
+    div.hero_left {
+        h1 {
+            @include mixins.poppins-regular;
+            font-size: 3.25rem;
+            line-height: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 5vh;
+        }
+
+        .sub_text_header {
+            @include mixins.poppins-regular;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 2vh;
+        }
+
+        .sub_text {
+            font-family: Tahoma;
+            color: #fff;
+            font-weight: 100;
+        }
 
 
-        span {
-            display: inline-block;
-            line-height: 1.5rem;
-            color: $white-darken;
-            font-size: 1.2rem;
-            margin-block: 1.54rem;
+        button {
+            margin-top: 5vh;
         }
 
         @include mixins.sm {
@@ -122,10 +215,14 @@ header {
 
         @include mixins.md {
             width: 50%;
-            font-size: 3.8rem;
         }
 
+    }
 
+    div.hero_right {
+        background: rgba(20, 30, 0, .7);
+        display: flex;
+        border-left: 1px solid #fff
     }
 
     &_image {
@@ -142,11 +239,8 @@ header {
     .btn {
         @include mixins.poppins-medium;
         font-size: 1rem;
+        text-decoration: none;
 
-        &::after {
-            --arrow-size: 2.3rem;
-            --arrow-height: 27%;
-        }
     }
 
     @include mixins.md {
@@ -156,9 +250,6 @@ header {
         height: 80vh;
     }
 
-    
-
-    
 }
 
 .hero_client {
@@ -167,7 +258,7 @@ header {
     padding-block: 2rem 4rem;
 
     flex-direction: column;
-    
+
     @include mixins.md {
         flex-direction: row;
         align-items: center;
@@ -198,6 +289,7 @@ header {
         @include flex;
         width: fit-content;
         flex-wrap: wrap;
+
         li {
             display: inline-block;
 
@@ -260,14 +352,14 @@ header {
     }
 
     .info-cta {
-        
+
         @include mixins.md {
-            
+
             @include flex;
             align-items: center;
         }
 
-        & > div {
+        &>div {
             // @include flex;
             // background-color: red;
             @include flex;
@@ -275,7 +367,7 @@ header {
             justify-content: space-evenly;
             row-gap: 2rem;
 
-            
+
             @include mixins.sm {
                 margin-bottom: 3rem;
             }
@@ -296,8 +388,61 @@ header {
                         font-size: 2.25rem;
                     }
                 }
-                
+
             }
+        }
+    }
+}
+
+.cards {
+    margin-top: 4rem;
+}
+
+.float-right {
+    width: 70%;
+    position: relative;
+    // right: 4rem;
+
+    @include mixins.md {
+        right: 4rem;
+    }
+}
+
+.s-card {
+    overflow: hidden;
+
+    @include mixins.sm {
+        width: 100%;
+    }
+
+    &:nth-child(even) {
+        margin-block: 1rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.card {
+    width: 32rem;
+    max-width: 100%;
+    // height: 8.8rem;
+
+    background-color: $white;
+    padding: 2rem;
+
+    &-icon {
+        width: 2.95rem;
+    }
+
+    &-margin {
+        &-top {
+            margin-top: 1rem;
+        }
+
+        &-bottom {
+            margin-bottom: 1rem;
         }
     }
 }
@@ -306,12 +451,14 @@ header {
 
     @include mixins.md {
         @include flex;
-        column-gap:10rem;
+        column-gap: 10rem;
     }
+
     h3 {
         font-size: 1rem;
         @include mixins.poppins-semibold;
     }
+
     p {
         @include mixins.poppins-regular;
         font-size: .87rem;
@@ -321,47 +468,27 @@ header {
             margin-top: 2rem;
         }
     }
+}
 
-    .cards {
-        margin-top: 4rem;
+
+.l-card {
+    width: 25rem;
+
+    h3 {
+        margin-block: .7rem;
     }
-
-    .float-right {
-        width: 70%;
-        position: relative;
-        // right: 4rem;
-
-        @include mixins.md {
-            right: 4rem;
-        }
-    }
-
-    .card {
-        overflow: hidden;
-        @include mixins.sm {
-            width: 100%;
-        }
-
-        &:nth-child(even) {
-            margin-block: 1rem ;
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    
 }
 
 .services {
-        // @include mixins.sm {
-        //         display: none;
-        //     }
+
+    // @include mixins.sm {
+    //         display: none;
+    //     }
     button {
         margin-block: 3rem;
     }
 
-    
+
 
     .cards {
         // @include flex;
@@ -370,31 +497,26 @@ header {
         flex-direction: column;
 
         row-gap: 2rem;
+
         @include mixins.md {
             flex-direction: row;
-        }
-
-        .card {
-            width: 25rem;
-            h3 {
-                margin-block: .7rem;
-            }
         }
     }
 }
 
 .process {
-        // @include mixins.sm {
-        //         display: none;
-        //     }
+    // @include mixins.sm {
+    //         display: none;
+    //     }
     counter-reset: linkedcard;
+
     .cards-linked {
         @include flex;
 
         flex-direction: column;
         column-gap: 3rem;
         row-gap: 3rem;
-        
+
         @include mixins.md {
             flex-direction: row;
         }
@@ -402,8 +524,8 @@ header {
         .card {
             $border-color: $hero-bg-gray;
             $card-width: 26rem;
-            
-            padding:2rem 1.3rem;
+
+            padding: 2rem 1.3rem;
             border: 1px solid $border-color;
             position: relative;
 
@@ -438,7 +560,7 @@ header {
                 height: 0px;
 
                 border: .125rem solid $hero-bg-gray;
-                border-style:dashed;
+                border-style: dashed;
                 z-index: -1;
 
 
@@ -453,14 +575,16 @@ header {
 }
 
 .customers {
-    
+
     @include flex;
     flex-direction: column;
     row-gap: 4rem;
+
     @include mixins.md {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
         .half-length {
             width: 40%;
         }
@@ -469,6 +593,7 @@ header {
     .section-h3 {
         margin-block: 1.125rem;
     }
+
     .section-h4 {
         @include mixins.poppins-semibold;
     }
@@ -530,6 +655,7 @@ header {
             background-size: contain;
             background-position: center;
         }
+
         .slide-controllers {
 
             text-align: center;
@@ -545,12 +671,12 @@ header {
                 display: inline-block;
                 width: $btn-size;
                 height: $btn-size;
-                
+
                 cursor: pointer;
                 border: 0;
                 border-radius: 50%;
                 background-color: $hero-bg;
-                
+
                 &:not([data-active="true"]) {
                     opacity: .2;
                 }
@@ -567,7 +693,7 @@ header {
         align-items: center;
         gap: 1rem;
         margin-top: 2rem;
-        
+
 
         b {
             @include mixins.poppins-semibold;
@@ -578,7 +704,7 @@ header {
         .customer-img {
             --customer-img: 2.4rem;
         }
-        
+
         span:not(.customer-img) {
             @include mixins.poppins-medium;
             font-size: .875rem;
@@ -605,9 +731,10 @@ header {
 
 
 .blogs {
-        // @include mixins.sm {
-        //         display: none;
-        //     }
+
+    // @include mixins.sm {
+    //         display: none;
+    //     }
     .blog-highlights {
         @include flex;
         // gap: 2rem;
@@ -616,7 +743,7 @@ header {
         @include mixins.md {
             flex-direction: row;
         }
-        
+
         justify-content: space-between;
         gap: 2rem;
 
@@ -628,19 +755,21 @@ header {
             @include mixins.md {
                 flex-direction: row;
             }
+
             // width: 38rem;
             .feature-img {
                 width: 18rem;
                 // height: 15.5rem;
-                
+
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
             }
-            
+
             .details {
                 width: 20rem;
                 padding: 2rem;
+
                 span {
                     @include mixins.poppins-medium;
                     display: block;
@@ -664,9 +793,9 @@ header {
 
 
 .newsletter {
-        // @include mixins.sm {
-        //         display: none;
-        //     }
+    // @include mixins.sm {
+    //         display: none;
+    //     }
     @include flex;
     flex-direction: column;
     column-gap: 5rem;
@@ -691,11 +820,12 @@ header {
     h1 {
         color: $white;
     }
+
     .section-header {
         margin-bottom: 1rem;
-        
+
     }
-    
+
     .section-h1 {
         font-size: 1.5rem;
 
@@ -703,9 +833,10 @@ header {
             font-size: 2.25rem;
             width: 90%;
         }
-    }    
+    }
+
     .newsletter-input {
-        
+
         background-color: $white;
 
         @include mixins.md {
@@ -731,12 +862,12 @@ header {
 }
 
 .footer-top {
-        // @include mixins.sm {
-        //         display: none;
-        //     }
+    // @include mixins.sm {
+    //         display: none;
+    //     }
     @include flex;
     flex-direction: column;
-    
+
     @include mixins.md {
         flex-direction: row;
         justify-content: space-between;
@@ -746,11 +877,12 @@ header {
 
     .section-h1 {
         // background-color: red;
-        
+
         @include mixins.md {
             width: 65%;
         }
     }
+
     .section-h3 {
         margin-block: 2rem;
         font-size: 1.5rem;
@@ -778,7 +910,7 @@ header {
         flex-direction: column;
         row-gap: 2rem;
 
-        
+
         @include mixins.sm {
             margin-top: 3rem;
         }
@@ -789,17 +921,18 @@ header {
             justify-content: space-between;
         }
 
-        
+
         ul {
             list-style: none;
             padding: 0;
 
-            li{
-                
+            li {
+
                 margin-block: .55rem;
+
                 &:first-of-type {
                     margin-top: 0;
-                    
+
                     a {
                         @include mixins.poppins-semibold;
                     }
@@ -807,7 +940,7 @@ header {
             }
 
             &:first-of-type {
-                
+
                 a {
                     @include mixins.poppins-semibold;
                 }
@@ -847,6 +980,7 @@ header {
             margin-left: 2rem;
         }
     }
+
     ul {
         @include flex;
         // margin-left: auto;
@@ -858,7 +992,7 @@ header {
             margin-left: auto;
         }
 
-        li a{
+        li a {
             display: inline-block;
             $icon-size: 2.4rem;
 

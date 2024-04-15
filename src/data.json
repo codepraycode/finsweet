@@ -39,8 +39,8 @@
         }
     },
     "hero": {
-        "mainText": "Transform Your Idea Into Reality with Finsweet",
-        "subText": "The entire Finsweet team knows what's good with Webflow and you can too with 1 week and a good attitude.",
+        "mainText": "Your gateway to exceptional aviation services.",
+        "subText": "Welcome to DonManuel Group, your gateway to exceptional aviation services. As a household name with subsidiaries like DonManuel Concept Ltd and DonBryan Logistics Ltd, we are dedicated to providing service without boundaries. Our vision is to be the leading hub in aviation services, driven by customer feedback and timely solutions",
         "image": {
             "url": "/images/hero_Image.png",
             "alt": "Hero image",
@@ -94,7 +94,6 @@
         "subTitle1": "The company leads entire webdesign process from concept to delivery.",
         "subTitle2": "The Era Of Technology.",
         "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded.",
-
         "featuredImages": [
             {
                 "url": "/images/about-us/img-1.png",
@@ -238,7 +237,6 @@
         "title": "Our Process",
         "main": "The process we are working With Our client Worldwide",
         "paragraph": "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable.",
-
         "milestones": [
             [
                 {
@@ -390,7 +388,6 @@
                 "review": null,
                 "company": null
             }
-            
         ]
     },
     "blogHighlight": {
@@ -439,7 +436,7 @@
     "footer": {
         "main": "Let's make something special",
         "subTitle": "Let's talk! 🤙",
-        "contacts":[
+        "contacts": [
             "020 7993 2905",
             "hi@finsweet.com"
         ],

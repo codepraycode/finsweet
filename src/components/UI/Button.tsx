@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 
 interface ButtonProps {
@@ -10,19 +11,33 @@ interface ButtonProps {
 
 export default function Button(props: ButtonProps) {
 
-    const classNames =`btn ${props.className || ''}`.trim();
-
-    if (props.link) {
-        return (
-            <Link href={props.link} className={classNames}>
-                {props.label}
-            </Link>
-        )
-    }
+    const classNames = `btn ${props.className || ''}`.trim();
 
     return (
         <button className={classNames}>
-            {props.label}
+            <Link
+                href={props.link || '#'}
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                }}>
+                <div
+                    style={{
+                        marginRight: '10px',
+                        width: "120px",
+                        fontSize: "16px"
+                    }}>
+                    {props.label}
+                </div>
+                <Image
+                    style={{
+                        marginRight: '10px',
+                    }}
+                    src="/images/icons/arrow.svg"
+                    alt="Arrow right"
+                    width={35}
+                    height={20} />
+            </Link>
         </button>
     )
 }
