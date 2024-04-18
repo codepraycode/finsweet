@@ -1014,3 +1014,36 @@ header {
         }
     }
 }
+
+
+.hero_slide {
+
+
+    .slider_details {
+        padding: 2rem;
+
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+
+    
+    @include mixins.md {
+        display: flex;
+        height: 92vh;
+
+
+        & >div:first-of-type {
+            width: 60vw;
+        }
+        & >div:last-of-type {
+            width: 40vw;
+        }
+
+        .slider_details {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+    }
+}

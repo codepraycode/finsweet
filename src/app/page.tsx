@@ -1,5 +1,4 @@
 'use client'
-import { ClientsSection } from "@/components/ClientSection";
 import SlidingHero from "@/components/HeroSlider";
 import aviation from "@/nobox/initialData/aviation";
 import { AviationModel } from "@/nobox/structures";
@@ -31,13 +30,6 @@ export default function Home() {
     return (
         <main>
             <SlidingHero />
-            {/* <ClientsSection /> */}
-            {/*  <AboutSection />
-            <ExpertiseSection />
-            <ServicesSection />
-            <ProcessSection />
-            <CustomerSection />
-            <BlogSection /> */}
         </main>
     );
 }

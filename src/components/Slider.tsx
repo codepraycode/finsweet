@@ -48,13 +48,8 @@ export default function Slider() {
     }
 
     return (
-        <div style={{
-            display: "flex",
-            height: "92vh",
-        }}>
-            <div style={{
-                width: "60vw"
-            }}>
+        <div className='hero_slide'>
+            <div>
                 <div className="container-slider">
                     {dataSlider.map((obj, index) => {
                         return (
@@ -80,6 +75,7 @@ export default function Slider() {
                     <div className="container-dots">
                         {Array.from({ length: dataSlider.length }).map((item, index) => (
                             <div
+                                key={index}
                                 onClick={() => moveDot(index + 1)}
                                 className={slideIndex === index + 1 ? "dot active" : "dot"}
                             ></div>
@@ -88,14 +84,10 @@ export default function Slider() {
                 </div>
 
             </div>
-            <div className="slider_details" style={{
-                width: "40vw",
-            }}>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "60%"
-                }}>
+
+
+            <div className="slider_details">
+                <div>
                     <h2 style={{
                         fontWeight: "bolder",
                         textAlign: "center"
