@@ -1079,3 +1079,12 @@ header {
         }
     }
 }
+
+.btn-slides {
+    @include mixins.sm {
+        background-color: red !important;
+        position: relative;
+
+        top: 80%;
+    }
+}

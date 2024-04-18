@@ -67,7 +67,7 @@ export default function Slider() {
                         )
                     })}
 
-                    <div >
+                    <div className='btn-slides'>
                         <BtnSlider moveSlide={nextSlide} direction={"next"} />
                         <BtnSlider moveSlide={prevSlide} direction={"prev"} />
                     </div>
