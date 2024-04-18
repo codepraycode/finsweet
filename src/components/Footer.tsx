@@ -1,7 +1,6 @@
 import Link from "next/link"
-import NewsLetter from "./NewsLetter"
-import siteData from "@/data.json";
-import Logo from "./UI/Logo";
+import siteData from "@/data/common.json";
+
 import Section from "./UI/Section";
 
 const {footer} = siteData;
@@ -16,23 +15,20 @@ const FooterDetails = () => {
                     {footer.main}
                 </h1>
 
+                
                 <p className="section-h3 d-block">
-                    {footer.subTitle}
+                    {footer.subTitle}:
+                    <br/>
+                    {footer.subsidiaries.join(", ")}
                 </p>
 
 
-                <p className="contact">
-                    {
-                        footer.contacts.map((item, i) => (
-                            <span
-                                key={i}
-                                className="d-block"
-                            >
-                                {item}
-                            </span>
-                        ))
-                    }
+                <p className="p d-block">
+                    Registration Number: {footer.registrationNo}
+                    <br/>
+                    Moto: {footer.motto}
                 </p>
+
                 <hr />
                 <p className="address">
                     {footer.address}
@@ -40,27 +36,38 @@ const FooterDetails = () => {
             </div>
 
 
-            <nav>
-                {
-                    footer.links.map((links, i) => (
-                        <ul key={i}>
-                            {
-                                links.map((item, i) => (
-                                    <li key={i}>
-                                        <Link
-                                            href={item.url}
-                                            className={`${item.active} ? 'active':''`}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    ))
-                }
-            </nav>
-            
+            <div className="info">
+
+                <p className="copyright">
+                    {footer.copyright}
+                </p>
+                <br/>
+                <p className="copyright">
+                    Contacts: {footer.contacts.phone.join(", ")}
+                </p>
+                <br/>
+                <p className="copyright">
+                    Email: {footer.contacts.email}
+                </p>
+                <br/>
+                <ul role="list" className="socials">
+                    {
+                        footer.socials.map((item, i)=>(
+                            <li key={i}>
+                                <Link
+                                    href={"/"}
+                                    style={{
+                                        backgroundImage:`url(${item.icon.url})`
+                                    }}
+                                >
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+            </div>
         </div>
     )
 }
@@ -73,44 +80,11 @@ const FooterSection = () => {
                 name="footer"
             >
 
-                <NewsLetter />
-                <br/><br/><br/><br/>
+                {/* <NewsLetter />
+                <br/><br/><br/><br/> */}
                 
                 <FooterDetails />
             </Section>
-
-            <footer className="bg-orange">
-                {/* <h1>Footer us Section</h1> */}
-
-                    <div className="container footer-bottom">
-
-                        <Logo negative/>
-
-                        <span className="copyright">
-                            {footer.copyright}
-                        </span>
-
-
-                        <ul role="list" className="socials">
-                            {
-                                footer.socials.map((item, i)=>(
-                                    <li key={i}>
-                                        <Link
-                                            href={"/"}
-                                            style={{
-                                                backgroundImage:`url(${item.icon.url})`
-                                            }}
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-
-                    </div>
-                
-            </footer>
         </>
     )
 }

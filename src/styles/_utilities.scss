@@ -101,6 +101,9 @@
     &--blue::before {
         background-color: $box-cap-blue;
     }
+    &--orange::before {
+        background-color: $box-cap-orange;
+    }
 }
 
 
@@ -112,18 +115,17 @@
     margin-inline: auto;
 
     &--padded {
-        padding-block: 7rem;
+        padding-block: 3rem 7rem;
     }
 
     &--outer-space {
         margin-block: 7rem;
     }
+}
 
-    // @include mixins.md {
-    //     display: none;
-        
-    
-    // }
+
+.border-radius {
+    border-radius: .3rem;
 }
 
 
@@ -133,6 +135,9 @@
     }
     &-blue-accent {
         background-color: $blue-accent;
+    }
+    &-gray {
+        background-color: $bg-grey;
     }
     &-orange {
         background-color: $active-bg;
@@ -161,6 +166,17 @@
     &-uppercase {
         text-transform: uppercase;
     }
+    &-center {
+        text-align: center;
+        // background-color: red;
+    }
+    &-gray {
+        color: $gray;
+    }
+}
+
+.w-full {
+    width: 100%;
 }
 
 
@@ -381,5 +397,37 @@ article.card {
         &-bottom {
             margin-bottom: 1rem;
         }
+    }
+}
+
+
+.form-input {
+
+    background-color: var(--input-background, #fff);
+
+    transition: background-color 200ms ease;
+
+    input {
+        width: 100%;
+        padding-block: 1.2rem;
+        padding-inline: 1.4rem .5rem;
+
+        size: 1rem;
+        @include mixins.poppins-medium;
+        background-color: transparent;
+
+        border: 0;
+
+        outline-color: $white-darken;
+
+        outline: 0;
+
+
+
+        
+        // &:hover,
+        // &:not(:placeholder-shown) {
+        //     outline-width: 1px;
+        // }
     }
 }
