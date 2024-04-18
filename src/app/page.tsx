@@ -1,16 +1,9 @@
 'use client'
-import AboutSection from "@/components/About";
-import BlogSection from "@/components/BlogSection";
 import { ClientsSection } from "@/components/ClientSection";
-import CustomerSection from "@/components/Customers";
-import ExpertiseSection from "@/components/Expertise";
-import HeroSection from "@/components/Hero";
-import ProcessSection from "@/components/Process";
-import ServicesSection from "@/components/Services";
+import SlidingHero from "@/components/HeroSlider";
 import aviation from "@/nobox/initialData/aviation";
 import { AviationModel } from "@/nobox/structures";
 import { useEffect } from "react";
-
 
 export default function Home() {
 
@@ -19,32 +12,32 @@ export default function Home() {
             const { name } = aviation[i];
             const exist = await AviationModel.findOne({ name });
 
-            console.log({ exist })
+            // console.log({ exist })
 
             if (!exist) {
                 await AviationModel.insertOne(aviation[i]);
-                console.log({ message: name + " airline inserted" })
+                // console.log({ message: name + " airline inserted" })
             }
         }
     }
 
     useEffect(() => {
         populate().then(() => {
-            console.log({ message: "airlines populated" })
+            // console.log({ message: "airlines populated" })
         })
     }, []);
 
 
     return (
         <main>
-            <HeroSection />
-            <ClientsSection />
-            <AboutSection />
+            <SlidingHero />
+            {/* <ClientsSection /> */}
+            {/*  <AboutSection />
             <ExpertiseSection />
             <ServicesSection />
             <ProcessSection />
             <CustomerSection />
-            <BlogSection />
+            <BlogSection /> */}
         </main>
     );
 }

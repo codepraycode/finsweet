@@ -16,7 +16,7 @@ function Header() {
                     links={header.nav}
                     cta={
                         <Button
-                            label='Clone project'
+                            label={header.cta.label}
                             link={header.cta.link}
                             className={header.cta.className}
                         />

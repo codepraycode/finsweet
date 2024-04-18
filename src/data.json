@@ -7,33 +7,13 @@
                 "label": "Home"
             },
             {
-                "url": "/services",
+                "url": "/about-us",
                 "active": false,
-                "label": "Services"
-            },
-            {
-                "url": "/company",
-                "active": false,
-                "label": "Company"
-            },
-            {
-                "url": "/career",
-                "active": false,
-                "label": "Career"
-            },
-            {
-                "url": "/blog",
-                "active": false,
-                "label": "Blog"
-            },
-            {
-                "url": "/contact-us",
-                "active": false,
-                "label": "Contact Us"
+                "label": "About Us"
             }
         ],
         "cta": {
-            "label": "Clone project",
+            "label": "Buy The Book",
             "link": null,
             "className": "btn-transparent btn-with-arrow text-active"
         }
@@ -306,7 +286,7 @@
     },
     "customers": {
         "main": "The process we are working With Our client Worldwide",
-        "subTitle": "Transform your idea into reality with finsweet",
+        "subTitle": "Transform your idea into reality with donmanuel",
         "paragraph": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "highlights": {
             "label": "30+ Customer Reviews",
@@ -364,7 +344,7 @@
                     "height": 50
                 },
                 "fullname": "Johnny Andro",
-                "review": "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
+                "review": "donmanuel has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!",
                 "company": {
                     "name": "Logo Ipsum",
                     "position": "Director, Company",
@@ -438,7 +418,7 @@
         "subTitle": "Let's talk! 🤙",
         "contacts": [
             "020 7993 2905",
-            "hi@finsweet.com"
+            "hi@donmanuel.com"
         ],
         "address": "DLF Cybercity, Bhubaneswar,\nIndia, &52050",
         "links": [
@@ -546,11 +526,11 @@
         },
         "logo": {
             "url": "/images/logo-negative.svg",
-            "alt": "Finsweet",
+            "alt": "donmanuel",
             "width": 50,
             "height": 50
         },
-        "copyright": "©2021 Finsweet",
+        "copyright": "©2021 DonManuel",
         "socials": [
             {
                 "name": "Facebook",

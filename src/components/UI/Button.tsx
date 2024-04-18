@@ -6,7 +6,7 @@ import Image from 'next/image'
 interface ButtonProps {
     label: string,
     link?: string | null,
-    className: string
+    className: string,
 }
 
 export default function Button(props: ButtonProps) {
@@ -33,7 +33,7 @@ export default function Button(props: ButtonProps) {
                     style={{
                         marginRight: '10px',
                     }}
-                    src="/images/icons/arrow.svg"
+                    src="/images/icons/arrow-point-right.svg"
                     alt="Arrow right"
                     width={35}
                     height={20} />

@@ -3,8 +3,9 @@ import NewsLetter from "./NewsLetter"
 import siteData from "@/data.json";
 import Logo from "./UI/Logo";
 import Section from "./UI/Section";
+import Image from "next/image";
 
-const {footer} = siteData;
+const { footer } = siteData;
 
 
 const FooterDetails = () => {
@@ -60,7 +61,7 @@ const FooterDetails = () => {
                     ))
                 }
             </nav>
-            
+
         </div>
     )
 }
@@ -68,49 +69,32 @@ const FooterDetails = () => {
 const FooterSection = () => {
     return (
         <>
-            <Section 
-                padded
-                name="footer"
-            >
+            <footer>
+                <div className="container footer-bottom">
+                    {footer.copyright}
+                    <div className="socials" style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
 
-                <NewsLetter />
-                <br/><br/><br/><br/>
-                
-                <FooterDetails />
-            </Section>
+                    }}>
+                        <Image alt="Address" src="/images/icons/file-write.svg" width={30} height={30} />
+                        <span>
+                            Behind NCAA head office , Airside, N.A.I.A ABUJA AIRPORT
+                        </span>
 
-            <footer className="bg-orange">
-                {/* <h1>Footer us Section</h1> */}
-
-                    <div className="container footer-bottom">
-
-                        <Logo negative/>
-
-                        <span className="copyright">
-                            {footer.copyright}
+                        <Image alt="Address" src="/images/icons/contact.svg" width={30} height={30} />
+                        <span>
+                            <a href="tel:+2347068886283">+2347068886283</a>&nbsp;,&nbsp;
+                            <a href="tel:+2348094906968">+2348094906968</a>
                         </span>
 
 
-                        <ul role="list" className="socials">
-                            {
-                                footer.socials.map((item, i)=>(
-                                    <li key={i}>
-                                        <Link
-                                            href={"/"}
-                                            style={{
-                                                backgroundImage:`url(${item.icon.url})`
-                                            }}
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-
                     </div>
-                
-            </footer>
+
+                </div>
+
+            </footer >
         </>
     )
 }

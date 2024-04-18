@@ -8,8 +8,10 @@ type Route = {
 export interface Aviation {
     logo?: string,
     name: string,
+    slug: string,
     company_name: string,
     details: string,
+    searchDump?: string,
     routes: Route[],
     link: string,
     fleet_size?: number | string,
@@ -26,6 +28,11 @@ export const AviationStructure: Space<Aviation> = {
             description: "Company's logo",
             type: String,
             required: false
+        },
+        slug: {
+            description: "Company's slug",
+            type: String,
+            required: true
         },
         name: {
             description: "Company's regular name",
@@ -68,6 +75,11 @@ export const AviationStructure: Space<Aviation> = {
             description: "Company's base",
             type: String,
         },
+        searchDump: {
+            description: "Field to improve search",
+            comment: "just add all keywords to it",
+            type: String,
+        }
     }
 }
 

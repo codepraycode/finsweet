@@ -42,7 +42,7 @@ const LeftHero = () => {
 
 const RightHero = () => {
     return (
-        <div className="hero_image">
+        <div className="hero_right">
             <div style={{
                 height: "100%",
                 padding: "1% 1%",
@@ -58,14 +58,10 @@ const RightHero = () => {
 
 const HeroSection = () => {
     return (
-        <div>
-            <section>
-                <div className="hero bg-sky">
-                    <LeftHero />
-                    <RightHero />
-                </div>
-            </section >
-        </div >
+        <div className="hero bg-sky">
+            <LeftHero />
+            <RightHero />
+        </div>
 
     )
 }
