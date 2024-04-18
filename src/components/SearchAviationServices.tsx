@@ -30,6 +30,7 @@ export const SearchAviationServices = () => {
         } else {
             getAll()
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchQuery]);
 
     return (

@@ -4,7 +4,7 @@ import { Aviation, AviationModel } from "@/nobox/structures";
 import { ReturnObject } from "nobox-client";
 import { useEffect, useState } from "react";
 import { RouteCard } from "@/components/UI/RouteCard";
-import Aviation from "./page";
+// import AviationPage from "./page";
 
 
 const AviationService = ({ params }: { params: { slug: string } }) => {
@@ -52,7 +52,7 @@ const Details = (props: { data: ReturnObject<Aviation> }) => {
     return (
         <>
             <div>
-                <image href={data?.logo} width={100} length={100} />
+                <image href={data?.logo} width={100} height={100} />
                 <h1 className="section-h1">
                     {data?.name}
                 </h1>
