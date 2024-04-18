@@ -9,12 +9,12 @@ const LeftHero = () => {
         container: React.CSSProperties
     } = {
         container: {
-            marginInline: "auto",
-            width: "550px",
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            // marginInline: "auto",
+            // width: "550px",
+            // display: 'flex',
+            // flexDirection: 'column',
+            // alignItems: 'center',
+            // justifyContent: 'center',
         }
     }
     return (
