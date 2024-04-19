@@ -132,8 +132,9 @@ header {
                 position: relative;
 
                 // color: $white-darken;
+                font-size: 1rem !important;
 
-                padding-block: calc(calc($nav-gap * 1.7) / 2);
+                padding-block: calc(calc($nav-gap * 1.7) / 2) !important;
                 @include mixins.poppins-semibold;
 
                 transition: color 300ms ease-in-out;
@@ -230,11 +231,13 @@ header {
 
                         // display: block;
                         width: 100vw !important;
-                        padding: 0;
+                        padding: 0 !important;
 
                         text-align: start;
 
                         padding-left: 2rem !important;
+
+                        font-size: 1.5rem !important;
 
                         // color: $hero-bg;
                         @include mixins.poppins-semibold;
