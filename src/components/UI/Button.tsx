@@ -27,7 +27,7 @@ export default function Button(props: ButtonProps) {
                     style={{
                         marginRight: '10px',
                         width: "120px",
-                        fontSize: "16px"
+                        // fontSize: "16px"
                     }}>
                     {props.label}
                 </div>

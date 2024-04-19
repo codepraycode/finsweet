@@ -126,13 +126,12 @@ header {
             @include flex;
             gap: $nav-gap;
 
-            a,
-            .text-logo {
+            a{
                 display: inline-block;
                 text-decoration: none;
                 position: relative;
 
-                color: $white-darken;
+                // color: $white-darken;
 
                 padding-block: calc(calc($nav-gap * 1.7) / 2);
                 @include mixins.poppins-semibold;
@@ -145,7 +144,7 @@ header {
 
                 &.active,
                 &:active {
-                    color: $white;
+                    // color: $white;
 
                     &::before {
                         content: "";
@@ -229,23 +228,23 @@ header {
 
                     a {
 
-                        display: block;
+                        // display: block;
                         width: 100vw !important;
-                        padding: .4rem 0;
+                        padding: 0;
 
-                        text-align: end;
+                        text-align: start;
 
-                        padding-right: 2rem !important;
+                        padding-left: 2rem !important;
 
                         // color: $hero-bg;
                         @include mixins.poppins-semibold;
-                        font-size: 1.4rem;
+                        // font-size: 1.4rem;
 
                         &::before {
                             background-color: $active-bg;
                             top: 100%;
                             // right: 1.5rem;
-                            right: 0;
+                            left: 0;
 
                             height: 1px;
                             width: 50%;
@@ -258,8 +257,13 @@ header {
                     z-index: 1;
 
                     width: fit-content;
-                    margin-left: auto;
+                    margin-right: auto;
                     padding-top: 2rem;
+                    margin-left: 1.4rem;
+
+                    // a {
+                    //     font-size: 1.3rem !important;
+                    // }
                 }
             }
 

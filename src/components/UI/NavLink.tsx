@@ -24,7 +24,7 @@ export default function NavLinks({ links, cta }: NavLinksProps ) {
                     <li key={i}>
                         <Link
                             href={item.url}
-                            className={`${item.active ? 'active' : ''}`}
+                            className={`${item.active ? 'active' : ''} text-logo`}
                         >
                             {item.label}
                         </Link>
