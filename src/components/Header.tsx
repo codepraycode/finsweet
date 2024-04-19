@@ -12,6 +12,12 @@ function Header() {
         <header className='bg-one'>
             <div className="container header-wrapper text-white">
                 <Logo />
+                 <label className="hambugger" htmlFor='menu-toggle'>
+                    <input type="checkbox"
+                        name="menu-toggle"
+                        id="menu-toggle"
+                    />
+                </label>
                 <NavLinks
                     links={header.nav}
                     cta={
@@ -22,12 +28,7 @@ function Header() {
                         />
                     }
                 />
-                <label className="hambugger" htmlFor='menu-toggle'>
-                    <input type="checkbox"
-                        name="menu-toggle"
-                        id="menu-toggle"
-                    />
-                </label>
+               
             </div>
         </header>
     )

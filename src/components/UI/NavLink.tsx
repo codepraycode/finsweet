@@ -17,6 +17,7 @@ interface NavLinksProps {
 export default function NavLinks({ links, cta }: NavLinksProps ) {
   return (
     <nav className="nav-wrapper">
+        
         <ul>
             {
                 links.map((item, i) => (
