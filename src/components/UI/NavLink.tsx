@@ -15,7 +15,6 @@ interface NavLinksProps {
     cta?: React.ReactNode
 }
 
-
 function isPathActive(urlPath: string, link: string) {
 
     if ((urlPath === '/') && (link !== '/') ) return false;

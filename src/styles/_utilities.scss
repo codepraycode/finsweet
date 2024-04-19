@@ -12,7 +12,7 @@
     $menu-animation-timing: 200ms ease;
 
     // Calculating for states
-    $menu-height: calc($menu-bar-height * 3  + $menu-gap * 2);
+    $menu-height: calc($menu-bar-height * 3 + $menu-gap * 2);
     $menu-x-width: calc($menu-height * 1.41421356);
 
 
@@ -25,10 +25,11 @@
         background-color: grey;
         border-radius: 5rem;
 
-        transition: opacity $menu-animation-timing, 
+        transition: opacity $menu-animation-timing,
             width $menu-animation-timing,
             rotate $menu-animation-timing,
-            translate $menu-animation-timing;;
+            translate $menu-animation-timing;
+        ;
 
         transform-origin: left center;
     }
@@ -74,6 +75,7 @@
             translate: 0 calc($menu-bar-height / -2);
             // translate: 0 0;
         }
+
         &::after {
             rotate: -45deg;
             width: $menu-x-width;
@@ -123,9 +125,6 @@
     }
 }
 
-
-.border-radius {
-    border-radius: .3rem;
 }
 
 
@@ -133,15 +132,14 @@
     &-hero {
         background-color: $hero-bg;
     }
+
     &-blue-accent {
         background-color: $blue-accent;
-    }
-    &-gray {
-        background-color: $bg-grey;
     }
     &-orange {
         background-color: $active-bg;
     }
+
     &-light-blue {
         background-color: $light-blue;
     }
@@ -152,6 +150,7 @@
     &-active {
         color: $active-text;
     }
+
     &-white {
         color: $white;
 
@@ -163,6 +162,7 @@
     &-capitalize {
         text-transform: capitalize !important;
     }
+
     &-uppercase {
         text-transform: uppercase;
     }
@@ -222,47 +222,14 @@
         border: 0;
 
         color: $white;
-        
-
         z-index: 0;
 
         padding-block: 1.2rem;
-        padding-inline: 2rem 4rem;
+        padding-inline: 1.5rem 0.2rem;
 
         font-size: .9rem !important;
 
         @include mixins.shape-on-edge;
-        &::after {
-            --arrow-height: 42% !important;
-            --arrow-distance: 8.95rem;
-        }
-    }
-
-    &-with-arrow {
-        position: relative;
-        width: fit-content;
-        // background-color: red;
-        &::after {
-            $arrow-size: var(--arrow-size, 2rem);
-
-            content: "";
-            position: absolute;
-            bottom: var(--arrow-height, 45%);
-            left: var(--arrow-distance, 5.8rem);
-            // left: 0;
-
-            width: $arrow-size;
-            height: calc($arrow-size / 4);
-            background-image: url('/images/icons/arrow.svg');
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            // background-color: red;
-        }
-
-        &.arrow-dark::after {
-            background-image: url('/images/icons/arrow-dark.svg');
-        }
     }
 }
 
@@ -281,13 +248,14 @@
         display: block;
         font-size: 2rem;
         line-height: 2.5rem;
-        
+
         @include mixins.md {
             font-size: 3rem;
             line-height: 3.6rem;
         }
-        
+
     }
+
     &-h2 {
         @include mixins.poppins-semibold;
         font-size: 1.8rem;
@@ -297,12 +265,14 @@
             font-size: 2.25rem;
         }
     }
+
     &-h3 {
         display: inline-block;
         @include mixins.poppins-medium;
         font-size: 1.25rem;
         margin-top: 1rem;
     }
+
     &-h4 {
         // display: inline-block;
         @include mixins.poppins-medium;
@@ -313,7 +283,7 @@
         display: inline-block;
         @include mixins.poppins-regular;
         font-size: 1rem;
-    
+
         margin-top: 1rem;
         color: $gray;
     }
@@ -338,6 +308,7 @@ a.nav-cta {
     // width: 60%;
 
     &--more {
+
         // width: 83%;
         @include mixins.md {
             width: 83%;
@@ -356,6 +327,7 @@ article.card {
         font-size: 1rem;
         @include mixins.poppins-semibold;
     }
+
     p {
         @include mixins.poppins-regular;
         font-size: .87rem;
@@ -370,64 +342,11 @@ article.card {
 }
 
 .float-left {
-    float: left;   
+    float: left;
 }
+
 .float-right {
     float: right;
     width: 80%;
     // background-color: red;
-}
-.card {
-    width: 32rem;
-    max-width: 100%;
-    // height: 8.8rem;
-
-    background-color: $white;
-    padding: 2rem;
-
-    &-icon {
-        width: 2.95rem;
-    }
-
-    &-margin {
-        &-top {
-            margin-top: 1rem;
-        }
-
-        &-bottom {
-            margin-bottom: 1rem;
-        }
-    }
-}
-
-
-.form-input {
-
-    background-color: var(--input-background, #fff);
-
-    transition: background-color 200ms ease;
-
-    input {
-        width: 100%;
-        padding-block: 1.2rem;
-        padding-inline: 1.4rem .5rem;
-
-        size: 1rem;
-        @include mixins.poppins-medium;
-        background-color: transparent;
-
-        border: 0;
-
-        outline-color: $white-darken;
-
-        outline: 0;
-
-
-
-        
-        // &:hover,
-        // &:not(:placeholder-shown) {
-        //     outline-width: 1px;
-        // }
-    }
 }

@@ -2,8 +2,9 @@ import Link from "next/link"
 import siteData from "@/data/common.json";
 
 import Section from "./UI/Section";
+import Image from "next/image";
 
-const {footer} = siteData;
+const { footer } = siteData;
 
 
 const FooterDetails = () => {
@@ -36,38 +37,27 @@ const FooterDetails = () => {
             </div>
 
 
-            <div className="info">
+            <nav>
+                {
+                    footer.links.map((links, i) => (
+                        <ul key={i}>
+                            {
+                                links.map((item, i) => (
+                                    <li key={i}>
+                                        <Link
+                                            href={item.url}
+                                            className={`${item.active} ? 'active':''`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    ))
+                }
+            </nav>
 
-                <p className="copyright">
-                    {footer.copyright}
-                </p>
-                <br/>
-                <p className="copyright">
-                    Contacts: {footer.contacts.phone.join(", ")}
-                </p>
-                <br/>
-                <p className="copyright">
-                    Email: {footer.contacts.email}
-                </p>
-                <br/>
-                <ul role="list" className="socials">
-                    {
-                        footer.socials.map((item, i)=>(
-                            <li key={i}>
-                                <Link
-                                    href={"/"}
-                                    style={{
-                                        backgroundImage:`url(${item.icon.url})`
-                                    }}
-                                >
-                                    {item.name}
-                                </Link>
-                            </li>
-                        ))
-                    }
-                </ul>
-
-            </div>
         </div>
     )
 }
@@ -75,16 +65,31 @@ const FooterDetails = () => {
 const FooterSection = () => {
     return (
         <>
-            <Section 
-                padded
-                name="footer"
-            >
+            <footer className="container footer-bottom">
+                <span className="copyright">
+                    {footer.copyright}
+                </span>
 
-                {/* <NewsLetter />
-                <br/><br/><br/><br/> */}
-                
-                <FooterDetails />
-            </Section>
+                <div className="contacts">
+                    <div>
+                        <Image alt="Address" src="/images/icons/file-write.svg" width={30} height={30} />
+                        <span>
+                            Behind NCAA head office , Airside, N.A.I.A ABUJA AIRPORT
+                        </span>
+                    </div>
+
+                    <div>
+
+                        <Image alt="Address" src="/images/icons/contact.svg" width={30} height={30} />
+                        <span>
+                            <a href="tel:+2347068886283">+2347068886283</a>&nbsp;,&nbsp;
+                            <a href="tel:+2348094906968">+2348094906968</a>
+                        </span>
+                    </div>
+
+
+                </div>
+            </footer >
         </>
     )
 }

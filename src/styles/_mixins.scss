@@ -18,7 +18,7 @@
     font-style: normal;
 }
 
-@mixin shape-on-edge($size: 1.75rem, $image:'/images/shapes-1.svg') {
+@mixin shape-on-edge($size: 1.75rem, $image: '/images/shapes-1.svg') {
     position: relative;
 
     &::before {

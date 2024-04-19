@@ -6,24 +6,21 @@ interface SectionProps {
     padded?: boolean,
     name: string,
     wrapperClassName?: string,
-    containerClassName?: string,
-    containerImage?: string
+    containerClassName?: string
+    style?: React.CSSProperties;
 }
 
 export default function Section(props: SectionProps) {
 
     let containerClassName =  "container " + props.containerClassName;
 
-    if (props.padded) containerClassName += " container--padded ";
-    
+    if (props.padded) containerClassName += "container--padded ";
+
     return (
-        <section className={`${props.name} ${props.wrapperClassName}`}>
-            <div
-                className={`${containerClassName}`.trim()}
-                style={!props.containerImage ? {} : {backgroundImage: `url(${props.containerImage})`}}
-            >
-                { props.children }
+        <section className={`${props.wrapperClassName}`} style={props.style || ({})}>
+            <div className={containerClassName.trim()}>
+                {props.children}
             </div>
-        </section>
+        </section >
     )
 }

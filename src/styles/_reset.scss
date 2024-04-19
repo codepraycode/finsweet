@@ -21,7 +21,7 @@ body {
 
 a {
     color: inherit;
-    // text-decoration: none;
+    text-decoration: none;
 }
 
 hr {
@@ -32,16 +32,11 @@ hr {
 }
 
 
-h1, h2, h3
-p {
+h1,
+h2,
+h3 p {
     margin: 0;
     padding: 0;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
 }
 
 ul[role="list"] {
