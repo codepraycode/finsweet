@@ -65,5 +65,5 @@ export default AdsSection;
 export async function getAdsData(): Promise<Ads[]> {
     const data = await AdsModel.find();
 
-    return data;
+    return data || [];
 }
