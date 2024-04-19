@@ -7,7 +7,7 @@ import { Book, BookModel } from "@/nobox/structures/book.structure";
 import Link from "next/link";
 
 
-export function slugify(text: string): string {
+function slugify(text: string): string {
     // Convert text to lowercase
     text = text.toLowerCase();
     // Remove non-word characters (excluding hyphens and spaces)
