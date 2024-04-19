@@ -12,7 +12,7 @@ interface SectionProps {
 
 export default function Section(props: SectionProps) {
 
-    let containerClassName =  "container " + props.containerClassName;
+    let containerClassName = props.name + " container ";
 
     if (props.padded) containerClassName += "container--padded ";
 

@@ -34,7 +34,7 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
                 name="book-banner"
                 padded
                 containerClassName="image-container"
-                containerImage={book.image.banner}
+                // containerImage={book.image.banner}
             >
                 <></>
             </Section>

@@ -103,6 +103,7 @@ header {
     .header-wrapper {
         @include flex;
     }
+
     position: sticky;
     top: -.2rem;
     z-index: 1;
@@ -117,7 +118,7 @@ header {
 
     nav {
         $nav-gap: 2rem;
-        
+
 
         ul {
             list-style: none;
@@ -164,7 +165,7 @@ header {
 
         @include mixins.md {
             // display: none;
-            
+
             margin-left: auto;
             @include flex;
             gap: $nav-gap;
@@ -207,24 +208,25 @@ header {
 
     @include mixins.sm {
         color: inherit;
-    
-        .hambugger:has(input:checked){
+
+        .hambugger:has(input:checked) {
 
             position: fixed;
-            
+
             &~.nav-wrapper {
                 // display: flex;
                 opacity: 1;
                 z-index: 1;
 
                 flex-direction: column;
-                
+
                 align-items: center !important;
                 width: 100%;
+
                 ul {
                     flex-direction: column;
                     gap: 1rem;
-                    
+
                     a {
 
                         display: block;
@@ -245,6 +247,7 @@ header {
                         }
                     }
                 }
+
                 .nav-cta {
                     // background-color: green;
                     z-index: 1;
@@ -254,7 +257,7 @@ header {
                     padding-top: 2rem;
                 }
             }
-    
+
         }
     }
 
@@ -484,6 +487,22 @@ header {
         @include mixins.md {
             width: 70%;
         }
+
+        input {
+            width: 100%;
+            padding-block: 1.2rem;
+            padding-inline: 1.4rem .5rem;
+
+            size: 1rem;
+            @include mixins.poppins-medium;
+            background-color: transparent;
+
+            border: 0;
+
+            outline-color: $white-darken;
+            // &:hover {
+            // }
+        }
     }
 }
 
@@ -508,12 +527,13 @@ header {
 
         @include mixins.md {
             margin-left: 2rem;
+
             &:after {
                 content: "|";
                 margin-inline: 1rem;
             }
         }
-        
+
 
     }
 
@@ -524,7 +544,7 @@ header {
         gap: 1rem;
 
 
-        & > div {
+        &>div {
             display: flex;
             align-items: center;
             margin-block: .5rem;
@@ -554,16 +574,17 @@ header {
         }
     }
 
-    
+
     @include mixins.md {
         display: flex;
         height: 92vh;
 
 
-        & >div:first-of-type {
+        &>div:first-of-type {
             width: 60vw;
         }
-        & >div:last-of-type {
+
+        &>div:last-of-type {
             width: 40vw;
         }
 

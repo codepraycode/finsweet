@@ -68,7 +68,6 @@
 
         // top: $menu-height;
         // background-color: red;
-        position: fixed;
         &::before {
             rotate: 45deg;
             width: $menu-x-width;
@@ -103,9 +102,6 @@
     &--blue::before {
         background-color: $box-cap-blue;
     }
-    &--orange::before {
-        background-color: $box-cap-orange;
-    }
 }
 
 
@@ -117,13 +113,12 @@
     margin-inline: auto;
 
     &--padded {
-        padding-block: 3rem 7rem;
+        padding-block: 7rem;
     }
 
     &--outer-space {
         margin-block: 7rem;
     }
-}
 
 }
 
@@ -136,6 +131,7 @@
     &-blue-accent {
         background-color: $blue-accent;
     }
+
     &-orange {
         background-color: $active-bg;
     }
@@ -166,17 +162,6 @@
     &-uppercase {
         text-transform: uppercase;
     }
-    &-center {
-        text-align: center;
-        // background-color: red;
-    }
-    &-gray {
-        color: $gray;
-    }
-}
-
-.w-full {
-    width: 100%;
 }
 
 

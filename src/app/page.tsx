@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-import AboutSection from "@/components/About";
-import AdsSection from "@/components/AdsSection";
-import CoreValuesSection from "@/components/CoreValuesSection";
-import FooterSection from "@/components/Footer";
-import HeroSection from "@/components/Hero";
-import Subsidiaries from "@/components/Subsidiaries";
-import Header from "@/components/Header";
-import SearchComponent from "@/components/SearchComponent";
-
-export default function Home() {
-
-    return (
-        <>
-            <Header />
-            <HeroSection />
-            <SearchComponent />
-            <AboutSection />
-            <CoreValuesSection />
-            <Subsidiaries />
-            <AdsSection />
-            <FooterSection />
-        </>
-=======
 'use client'
 import SlidingHero from "@/components/HeroSlider";
 import aviation from "@/nobox/initialData/aviation";
@@ -55,6 +31,5 @@ export default function Home() {
         <main>
             <SlidingHero />
         </main>
->>>>>>> cf89b5bd57485edf2c574df7bddb24718beb4cf1
     );
 }

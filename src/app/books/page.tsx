@@ -1,14 +1,6 @@
 import FooterSection from "@/components/Footer";
 import Header from "@/components/Header";
 import Section from "@/components/UI/Section";
-<<<<<<< HEAD
-import bookPage from "@/data/books.json";
-import { Book, BookModel } from "@/lib/nobox/structures/book.structure";
-import { slugify } from "@/utils";
-import Link from "next/link";
-
-
-=======
 import bookPage from "@/data/book.json";
 import { Book, BookModel } from "@/nobox/structures/book.structure";
 // import { slugify } from "@/utils";
@@ -27,17 +19,12 @@ function slugify(text: string): string {
     return text;
 }
 
->>>>>>> cf89b5bd57485edf2c574df7bddb24718beb4cf1
 
 const BookListItems = ({items}:{items: Book[]}) => {
     return (
         <div className="books-highlights">
             {
-<<<<<<< HEAD
-                items.length < 1 ? <h3 className="text-center text-gray w-full">No Book available for now</h3>: items.map((item, i) => {
-=======
                 items.length < 1 ? <h3 className="text-center text-gray w-full">Not available for now</h3>: items.map((item, i) => {
->>>>>>> cf89b5bd57485edf2c574df7bddb24718beb4cf1
 
                     const author = item.author;
 
@@ -84,11 +71,6 @@ const BooksPage = async () => {
 
     return (
         <>
-<<<<<<< HEAD
-            <Header />
-
-=======
->>>>>>> cf89b5bd57485edf2c574df7bddb24718beb4cf1
             <Section
                 name="books-hero"
                 padded
@@ -116,12 +98,6 @@ const BooksPage = async () => {
 
                 <BookListItems items={books}/>
             </Section>
-<<<<<<< HEAD
-
-
-            <FooterSection />
-=======
->>>>>>> cf89b5bd57485edf2c574df7bddb24718beb4cf1
         </>
     )
 };
@@ -133,9 +109,5 @@ const getData = async (): Promise<Book[]> => {
     // Fetch data from external API
     const books = await BookModel.find();
     // Pass data to the page via props
-<<<<<<< HEAD
-    return books;
-=======
     return books || [];
->>>>>>> cf89b5bd57485edf2c574df7bddb24718beb4cf1
 }
