@@ -199,9 +199,6 @@ header {
 
     @include mixins.sm {
         color: inherit;
-        // .nav-wrapper {
-        //     display: none;
-        // }
     
         .hambugger:has(input:checked){
 
@@ -211,6 +208,8 @@ header {
                 // display: flex;
                 opacity: 1;
                 z-index: 1;
+
+                flex-direction: column;
                 
                 ul {
                     flex-direction: column;
@@ -224,11 +223,16 @@ header {
                         font-size: 1.6rem;
                     }
                 }
+                .nav-cta {
+                    // background-color: green;
+                    z-index: 1;
+
+                    width: fit-content;
+                    margin-inline: auto;
+                    padding: 1rem 0;
+                }
             }
     
-            .nav-cta {
-                margin-inline: auto;
-            }
         }
     }
 

@@ -15,7 +15,7 @@
         "cta": {
             "label": "Buy The Book",
             "link": "/books",
-            "className": "btn-transparent btn-with-arrow text-active"
+            "className": "btn-transparent btn-with-arrow text-active nav-cta"
         }
     },
     "hero": {
