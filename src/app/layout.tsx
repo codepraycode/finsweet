@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import FooterSection from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "donmanuel",
-    description: "...",
+    title: "Donmanuel Group",
+    description: "Leading the Aviation Industry with Excellence",
 };
 
 export default function RootLayout({
