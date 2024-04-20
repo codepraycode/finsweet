@@ -69,6 +69,8 @@ const BookListItems = ({items}:{items: Book[]}) => {
 const BooksPage = async () => {
     const books = await getData();
 
+    console.log(books)
+
     return (
         <>
             <Section
@@ -109,5 +111,7 @@ const getData = async (): Promise<Book[]> => {
     // Fetch data from external API
     const books = await BookModel.find();
     // Pass data to the page via props
+
+    // console.log(books[0])
     return books || [];
 }

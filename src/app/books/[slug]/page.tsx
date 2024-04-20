@@ -23,9 +23,7 @@ const BookItemPage = async ({ params }: { params: { slug: string } }) => {
 
     return (
         <>
-            <Header />
-                <BookDetail item={book} baseUrl={baseUrl as string}/>
-            <FooterSection />
+            <BookDetail item={book} baseUrl={baseUrl as string}/>
         </>
     )
 }
