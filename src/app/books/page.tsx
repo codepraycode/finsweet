@@ -1,5 +1,4 @@
-import FooterSection from "@/components/Footer";
-import Header from "@/components/Header";
+
 import Section from "@/components/UI/Section";
 import bookPage from "@/data/book.json";
 import { Book, BookModel } from "@/nobox/structures/book.structure";
@@ -68,8 +67,6 @@ const BookListItems = ({items}:{items: Book[]}) => {
 
 const BooksPage = async () => {
     const books = await getData();
-
-    console.log(books)
 
     return (
         <>

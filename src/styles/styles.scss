@@ -885,3 +885,12 @@ header {
         color: $gray;
     }
 }
+
+.route-details {
+    @include mixins.md {
+        display: flex;
+        justify-content: space-evenly;
+
+        column-gap: 10rem;
+    }
+}

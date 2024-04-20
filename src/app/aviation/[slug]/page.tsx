@@ -50,7 +50,7 @@ const AviationService = ({ params }: { params: { slug: string } }) => {
 const Details = (props: { data: ReturnObject<Aviation> }) => {
     const { data } = props;
     return (
-        <>
+        <div className="route-details">
             <div>
                 <image href={data?.logo} width={100} height={100} />
                 <h1 className="section-h1">
@@ -127,6 +127,7 @@ const Details = (props: { data: ReturnObject<Aviation> }) => {
 
                 </div>
             </div>
+
             <div className="cards" >
                 <h1>Routes ({data?.routes.length})</h1>
                 <div style={{
@@ -153,7 +154,7 @@ const Details = (props: { data: ReturnObject<Aviation> }) => {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 
