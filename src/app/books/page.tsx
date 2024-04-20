@@ -33,7 +33,7 @@ const BookListItems = ({items}:{items: Book[]}) => {
 
                     <article className="book-highlight" key={i}>
 
-                        <Link href={`/books/${slugify(item.title)}`}>
+                        <Link href={`/books/${item.slug}`}>
                             <div
                                 className="feature-img"
                                 style={{backgroundImage:`url(${item.image.thumbmail})`}}
@@ -43,9 +43,11 @@ const BookListItems = ({items}:{items: Book[]}) => {
                                 <h1>{item.title}</h1>
 
                                 <p className="book-meta">
-                                    <span className="price">{item.price}</span>
+                                    <span className="price">
+                                        ₦ {new Intl.NumberFormat().format(item.price)}
+                                    </span>
                                     {/* <span className="rating star">{item.rating.rate}({item.rating.total})</span> */}
-                                    <span className="rating star">{item.date_released}</span>
+                                    <span className="rating">{item.date_released}</span>
                                 </p>
 
                                 <div className="attribution">
@@ -109,6 +111,5 @@ const getData = async (): Promise<Book[]> => {
     const books = await BookModel.find();
     // Pass data to the page via props
 
-    // console.log(books[0])
     return books || [];
 }

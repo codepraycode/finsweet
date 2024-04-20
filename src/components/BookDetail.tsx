@@ -34,7 +34,7 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
                 name="book-banner"
                 padded
                 containerClassName="image-container"
-                // containerImage={book.image.banner}
+                containerImage={book.image.banner}
             >
                 <></>
             </Section>
@@ -54,7 +54,9 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
 
                     <div>
                         <p className="book-meta">
-                            <span className="price">{book.price}</span>
+                            <span className="price">
+                                        ₦ {new Intl.NumberFormat().format(book.price)}
+                                    </span>
                             {/* <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span> */}
                             <span className="rating">{book.date_released}</span>
                         </p>

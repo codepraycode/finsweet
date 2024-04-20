@@ -39,22 +39,33 @@ export interface PayStackButtonProps {
     baseUrl: string
 }
 
-const sendMail = (email:string, subject:string, link:string) => {
-    fetch("/api/mail", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            mail_to: email,
-            subject,
-            link
+const sendMail = async (email:string, subject:string, link:string) => {
+
+    try {
+
+        const res = await fetch("/api/mail", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                mail_to: email,
+                subject,
+                link
+            })
         })
-    }).then((res)=>res.json())
-    .then(data=>console.log(data))
-    .catch((error)=>{
-        console.error(error);
-    })
+        
+        const data = await res.json();
+    
+    
+        if (data.error.cause) {
+            throw new Error(data.error.cause.message)
+        }
+    } catch(err) {
+        throw new Error("Could not send mail")
+    }
+
+
 }
 
 export default function PayStackButton(props: PayStackButtonProps) {
@@ -74,24 +85,28 @@ export default function PayStackButton(props: PayStackButtonProps) {
         setPaid(true);
 
 
-        PaymentModel.insertOne(payment)
-        .then(()=>{
-            // Send Mail
-            sendMail(payment.email, "Obtain your copy", url);
-        }).catch((error)=>{
-            console.error(error);
-        })
+        
+        try {
+            await PaymentModel.insertOne(payment)
+            await sendMail(payment.email, "Obtain your copy", url)
+        } catch(err: any) {
+
+            setError(()=>err.message);
+        }
 
         
     };
 
     const [email, setEmail] = useState("");
     const [paid, setPaid] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
 
     let template = <p className='paid-text'>A copy has been sent to your email</p>;
 
-    if (!paid) {
+    if (error) template = <p className='paid-text'>Anerror occured: {error} <br/> You can refresh and try again</p>;
+
+    else if (!paid) {
         template = (
             <>
                 <Input
