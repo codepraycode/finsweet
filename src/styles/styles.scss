@@ -621,10 +621,14 @@ header {
 // Books
 .books-highlights {
     @include flex;
-    flex-direction: column;
+    flex-direction: column;    
 
     @include mixins.md {
         flex-direction: row;
+    }
+
+    @include mixins.sm {
+        align-items: center;
     }
 
     // justify-content: space-evenly;
@@ -641,7 +645,7 @@ header {
 
         border-radius: $border-radius;
 
-        width: 20rem;
+        width: 23rem;
         max-width: 100%;
 
         a {
@@ -671,20 +675,20 @@ header {
             }
 
             .author-img {
-                $size: 4rem;
+                $size: 10rem;
 
 
                 display: inline-block;
 
                 width: $size;
-                height: $size;
+                height: calc($size / 2);
 
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
 
 
-                border-radius: 50%;
+                border-radius: 20%;
                 overflow: hidden;
 
                 img {
