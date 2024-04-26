@@ -3,6 +3,7 @@ import { Aviation, AviationModel } from "@/nobox/structures"
 import { useEffect, useState } from "react";
 import { ReturnObject } from "nobox-client";
 import { XLargeCard } from "./UI/XLargeCard";
+import { slugify } from "@/utils";
 
 export const SearchAviationServices = () => {
 
@@ -34,14 +35,37 @@ export const SearchAviationServices = () => {
     }, [searchQuery]);
 
     return (
-        <div>
-            <input
-                type="text"
-                placeholder="Search for Aviation Services"
-                className="pr-10 input rounded-l-full pl-8"
-                onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <ResultsView data={data} />
+        <div className="search-wrapper">
+
+
+            <form action="/aviation">
+
+
+                <div className="tags">
+                    <label className="tag-item" >
+                        <input type="radio" name="airline" id={slugify("Local Airlines")} value={slugify("Local Airlines")}/>
+                        <span>Local Airlines</span>
+                    </label>
+                    <label className="tag-item" >
+                        <input type="radio" value={slugify("International Airlines")} name="airline" id={slugify("International Airlines")} />
+                        <span>International Airlines</span>
+                    </label>
+                    <label className="tag-item" >
+                        <input type="radio" value={slugify("Private Jets")} name="airline" id={slugify("Private Jets")} />
+                        <span>Private Jets</span>
+                    </label>
+                </div>
+
+                <input
+                    type="text"
+                    name="query"
+                    placeholder="Search for aviation services"
+                    className="pr-10 input rounded-l-full pl-8"
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </form>
+
+            {/* <ResultsView data={data} /> */}
         </div>
     )
 }

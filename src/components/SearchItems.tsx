@@ -6,9 +6,10 @@ import { Aviation } from "@/lib/nobox/structures";
 
 export default function SearchItems({item}: {item: Aviation}) {
 
-    const breakPoint = 150;
+    const breakPoint = 150;    
 
-    const detail_text = item.detail.slice(1,breakPoint) + (item.detail.length > breakPoint ? "..." : '')
+
+    const detail_text = item.detail && item.detail.slice(1,breakPoint) + (item.detail.length > breakPoint ? "..." : '')
 
     return (
         <div className="search-item card">

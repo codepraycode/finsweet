@@ -10,30 +10,24 @@ import { Suspense } from "react";
 const SearchPageContent = () => {
     const params = useSearchParams()
     const query = params.get("query");
+    const airline = params.get("query");
 
     if (!query) return <p>Please enter a search query</p>;
 
 
-    return <SearchContent query={query} />
+    return <SearchContent query={query} airline={airline} />
 }
 
-const SearchPage = () => {
+const AviationPage = () => {
     
     return (
 
-        <>
-            <Header />
-            <br /><br />
-            
-            <Suspense fallback={<h3 className="text-center text-center w-full">Loading...</h3>}>
-                <SearchPageContent />
-            </Suspense>
-
-            <FooterSection />
-        </>
+        <Suspense fallback={<h3 className="text-center text-center w-full">Loading...</h3>}>
+            <SearchPageContent />
+        </Suspense>
 
     )
 }
 
 
-export default SearchPage;
+export default AviationPage;

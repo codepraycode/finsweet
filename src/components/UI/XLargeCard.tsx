@@ -1,3 +1,4 @@
+import { parseExternalLink } from "@/utils/parseUrl";
 import Image from "next/image";
 
 export const XLargeCard = ({ icon, title, description, pills, onClick }: {
@@ -9,7 +10,7 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
     },
     title: string;
     description: string;
-    pills?: {
+    pills: {
         label: string;
         value?: string;
         clickable?: boolean;
@@ -22,14 +23,12 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
     onClick: () => void;
 }) => {
     return <>
-        <article className="card l-card" onClick={onClick} style={{
-            cursor: "pointer",
-        }}>
+        <article className="card l-card airline-card" onClick={onClick}>
             <div className="card-icon">
                 <Image
-                    style={{
-                        border: "0px solid #fff",
-                    }}
+                    // style={{
+                    //     border: "0px solid #fff",
+                    // }}
                     src={icon.url}
                     alt={icon.alt}
                     width={icon.width}
@@ -39,30 +38,39 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
 
             <h3>{title}</h3>
 
-            <p>
-                {description}
-            </p>
-            {
-                pills ? (<p>
+            <div className="other-details">
 
-                    <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                    }}>
-                        {pills.map(pill => {
+                <p>
+                    {description || (
+                        <i>Description not available</i>
+                    )}
+                </p>
 
-                            const onClick = () => {
-                                if (pill.clickable) {
-                                    window.open("https://" + pill.value, '_blank');
+                
+                {
+                    (pills.length >= 1) && (
+                        <div className="pills">
+                            {pills.map(pill => {
+
+                                const onClick = (e: any) => {
+                                    e.preventDefault();
+
+                                    if (pill.clickable && Boolean(pill.value) && pill.value !== "/") {
+                                        // window.open("https://" + pill.value, '_blank');
+                                        const _url = parseExternalLink(pill.value!);
+
+                                        window.open(_url, '_blank');
+                                    }
                                 }
-                            }
 
-                            if (pill.clickable) {
 
                                 return (
-                                    <div
+                                    <a
                                         onClick={onClick}
+                                        // href={parseExternalLink(pill.value!)}
+                                        data-clickable={pill.clickable}
                                         key={pill.label}
+                                        className="pill"
                                         style={{
                                             borderRadius: '2px',
                                             color: "hsl(229, 38%, 23%)",
@@ -71,27 +79,13 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
                                             textDecoration: "underline",
                                             marginRight: '10px',
                                         }}
-                                    >{pill.label}: {pill.value}</div>
+                                    >{pill.label}: {pill.value}</a>
                                 )
-                            }
-
-                            return (
-                                <span
-                                    onClick={onClick}
-                                    key={pill.label}
-                                    style={{
-                                        borderRadius: '2px',
-                                        color: "hsl(229, 38%, 23%)",
-
-                                        padding: '3px 10px',
-                                        marginRight: '10px',
-                                    }}
-                                >{pill.label}: {pill.value}</span>
-                            )
-                        })}
-                    </div>
-                </p>) : <></>
-            }
+                            })}
+                        </div>
+                    )
+                }
+            </div>
         </article >
     </>
 }

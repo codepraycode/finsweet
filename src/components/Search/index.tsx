@@ -4,22 +4,52 @@ import SearchItems from "../SearchItems";
 import { useEffect, useState } from "react";
 import { Aviation, AviationModel } from "@/lib/nobox/structures";
 import { NoboxResponse } from "../../nobox-client";
+import AviationDetail from "../Aviation/AviationDetail";
 
-const SearchContent = ({ query }: any) => {
-    const [data, setData] = useState<(NoboxResponse<Aviation>)[]>([]);
+const SearchContent = ({ query, airline }: any) => {
+    const [data, setData] = useState<(NoboxResponse<Aviation>)[] | null>(null);
 
     useEffect(() => {
         (
             async () => {
                 const data = await AviationModel.search({ searchableFields: ["name", "detail", "routes"], searchText: query });
-                setData(data);
+
+                // if (!data) return;
+                setData(()=> data || []);
             }
         )()
     }, [query])
 
+    let template:React.ReactNode
+
+
+    if (data === null) {
+        
+        template = (
+            <h1 className="section-h3 text-center">Loading search...</h1>
+        )
+    }else if( data.length < 1) {
+        template = (
+            <h3 className="section-h3 text-center">No result for your search</h3>
+        )
+    } else (
+        template = (
+            <div className="search-item-list">
+
+                {
+                    data.map((item, i) => (
+
+                        <AviationDetail key={i} data={item} />
+                    ))
+                }
+            </div>
+        )
+    )
+
+
     return (
         <Section
-            name="search-list"
+            name="search-list bg-light-blue"
             padded
         >
             <h1 className="section-header">
@@ -31,16 +61,7 @@ const SearchContent = ({ query }: any) => {
 
             <br /><br />
 
-            {
-                data === null ? <h1 className="section-h3 text-center">Loading search...</h1> : <div className="search-item-list">
-
-                    {
-                        !data ? <h3>No rresult</h3> : data.map((item, i) => (
-
-                            <SearchItems key={i} item={item} />
-                        ))
-                    }
-                </div>}
+            { template }
         </Section>
     )
 }

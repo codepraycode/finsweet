@@ -438,15 +438,6 @@ header {
 }
 
 
-.l-card {
-    width: 25rem;
-
-    h3 {
-        margin-block: .7rem;
-    }
-}
-
-
 
 
 .newsletter {
@@ -905,5 +896,169 @@ header {
         justify-content: space-evenly;
 
         column-gap: 10rem;
+    }
+}
+
+
+
+.search-wrapper {
+    height: 12rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: relative;
+    top: 30%;
+    right: 7rem;
+
+
+    .tags {
+        margin-bottom: .9rem;
+        
+        display: flex;
+        gap: 1rem;
+        
+        .tag-item {
+            border: 1px solid $active-bg;
+
+            cursor: pointer;
+
+            color: $active-text;
+            display: inline-block;
+
+            padding: .6rem;
+            border-radius: .5rem;
+
+            font-size: .9rem;
+
+            input[type="radio"] {
+                width: 0;
+            }
+
+            &:has(input[type="radio"]:checked) {
+                background-color: $active-text;
+                color: $gray;
+            }
+        }
+    }
+
+    form {
+        display: block;
+        width: 90%;
+
+        input {
+            border: 1px solid $active-bg;
+            border-radius: .3rem;
+
+            color: $gray;
+
+            &::placeholder {
+                font-size: .9rem;
+                color: inherit;
+            }
+        }
+    }
+}
+
+.search-item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    // background-color: red;
+
+    & > *:nth-last-child(-n+1) {
+        /* Apply alignment to the left */
+        margin-right: auto;
+        margin-left: calc(1rem / 3);
+        // margin-bottom: 1rem;
+    }
+}
+
+
+.airline-card{
+    width: 27rem;
+    // height: 20rem;
+    overflow: hidden;
+
+    background-image: url("/images/plane-air.jpg");
+    background-position: 6rem center;
+    background-size: cover;
+
+    // filter: brightness(80%);
+
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
+    border-radius: .3rem;
+
+
+    position: relative;
+
+    z-index: 0;
+
+
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+
+        background-color: rgba(0, 0, 0, 0.582);
+
+        top: 0;
+        left: 0;
+
+        z-index: -1;
+    }
+
+
+    color: $light-blue;
+
+
+    .card-icon {
+        // background-color: red !important;
+        margin-bottom: auto;
+
+        width: 12rem;
+        // aspect-ratio: 1;
+
+        // margin-block: 2rem 4rem;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    h3 {
+        margin-block: 1.5rem .7rem;
+        font-size: 1.2rem !important;
+    }
+
+    p {
+        font-size: .9rem !important;
+    }
+
+
+    .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        margin-top: 1rem;
+
+        .pill {
+            text-decoration: none !important;
+            background-color: $active-text;
+
+            font-size: .8rem;
+        }
     }
 }
