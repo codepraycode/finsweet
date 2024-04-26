@@ -4,7 +4,7 @@ import { dataSlider } from '@/data/data-slider'
 import "../styles/slider.css"
 import Image from 'next/image'
 
-export default function Slider() {
+export default function IntroSlider() {
 
     const [slideIndex, setSlideIndex] = useState<number>(1)
 

@@ -1,6 +1,6 @@
 import data from '@/data.json';
-import Button from "./UI/Button";
-import { SearchAviationServices } from './SearchAviationServices';
+import Button from "../UI/Button";
+import { SearchAviationServices } from '../SearchAviationServices';
 
 const { hero } = data;
 
