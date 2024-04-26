@@ -1,31 +1,22 @@
-'use client'
-import FooterSection from "@/components/Footer";
-import Header from "@/components/Header";
 import SearchContent from "@/components/Search";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import SearchHeader from "@/components/Search/SearchHeader";
+import Section from "@/components/UI/Section";
 
-
-
-const SearchPageContent = () => {
-    const params = useSearchParams()
-    const query = params.get("query");
-    const airline = params.get("query");
-
-    if (!query) return <p>Please enter a search query</p>;
-
-
-    return <SearchContent query={query} airline={airline} />
-}
 
 const AviationPage = () => {
-    
+
     return (
+        <Section
+            name="search-list bg-light-blue"
+            padded
+        >
 
-        <Suspense fallback={<h3 className="text-center text-center w-full">Loading...</h3>}>
-            <SearchPageContent />
-        </Suspense>
+            <SearchHeader />
+            <br /><br />
+            <SearchContent />
 
+
+        </Section>
     )
 }
 

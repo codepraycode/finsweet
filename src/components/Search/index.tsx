@@ -1,17 +1,22 @@
-import Link from "next/link";
+'use client'
+
 import Section from "../UI/Section";
-import SearchItems from "../SearchItems";
 import { useEffect, useState } from "react";
 import { Aviation, AviationModel } from "@/lib/nobox/structures";
 import { NoboxResponse } from "../../nobox-client";
 import AviationDetail from "../Aviation/AviationDetail";
+import { useSearchParams } from "next/navigation";
 
-const SearchContent = ({ query, airline }: any) => {
+const SearchContent = () => {
+    const params = useSearchParams()
+    const query = params.get("query");
+    const airline = params.get("query");
     const [data, setData] = useState<(NoboxResponse<Aviation>)[] | null>(null);
 
     useEffect(() => {
         (
             async () => {
+                if (!query) return;
                 const data = await AviationModel.search({ searchableFields: ["name", "detail", "routes"], searchText: query });
 
                 // if (!data) return;
@@ -20,10 +25,15 @@ const SearchContent = ({ query, airline }: any) => {
         )()
     }, [query])
 
-    let template:React.ReactNode
+    let template:React.ReactNode;
 
+    if (!query) {
+        template = (
+            <h1 className="section-h3 text-center">Search aviation services</h1>
+        )
+    }
 
-    if (data === null) {
+    else if (data === null) {
         
         template = (
             <h1 className="section-h3 text-center">Loading search...</h1>
@@ -46,24 +56,7 @@ const SearchContent = ({ query, airline }: any) => {
         )
     )
 
-
-    return (
-        <Section
-            name="search-list bg-light-blue"
-            padded
-        >
-            <h1 className="section-header">
-                <Link href={"/"} replace className="go-back">Go Back</Link>
-                <br />
-                <br />
-                Search result for &#39;{query}&#39;
-            </h1>
-
-            <br /><br />
-
-            { template }
-        </Section>
-    )
+    return template;
 }
 
 export default SearchContent;
