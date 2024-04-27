@@ -73,7 +73,7 @@ export default function PayStackButton(props: PayStackButtonProps) {
 
     const pathname = usePathname();
 
-    const location = new URL(window.location.href);
+    const location = new URL(window?.location.href);
     
     const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
         const url = `${location.origin}${pathname}/?action=download&token=${reference.reference}`;
