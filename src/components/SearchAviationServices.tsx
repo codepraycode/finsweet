@@ -43,7 +43,7 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
 
     if (!props.indicate){}
-    else if (data.length <= 0){
+    else if (Boolean(data) && data.length <= 0){
         searchInicator = "No aviation service related to your search was found"
     } else {
         searchInicator = `Found ${data.length} aviation service${data.length > 1 ? 's': ''} related to your search`
@@ -76,14 +76,22 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
                     </label>
                 </div>
 
-                <input
-                    type="text"
-                    name="query"
-                    placeholder="Search for aviation services"
-                    className="pr-10 input rounded-l-full pl-8"
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    autoComplete="off"
-                />
+
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="query"
+                        placeholder="Search for aviation services"
+                        className="pr-10 input rounded-l-full pl-8"
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        autoComplete="off"
+                    />
+
+                    <button type="submit" className="btn btn-transparent btn-search">
+                        Search
+                    </button>
+                </div>
+
             </form>
 
             {props.indicate && (
