@@ -118,6 +118,7 @@ export default function PayStackButton(props: PayStackButtonProps) {
                         setEmail(val);
                     }}
                     onSubmit={()=>null}
+                    required
                 />
 
                 <PaystackButton

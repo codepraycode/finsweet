@@ -11,6 +11,7 @@ interface InputProps {
     onChange?: (val: any | undefined) => void,
     action?: string,
     name?: string,
+    required?: boolean
 }
 
 
@@ -38,6 +39,7 @@ export default function Input(cProps: InputProps) {
                     onChange={(e)=>{
                         if (onChange) onChange(e.target.value)
                     }}
+                required={props.required}
                 />
             </form>
         </div>

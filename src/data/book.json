@@ -1,153 +1,24 @@
 {
-    "title": "Our Books",
-    "header1": "Service Creed: Empowerment by Emmanuel Omonisaye",
-    "paragraph": "Discover the ethos that drives Donmanuel Group forward, encapsulated in the profound wisdom and visionary insights of Emmanuel Omonisaye. As you delve into the pages of \"Service Creed\", you'll embark on a transformative journey, guided by principles that shape not just businesses, but entire legacies.",
-    "bookItems": [
-        {
-            "id": 1,
-            "images": {
-                "thumbmail": {
-                    "url": "https://public-files.gumroad.com/qkbo8niet2hd431pkxqb46h20gp3",
-                    "alt": "A book",
-                    "width": 100,
-                    "height": 100
-                },
-                "banner": {
-                    "url": "https://i.pinimg.com/736x/e6/b4/6e/e6b46ec93bc346f02a6bf8b7f58c41cb.jpg",
-                    "alt": "A book",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "title": "Illustration",
-            "genre": [
-                "Art",
-                "Design",
-                "Illustration"
-            ],
-            "price": "15k",
-            "date": "January 8, 2023",
-            "synopsis": {
-                "summary": "Step into a world where imagination knows no bounds and creativity is boundless. In \"Illustration,\" acclaimed artist and author Rebecca Summers invites readers on a breathtaking journey through the captivating realm of visual storytelling.",
-                "details": {
-                    "highlights": [
-                        "From enchanting fairy tale landscapes to dynamic comic book adventures, \"Illustration\" showcases a diverse array of artistic styles and techniques, each one more mesmerizing than the last. With stunning full-color illustrations and insightful commentary, Summers delves deep into the creative process, offering readers a behind-the-scenes look at the art of illustration.",
-                        "Discover the secrets of character design, learn the fundamentals of composition and perspective, and unlock the power of color and light to bring your illustrations to life. Whether you're a seasoned artist looking to refine your skills or a budding illustrator seeking inspiration, \"Illustration\" is your ultimate guide to mastering the art of visual storytelling.",
-                        "Packed with practical tips, inspiring examples, and hands-on exercises, this indispensable resource is sure to ignite your imagination and unleash your creativity. So grab your pencils, pens, and brushes, and prepare to embark on an unforgettable artistic adventure. Let \"Illustration\" be your guide as you journey into the boundless realm of visual expression.",
-                        "\"Illustration\" is more than just a book—it's a celebration of the endless possibilities of the imagination and the transformative power of art. Dive into its pages and discover the magic of illustration today."
-                    ],
-                    "target_audience": "Seasoned artists and budding illustrators seeking inspiration and practical guidance."
-                }
-            },
-            "author": {
-                "name": "Andrew Jason",
-                "about": "CEO",
-                "image": {
-                    "url": "/images/authors/author-1.jpeg",
-                    "alt": "Author 1",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "rating": {
-                "total": 9,
-                "rate": 4.5,
-                "metric": [
-                    {
-                        "label": "5 stars",
-                        "value": 7
-                    },
-                    {
-                        "label": "4 stars",
-                        "value": 0
-                    },
-                    {
-                        "label": "3 stars",
-                        "value": 0
-                    },
-                    {
-                        "label": "2 stars",
-                        "value": 2
-                    },
-                    {
-                        "label": "1 stars",
-                        "value": 0
-                    }
-                ]
-            }
-        },
-        {
-            "id": 1,
-            "images": {
-                "thumbmail": {
-                    "url": "https://public-files.gumroad.com/qkbo8niet2hd431pkxqb46h20gp3",
-                    "alt": "A book",
-                    "width": 100,
-                    "height": 100
-                },
-                "banner": {
-                    "url": "https://i.pinimg.com/736x/e6/b4/6e/e6b46ec93bc346f02a6bf8b7f58c41cb.jpg",
-                    "alt": "A book",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "title": "Lilio Ogede",
-            "genre": [
-                "Art",
-                "Design",
-                "Illustration"
-            ],
-            "price": "15k",
-            "date": "January 8, 2023",
-            "synopsis": {
-                "summary": "Step into a world where imagination knows no bounds and creativity is boundless. In \"Illustration,\" acclaimed artist and author Rebecca Summers invites readers on a breathtaking journey through the captivating realm of visual storytelling.",
-                "details": {
-                    "highlights": [
-                        "From enchanting fairy tale landscapes to dynamic comic book adventures, \"Illustration\" showcases a diverse array of artistic styles and techniques, each one more mesmerizing than the last. With stunning full-color illustrations and insightful commentary, Summers delves deep into the creative process, offering readers a behind-the-scenes look at the art of illustration.",
-                        "Discover the secrets of character design, learn the fundamentals of composition and perspective, and unlock the power of color and light to bring your illustrations to life. Whether you're a seasoned artist looking to refine your skills or a budding illustrator seeking inspiration, \"Illustration\" is your ultimate guide to mastering the art of visual storytelling.",
-                        "Packed with practical tips, inspiring examples, and hands-on exercises, this indispensable resource is sure to ignite your imagination and unleash your creativity. So grab your pencils, pens, and brushes, and prepare to embark on an unforgettable artistic adventure. Let \"Illustration\" be your guide as you journey into the boundless realm of visual expression.",
-                        "\"Illustration\" is more than just a book—it's a celebration of the endless possibilities of the imagination and the transformative power of art. Dive into its pages and discover the magic of illustration today."
-                    ],
-                    "target_audience": "Seasoned artists and budding illustrators seeking inspiration and practical guidance."
-                }
-            },
-            "author": {
-                "name": "Andrew Jason",
-                "about": "CEO",
-                "image": {
-                    "url": "/images/authors/author-1.jpeg",
-                    "alt": "Author 1",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "rating": {
-                "total": 9,
-                "rate": 4.5,
-                "metric": [
-                    {
-                        "label": "5 stars",
-                        "value": 7
-                    },
-                    {
-                        "label": "4 stars",
-                        "value": 0
-                    },
-                    {
-                        "label": "3 stars",
-                        "value": 0
-                    },
-                    {
-                        "label": "2 stars",
-                        "value": 2
-                    },
-                    {
-                        "label": "1 stars",
-                        "value": 0
-                    }
-                ]
-            }
-        }
-    ]
+    "image": {
+        "thumbmail": "http://via.placeholder.com/512x512",
+        "banner": "http://via.placeholder.com/1200x400"
+    },
+    "title": "The Great Gatsby",
+    "slug": "the-great-gatsby",
+    "genre": [
+        "Fiction",
+        "Classic"
+    ],
+    "price": 12000.00,
+    "summary": [
+        "The story primarily concerns the young and mysterious millionaire Jay Gatsby...",
+        "Considered one of the greatest works in American literature."
+    ],
+    "date_released": "April 10, 1925",
+    "author": {
+        "name": "F. Scott Fitzgerald",
+        "about": "Francis Scott Key Fitzgerald was an American novelist, essayist, screenwriter, and short-story writer. He was best known for his novels depicting the flamboyance and excess of the Jazz Age...",
+        "image": "fitzgerald.jpg"
+    },
+    "downloadLink":"/books"
 }
