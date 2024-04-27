@@ -27,7 +27,7 @@ const AviationService = ({ params }: { params: { slug: string } }) => {
 
     return (
         <Section
-            wrapperClassName="bg-blue-accent"
+            wrapperClassName="bg-primary"
             name="expertise"
             padded
         >

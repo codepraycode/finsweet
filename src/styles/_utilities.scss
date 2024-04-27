@@ -84,26 +84,6 @@
 }
 
 
-.box-cap {
-    &::before {
-        content: "";
-        $box-size: 1.3rem;
-
-        display: block;
-
-        width: $box-size;
-        height: $box-size;
-
-        background-color: $box-cap-deep;
-        border-radius: .2rem;
-        margin-bottom: 1.1rem;
-    }
-
-    &--blue::before {
-        background-color: $box-cap-blue;
-    }
-}
-
 
 // Layout
 .container {
@@ -141,9 +121,12 @@
     }
 
     &-primary {
-        background-color: #0d0d0d;
+        // background-color: #0d0d0d;
+        @include mixins.primary-color-style;
     }
 }
+
+
 
 
 .text {
@@ -207,10 +190,12 @@
     }
 
     &-shape-bg {
-        background-color: $blue;
+        // color: $white;
+        // background-color: $blue;
+
+        @include mixins.primary-color-style;
         border: 0;
 
-        color: $white;
         z-index: 0;
 
         padding-block: 1.2rem;
@@ -274,7 +259,7 @@
         font-size: 1rem;
 
         margin-top: 1rem;
-        color: $gray;
+        // color: $gray;
     }
 }
 

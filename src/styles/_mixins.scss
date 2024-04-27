@@ -31,6 +31,8 @@
         background-image: url($image);
         background-repeat: no-repeat;
         background-size: contain;
+
+        filter: brightness(20%);
         top: 0;
         left: 0;
     }
@@ -45,5 +47,41 @@
 @mixin md() {
     @media screen and (min-width: $desktop-bp) {
         @content;
+    }
+}
+
+
+@mixin primary-color-style() {
+    background-image: $primary-color;
+    color: $light-blue;
+}
+
+@mixin blur-bg($image, $position-x: center, $position-y: center, $blur: 0.582) {
+    background-image: url($image);
+    background-position: $position-x $position-y;
+    background-size: cover;
+
+
+    position: relative;
+
+
+    // filter: brightness(80%);
+    z-index: 0;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+
+        background-color: rgba(0, 0, 0, $blur);
+
+        top: 0;
+        left: 0;
+
+        z-index: -1;
     }
 }

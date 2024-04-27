@@ -2,13 +2,16 @@
 import siteData from "@/data/common.json";
 
 import Image from "next/image";
+import Section from "./UI/Section";
 
 const { footer } = siteData;
 
 
 const FooterSection = () => {
     return (
-        <>
+        <Section
+            name="footer bg-primary"
+        >
             <footer className="container footer-bottom">
                 <span className="copyright">
                     {footer.copyright}
@@ -34,7 +37,7 @@ const FooterSection = () => {
 
                 </div>
             </footer >
-        </>
+        </Section>
     )
 }
 

@@ -86,7 +86,7 @@ export default function IntroSlider() {
             </div>
 
 
-            <div className="slider_details">
+            <div className="slider_details bg-primary">
                 <div>
                     <h2 style={{
                         fontWeight: "bolder",

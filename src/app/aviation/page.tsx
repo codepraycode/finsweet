@@ -6,17 +6,20 @@ import Section from "@/components/UI/Section";
 const AviationPage = () => {
 
     return (
-        <Section
-            name="search-list bg-light-blue"
-            // padded
-        >
 
+        <>
             <SearchHeader />
-            <br /><br />
-            <SearchContent />
+            <Section
+                name="search-list bg-primary"
+                // padded
+            >
+
+                <br /><br />
+                <SearchContent />
 
 
-        </Section>
+            </Section>
+        </>
     )
 }
 

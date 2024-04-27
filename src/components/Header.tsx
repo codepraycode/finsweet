@@ -8,7 +8,7 @@ const { header } = siteData;
 
 function Header() {
     return (
-        <header className='bg-one'>
+        <header className='bg-primary'>
             <div className="container header-wrapper text-white">
                 <Logo />
                  <label className="hambugger" htmlFor='menu-toggle'>

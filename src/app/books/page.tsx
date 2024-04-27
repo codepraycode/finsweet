@@ -73,12 +73,12 @@ const BooksPage = async () => {
     return (
         <>
             <Section
-                name="books-hero"
+                name="books-hero bg-primary"
                 padded
                 containerClassName="books-wrapper"
 
             >
-                <h1 className="box-cap box-cap--orange">
+                <h1 >
                     <span className="section-header">{bookPage.title}</span><br/>
                     <span className="section-h1">
                         {bookPage.header1}
