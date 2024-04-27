@@ -59,7 +59,7 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
                 <div className="tags">
                     <label className="tag-item" >
-                        <input type="radio" name="airline" id={slugify("All")} value={slugify("All")} checked/>
+                        <input type="radio" name="airline" id={slugify("All")} value={slugify("All")} />
                         <span>All</span>
                     </label>
                     <label className="tag-item" >
