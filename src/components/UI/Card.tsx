@@ -17,7 +17,7 @@ export const Card = ({ title, description, icon }: {
             <div className="card-icon float-left">
                 <Image
                     src={icon.url}
-                    alt={icon.alt}
+                    alt={icon.alt || ""}
                     width={icon.width}
                     height={icon.height}
                 />

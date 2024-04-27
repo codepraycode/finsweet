@@ -22,7 +22,7 @@ export const LargeCard = ({ icon, title, description, cta }: {
             <div className="card-icon">
                 <Image
                     src={icon.url}
-                    alt={icon.alt}
+                    alt={icon.alt || ""}
                     width={icon.width}
                     height={icon.height}
                 />

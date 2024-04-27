@@ -5,7 +5,12 @@ import { ReturnObject } from "nobox-client";
 import { XLargeCard } from "./UI/XLargeCard";
 import { slugify } from "@/utils";
 
-export const SearchAviationServices = () => {
+interface SearchAviationServicesProps {
+    headerText?: string
+    indicate?: boolean
+}
+
+export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
     const [data, setData] = useState<ReturnObject<Aviation>[]>([]);
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -34,9 +39,21 @@ export const SearchAviationServices = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchQuery]);
 
+
+    let searchInicator = null;
+
+
+    if (!props.indicate){}
+    else if (data.length <= 0){
+        searchInicator = "No aviation service related to your search was found"
+    } else {
+        searchInicator = `Found ${data.length} aviation service${data.length > 1 ? 's': ''} related to your search`
+    }
+
     return (
         <div className="search-wrapper">
 
+            {props.headerText && <h2>{props.headerText}</h2>}
 
             <form action="/aviation">
 
@@ -64,6 +81,12 @@ export const SearchAviationServices = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </form>
+
+            {props.indicate && (
+                <p>
+                    {searchInicator}
+                </p>
+            )}
 
             {/* <ResultsView data={data} /> */}
         </div>

@@ -904,14 +904,43 @@ header {
 .search-wrapper {
     height: 12rem;
 
+    max-width: 100%;
+
+
+    
+
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
+
+    flex-direction: column;
+
     background-color: rgba(0, 0, 0, 0.5);
 
     position: relative;
-    top: 30%;
-    right: 7rem;
+
+    padding-inline: 2rem;
+    
+    
+    @include mixins.md {
+        top: 30%;
+        right: 7rem;
+
+        padding-inline: 3rem;
+    }
+
+
+    h2 {
+        // align-self: flex-start;
+        color: $active-text;
+
+        margin-bottom: 2rem;
+    }
+
+    p {
+        color: $active-bg;
+        margin-top: 2rem;
+    }
 
 
     .tags {
@@ -933,6 +962,8 @@ header {
 
             font-size: .9rem;
 
+            text-align: center;
+
             input[type="radio"] {
                 width: 0;
             }
@@ -946,13 +977,16 @@ header {
 
     form {
         display: block;
-        width: 90%;
+        width: 40rem;
+        max-width: 100%;
 
         input {
             border: 1px solid $active-bg;
             border-radius: .3rem;
 
-            color: $gray;
+            background-color: transparent;
+
+            color: $active-text;
 
             &::placeholder {
                 font-size: .9rem;
@@ -979,29 +1013,18 @@ header {
 }
 
 
-.airline-card{
-    width: 27rem;
-    // height: 20rem;
-    overflow: hidden;
-
-    background-image: url("/images/plane-air.jpg");
-    background-position: 6rem center;
+@mixin blur-bg($image, $position-x: center, $position-y: center, $blur:0.582) {
+    background-image: url($image);
+    background-position: $position-x $position-y;
     background-size: cover;
-
-    // filter: brightness(80%);
-
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-
-    border-radius: .3rem;
 
 
     position: relative;
+    
 
+    // filter: brightness(80%);
     z-index: 0;
 
-
-    display: flex;
-    flex-direction: column;
 
     &::before {
         content: "";
@@ -1011,16 +1034,32 @@ header {
         height: 100%;
 
 
-        background-color: rgba(0, 0, 0, 0.582);
+        background-color: rgba(0, 0, 0, $blur);
 
         top: 0;
         left: 0;
 
         z-index: -1;
     }
+}
+
+.airline-card{
+    width: 27rem;
+    // height: 20rem;
+    overflow: hidden;
+
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
+    border-radius: .3rem;
+
+
+    display: flex;
+    flex-direction: column;
 
 
     color: $light-blue;
+
+    @include blur-bg($image: "/images/plane-air.jpg", $position-x: 6rem);
 
 
     .card-icon {
@@ -1060,5 +1099,46 @@ header {
 
             font-size: .8rem;
         }
+    }
+}
+
+.page-header {
+
+    // position: sticky;
+    // top: 1rem;
+    
+    // background-color: red;
+    
+    z-index: 1;
+
+
+    &.sticky {
+
+
+        position: sticky;
+        top: 1rem;
+
+        .search-wrapper {
+            background-image: none;
+
+        }
+    }
+    
+    .search-wrapper {
+        height: 40vh;
+
+        @include blur-bg($image: "/images/plane-air-2.jpg", $position-x: 9rem, $blur: 0.8);
+
+        top: 0;
+        right: 0;
+
+        // width: 50rem;
+
+        padding-block: 2rem;
+
+        // background-image: url();
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-position: center;
     }
 }

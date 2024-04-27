@@ -8,7 +8,7 @@ const AviationPage = () => {
     return (
         <Section
             name="search-list bg-light-blue"
-            padded
+            // padded
         >
 
             <SearchHeader />

@@ -1,6 +1,5 @@
 'use client'
 
-import Section from "../UI/Section";
 import { useEffect, useState } from "react";
 import { Aviation, AviationModel } from "@/lib/nobox/structures";
 import { NoboxResponse } from "../../nobox-client";
@@ -23,7 +22,7 @@ const SearchContent = () => {
                 setData(()=> data || []);
             }
         )()
-    }, [query])
+    }, [query, airline])
 
     let template:React.ReactNode;
 

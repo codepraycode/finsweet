@@ -43,14 +43,7 @@ const LeftHero = () => {
 const RightHero = () => {
     return (
         <div className="hero_right">
-            <div style={{
-                height: "100%",
-                padding: "1% 1%",
-                // border: "1px solid #fff",
-                // backgroundColor: "rgba(0, 0, 0, 0.5)",
-            }}>
-                <SearchAviationServices />
-            </div>
+            <SearchAviationServices />
         </div>
     )
 }

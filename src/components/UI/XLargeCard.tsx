@@ -30,7 +30,7 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
                     //     border: "0px solid #fff",
                     // }}
                     src={icon.url}
-                    alt={icon.alt}
+                    alt={icon.alt || ""}
                     width={icon.width}
                     height={icon.height}
                 />
