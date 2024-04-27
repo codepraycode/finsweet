@@ -1,13 +1,12 @@
 
 import BookDetail from "@/components/BookDetail";
-import { Book } from "@/lib/nobox/structures/book.structure";
 import { headers } from "next/headers";
 
 import bookData from "@/data/book.json";
 import Section from "@/components/UI/Section";
 
 
-const BookPage = ({ params }: { params: { slug: string } }) => {
+const BookPage = () => {
 
     // console.log("Params", params);
     const headerList = headers();

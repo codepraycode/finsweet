@@ -58,10 +58,11 @@ const sendMail = async (email:string, subject:string, link:string) => {
         const data = await res.json();
     
     
-        if (data.error.cause) {
+        if (data.error?.cause) {
             throw new Error(data.error.cause.message)
         }
     } catch(err) {
+        console.error(err);
         throw new Error("Could not send mail")
     }
 
@@ -71,9 +72,11 @@ const sendMail = async (email:string, subject:string, link:string) => {
 export default function PayStackButton(props: PayStackButtonProps) {
 
     const pathname = usePathname();
+
+    const location = new URL(window.location.href);
     
     const handlePaystackSuccessAction = async (reference:{[k: string]: any}) => {
-        const url = `${props.baseUrl}/${pathname}/?action=download&token=${reference.reference}`;
+        const url = `${location.origin}${pathname}/?action=download&token=${reference.reference}`;
         
         const payment = {
             reference: reference.reference,
@@ -90,7 +93,6 @@ export default function PayStackButton(props: PayStackButtonProps) {
             await PaymentModel.insertOne(payment)
             await sendMail(payment.email, "Obtain your copy", url)
         } catch(err: any) {
-
             setError(()=>err.message);
         }
 

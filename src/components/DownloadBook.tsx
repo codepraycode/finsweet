@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { Payment, PaymentModel } from '@/lib/nobox/structures';
 import PayStackButton, { PayStackButtonProps } from './PayStackButton';
 import { useSearchParams } from 'next/navigation';
-import commonData from "@/data/common.json";
+import bookData from "@/data/book.json";
 
-const {bookDownloadLink} = commonData
+const {link:bookDownloadLink, name:bookName} = bookData.download;
 
 
 
@@ -63,7 +63,8 @@ export default function DownloadBook(props: PayStackButtonProps) {
             <>
                 <a
                     href={bookDownloadLink}
-                    download
+                    download={bookName}
+                    target="_blank"
                     onClick={(e)=>{
                         inValidateToken(paymentData.reference)
                     }}

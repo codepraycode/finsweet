@@ -191,7 +191,8 @@ header {
                 content: "";
                 position: fixed;
 
-                background-color: $bg-one;
+                // background-color: $bg-one;
+                @include mixins.primary-color-style;
                 border-top: 1px solid $white;
 
                 // backdrop-filter: blur(20px);
@@ -243,6 +244,7 @@ header {
                         @include mixins.poppins-semibold;
                         // font-size: 1.4rem;
 
+                        // the  Line
                         &::before {
                             background-color: $active-bg;
                             top: 100%;
@@ -1029,15 +1031,6 @@ header {
 
 .page-header {
 
-    // position: sticky;
-    // top: 1rem;
-    
-    // background-color: red;
-
-
-
-    
-    z-index: 1;
 
 
     &.sticky {
@@ -1056,19 +1049,27 @@ header {
         height: 50vh;
         
         padding-block: 5rem;
-        padding-inline: 10rem;
-
-        @include mixins.blur-bg($image: "/images/plane-air-2.jpg", $position-x: 9rem, $blur: 0.8);
-
+        
         top: 0;
         right: 0;
 
-        // width: 50rem;
+        
+        @include mixins.blur-bg($image: "/images/plane-air-2.jpg", $blur: 0.8);
+        background-position: center;
+        
+        @include mixins.md {
+            
+            background-position-x: 9rem;
+            padding-inline: 10rem;
 
 
-        // background-image: url();
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        // background-position: center;
+        }
+
     }
+}
+
+
+.btn-download {
+    @include mixins.primary-color-style;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
