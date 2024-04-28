@@ -61,7 +61,7 @@ export default function IntroSlider() {
                                     src={obj.image}
                                     width="800"
                                     height="200"
-                                    alt="yeah"
+                                    alt={obj.description}
                                 />
                             </div>
                         )
