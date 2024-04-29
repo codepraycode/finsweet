@@ -1,5 +1,5 @@
 'use client'
-import { SearchAviationServices } from '../SearchAviationServices';
+import { SearchAviationServices } from './SearchAviationServices';
 
 export default function SearchHeader() {
 

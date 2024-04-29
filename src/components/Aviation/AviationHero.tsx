@@ -1,6 +1,6 @@
 import data from '@/data/common.json';
 import Button from "../UI/Button";
-import { SearchAviationServices } from '../SearchAviationServices';
+import { SearchAviationServices } from '../Search/SearchAviationServices';
 
 const { hero } = data;
 
