@@ -417,7 +417,6 @@ header {
     margin-block: 1rem;
 
     font-size: 1.5rem !important;
-    // background-color: red;
 
     .price {
         @include mixins.poppins-semibold;
@@ -453,25 +452,16 @@ header {
         font-size: 1.2rem !important;
     }
 
-    .rating.star {
-        padding-left: 1.7rem;
-
-        &::before {
-
-
-            --star-size: 1.6rem;
-
-            left: -.2rem;
-            top: -.05rem;
-        }
-    }
-
 
     .attribution {
         @include mixins.flex;
         align-items: center;
         gap: 1rem;
         margin-top: 2rem;
+
+        // background-color: red;
+
+        max-width: 100%;
 
 
         b {
@@ -489,6 +479,7 @@ header {
 
         .author-img {
             $size: 5rem;
+
             width: var(--a-img, $size);
             height: var(--a-img, $size);
 
@@ -499,8 +490,8 @@ header {
 
 
             @include mixins.sm {
-                --a-img: 10rem;
-                height: calc(var(--a-img, $size) / 2);
+                --a-img: 5rem;
+                height: var(--a-img, $size);
             }
         }
 
