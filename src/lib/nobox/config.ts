@@ -1,4 +1,4 @@
-import { Config, getFunctions, getSchemaCreator } from "../../nobox-client";
+import { Config, getFunctions, getSchemaCreator } from "../nobox-client";
 
 const endpoint = process.env.NEXT_PUBLIC_CLIENT_NOBOX_API || "https://api.nobox.cloud";
 const project = process.env.NEXT_PUBLIC_CLIENT_NOBOX_PROJECT || "nobox-forms";

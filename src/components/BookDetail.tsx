@@ -73,7 +73,7 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
 
 
                     <DownloadBook
-                        className="add-to-cart"
+                        className="buy-btn"
                         label="Buy Book"
                         price={book.price}
                         title={book.title}

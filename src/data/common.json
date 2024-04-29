@@ -1,5 +1,4 @@
 {
-    "bookDownloadLink": "http://localhost:3000/book.pdf",
     "header": {
         "nav": [
             {
@@ -8,39 +7,35 @@
                 "label": "Home"
             },
             {
-                "url": "/subsidiaries",
+                "url": "/about-us",
                 "active": false,
-                "label": "Subsidiaries"
-            },
-            {
-                "url": "/books",
-                "active": false,
-                "label": "Books"
+                "label": "About Us"
             }
         ],
         "cta": {
-            "label": "Other Services",
+            "label": "Buy The Book",
+            "link": "/book",
+            "className": "btn-transparent btn-with-arrow text-active nav-cta"
+        }
+    },
+
+    "hero": {
+        "mainText": "Your gateway to exceptional aviation services.",
+        "subText": "Welcome to DonManuel Group, your gateway to exceptional aviation services. As a household name with subsidiaries like DonManuel Concept Ltd and DonBryan Logistics Ltd, we are dedicated to providing service without boundaries. Our vision is to be the leading hub in aviation services, driven by customer feedback and timely solutions",
+        "image": {
+            "url": "/images/hero_Image.png",
+            "alt": "Hero image",
+            "width": 50,
+            "height": 50
+        },
+        "cta": {
+            "label": "Request Quote",
             "link": null,
-            "className": "btn-transparent btn-with-arrow text-active nav-cta",
-            "navTo": "/ads"
+            "className": "btn-with-arrow btn-shape-bg"
         }
     },
-    "newsletter": {
-        "title": "NEWSLETTER",
-        "subTitle": "Subscribe our News Letter to get Latest Updates.",
-        "input": {
-            "placeholder": "Paresh@Pixeto.com",
-            "type": "text"
-        }
-    },
+
     "footer": {
-        "main": "DonManuel Group",
-        "subTitle": "with subsidiaries",
-        "subsidiaries": [ "DonManuel Concept Ltd", "DonBryan Logistics Ltd"],
-
-        "registrationNo":"RC1093505",
-        "motto": "Service without Boundary",
-
         "address": "Behind NCAA head office, Airside, N.A.I.A ABUJA AIRPORT",
         "contacts": {
             
@@ -50,55 +45,7 @@
             ],
             "email": "donbryanlogisticsltd@gmail.com"
         },
-        "cta": {
-            "label": "Contact Us",
-            "link": "/",
-            "className": "btn-transparent btn-with-arrow text-active"
-        },
-        "logo": {
-            "url": "/images/logo-negative.svg",
-            "alt": "Finsweet",
-            "width": 50,
-            "height": 50
-        },
-        "copyright": "©2021 Finsweet",
-        "socials": [
-            {
-                "name": "Facebook",
-                "icon": {
-                    "url": "/images/icons/socials/facebook-negative.svg",
-                    "alt": "Facebook",
-                    "width": 50,
-                    "height": 50
-                }
-            },
-            {
-                "name": "twitter",
-                "icon": {
-                    "url": "/images/icons/socials/twitter-negative.svg",
-                    "alt": "Twitter",
-                    "width": 50,
-                    "height": 50
-                }
-            },
-            {
-                "name": "instagram",
-                "icon": {
-                    "url": "/images/icons/socials/instagram-negative.svg",
-                    "alt": "Instagram",
-                    "width": 50,
-                    "height": 50
-                }
-            },
-            {
-                "name": "linkedin",
-                "icon": {
-                    "url": "/images/icons/socials/linkedin-negative.svg",
-                    "alt": "Linkedin",
-                    "width": 50,
-                    "height": 50
-                }
-            }
-        ]
+
+        "copyright": "©2021 Finsweet"
     }
 }

@@ -1,7 +1,7 @@
 'use client';
 
-import aviation from "@/nobox/initialData/aviation";
-import { AviationModel } from "@/nobox/structures";
+import aviation from "@/lib/nobox/initialData/aviation";
+import { AviationModel } from "@/lib/nobox/structures";
 import { useEffect } from "react";
 
 export default function PopulateRecords() {

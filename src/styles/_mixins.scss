@@ -50,6 +50,9 @@
     }
 }
 
+@mixin flex {
+    display: flex;
+}
 
 @mixin primary-color-style() {
     // background-image: $primary-color;

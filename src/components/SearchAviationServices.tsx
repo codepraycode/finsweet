@@ -1,5 +1,5 @@
 'use client'
-import { Aviation, AviationModel } from "@/nobox/structures"
+import { Aviation, AviationModel } from "@/lib/nobox/structures"
 import { useEffect, useState } from "react";
 import { ReturnObject } from "nobox-client";
 import { slugify } from "@/utils";
@@ -41,8 +41,10 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
     let searchInicator = null;
 
-
-    if (!props.indicate){}
+    if (!data) {
+        searchInicator = null;
+    }
+    else if (!props.indicate){}
     else if (Boolean(data) && data.length <= 0){
         searchInicator = "No aviation service related to your search was found"
     } else {

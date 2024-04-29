@@ -1,4 +1,4 @@
-import { Space } from "../../../nobox-client";
+import { Space } from "../../nobox-client";
 import { createRowSchema } from "../config";
 
 export interface Ads {

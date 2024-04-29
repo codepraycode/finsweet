@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from './UI/Logo'
 import NavLinks from './UI/NavLink'
 import Button from './UI/Button'
-import siteData from '@/data.json';
+import siteData from '@/data/common.json';
 
 const { header } = siteData;
 

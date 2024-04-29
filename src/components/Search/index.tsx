@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Aviation, AviationModel } from "@/lib/nobox/structures";
-import { NoboxResponse } from "../../nobox-client";
+import { NoboxResponse } from "../../lib/nobox-client";
 import AviationDetail from "../Aviation/AviationDetail";
 import { useSearchParams } from "next/navigation";
 

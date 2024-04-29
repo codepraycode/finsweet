@@ -4,7 +4,7 @@ import { SearchAviationServices } from '../SearchAviationServices';
 export default function SearchHeader() {
 
     return (
-        <div className='page-header'>
+        <div className='search-page-header'>
 
             <div>
                 {/* <Link href={"/"} replace className="go-back">Go Back</Link> */}

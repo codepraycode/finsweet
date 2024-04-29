@@ -1,29 +1,50 @@
-import { Space } from "../../../nobox-client";
+import { Space } from "../../nobox-client";
 import { createRowSchema } from "../config";
-import aviation from "../initialData/aviation";
 
 type Route = {
-    from: string,
-    to: string,
+    origin: string;
+    destination: string;
 }
 export interface Aviation {
+    logo?: string,
     name: string,
-    detail: string,
+    slug: string,
+    company_name: string,
+    details: string,
+    searchDump?: string,
     routes: Route[],
     link: string,
+    fleet_size?: number | string,
+    headoffice?: string,
+    hubs?: string[],
+    base?: string,
 }
 
 export const AviationStructure: Space<Aviation> = {
     space: "Aviation",
     description: "A Record Space for Aviation companies",
-    initialData: aviation,
     structure: {
+        logo: {
+            description: "Company's logo",
+            type: String,
+            required: false
+        },
+        slug: {
+            description: "Company's slug",
+            type: String,
+            required: true
+        },
         name: {
+            description: "Company's regular name",
+            type: String,
+            required: true
+        },
+        company_name: {
             description: "Company's name",
             type: String,
             required: true
         },
-        detail: {
+        details: {
             description: "Company's detail",
             required: true,
             type: String,
@@ -38,6 +59,27 @@ export const AviationStructure: Space<Aviation> = {
             required: true,
             type: String,
         },
+        fleet_size: {
+            description: "Company's fleet size",
+            type: Number,
+        },
+        headoffice: {
+            description: "Company's head office",
+            type: String,
+        },
+        hubs: {
+            description: "Company's hub",
+            type: Array,
+        },
+        base: {
+            description: "Company's base",
+            type: String,
+        },
+        searchDump: {
+            description: "Field to improve search",
+            comment: "just add all keywords to it",
+            type: String,
+        }
     }
 }
 

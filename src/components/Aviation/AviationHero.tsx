@@ -1,4 +1,4 @@
-import data from '@/data.json';
+import data from '@/data/common.json';
 import Button from "../UI/Button";
 import { SearchAviationServices } from '../SearchAviationServices';
 
