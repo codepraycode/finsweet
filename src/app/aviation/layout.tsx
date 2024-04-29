@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import "@/styles/styles.scss";
-import Header from "@/components/Header";
-import FooterSection from "@/components/Footer";
+// import "@/styles/styles.scss";
 import { SearchContextProvider } from "@/context/SearchContext";
 
 export const metadata: Metadata = {
@@ -15,12 +13,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body>
-                <Header />
-                {children}
-                <FooterSection />
-            </body>
-        </html>
+        <>
+            {/* <body> */}
+                {/* <Header /> */}
+                <SearchContextProvider>
+                    {children}
+                </SearchContextProvider>
+                {/* <FooterSection /> */}
+            {/* </body> */}
+        </>
     );
 }

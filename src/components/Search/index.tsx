@@ -6,16 +6,16 @@ import { useSearchContext } from "@/context/SearchContext";
 const SearchContent = () => {
 
 
-    const {searchParams, searchResult} = useSearchContext();
+    const {searchResult} = useSearchContext();
 
 
-    if (!searchParams.query) return (
-        <h1 className="section-h3 text-center">Search aviation services</h1>
-    )
+    // if (!searchParams.query) return (
+    //     <h1 className="section-h3 text-center empty">Search aviation services</h1>
+    // )
 
-    if (searchResult.length < 1) return (
-        <h3 className="section-h3 text-center">No result for your search</h3>
-    )
+    // if (searchResult.length < 1) return (
+    //     <h3 className="section-h3 text-center empty">No result for your search</h3>
+    // )
 
     return (
         <div className="search-item-list">

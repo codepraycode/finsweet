@@ -1,6 +1,7 @@
 import data from '@/data/common.json';
 import Button from "../UI/Button";
 import { SearchAviationServices } from '../Search/SearchAviationServices';
+import { SearchContextProvider } from '@/context/SearchContext';
 
 const { hero } = data;
 
@@ -51,10 +52,12 @@ const RightHero = () => {
 
 const HeroSection = () => {
     return (
-        <div className="hero bg-sky">
-            <LeftHero />
-            <RightHero />
-        </div>
+        <SearchContextProvider>
+            <div className="hero bg-sky">
+                <LeftHero />
+                <RightHero />
+            </div>
+        </SearchContextProvider>
 
     )
 }
