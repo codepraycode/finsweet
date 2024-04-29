@@ -11,8 +11,6 @@ export interface SearchProps {
 }
 
 
-
-
 interface SearchContextProps {
     handleSearch: (searchProps: SearchProps) => void,
     searchResult: SearchResult[],
@@ -44,9 +42,13 @@ export const SearchContextProvider:React.FC<SearchContextProvider> = ({children}
     });
 
     const search = async (searchQuery:string, tag:string | undefined) => {
+        if (searchQuery.trim().length <= 0) {
+            return
+        };
+
         let result: NoboxResponse<Aviation>[] = [];
         try {            
-            result = await searchAviation(searchQuery);
+            result = await searchAviation(searchQuery) || [];
             setSearching(true)
         } catch(err) {
             console.error(err);

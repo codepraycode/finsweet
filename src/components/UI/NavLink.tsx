@@ -1,6 +1,7 @@
+'use client';
 import Link from 'next/link';
 import React from 'react';
-import Button from './Button';
+import { usePathname } from 'next/navigation';
 
 type NavLink = {
     url: string,
@@ -15,25 +16,31 @@ interface NavLinksProps {
 }
 
 export default function NavLinks({ links, cta }: NavLinksProps ) {
-  return (
-    <nav className="nav-wrapper">
-        
-        <ul>
-            {
-                links.map((item, i) => (
-                    <li key={i}>
-                        <Link
-                            href={item.url}
-                            className={`${item.active ? 'active' : ''} text-logo`}
-                        >
-                            {item.label}
-                        </Link>
-                    </li>
-                ))
-            }
-        </ul>
+    const pathname = usePathname();
 
-        { cta }
-    </nav>
-  )
+    return (
+        <nav className="nav-wrapper">
+            
+            <ul>
+                {
+                    links.map((item, i) => {
+
+                        const isActive = pathname === item.url;
+                        
+                        return (
+                        <li key={i}>
+                            <Link
+                                href={item.url}
+                                className={`${isActive ? 'active' : ''} text-logo`}
+                            >
+                                {item.label}
+                            </Link>
+                        </li>
+                    )})
+                }
+            </ul>
+
+            { cta }
+        </nav>
+    )
 }
