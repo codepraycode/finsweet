@@ -1,61 +1,31 @@
 'use client'
-
-import { useEffect, useState } from "react";
-import { Aviation, AviationModel } from "@/lib/nobox/structures";
-import { NoboxResponse } from "../../lib/nobox-client";
 import AviationDetail from "../Aviation/AviationDetail";
-import { useSearchParams } from "next/navigation";
+
+import { useSearchContext } from "@/context/SearchContext";
 
 const SearchContent = () => {
-    const params = useSearchParams()
-    const query = params.get("query");
-    const airline = params.get("query");
-    const [data, setData] = useState<(NoboxResponse<Aviation>)[] | null>(null);
 
-    useEffect(() => {
-        (
-            async () => {
-                if (!query) return;
-                const data = await AviationModel.search({ searchableFields: ["name", "detail", "routes"], searchText: query });
 
-                // if (!data) return;
-                setData(()=> data || []);
-            }
-        )()
-    }, [query, airline])
+    const {searchParams, searchResult} = useSearchContext();
 
-    let template:React.ReactNode;
 
-    if (!query) {
-        template = (
-            <h1 className="section-h3 text-center">Search aviation services</h1>
-        )
-    }
-
-    else if (data === null) {
-        
-        template = (
-            <h1 className="section-h3 text-center">Loading search...</h1>
-        )
-    }else if( data.length < 1) {
-        template = (
-            <h3 className="section-h3 text-center">No result for your search</h3>
-        )
-    } else (
-        template = (
-            <div className="search-item-list">
-
-                {
-                    data.map((item, i) => (
-
-                        <AviationDetail key={i} data={item} />
-                    ))
-                }
-            </div>
-        )
+    if (!searchParams.query) return (
+        <h1 className="section-h3 text-center">Search aviation services</h1>
     )
 
-    return template;
+    if (searchResult.length < 1) return (
+        <h3 className="section-h3 text-center">No result for your search</h3>
+    )
+
+    return (
+        <div className="search-item-list">
+            {
+                searchResult.map((item, i) => (
+                    <AviationDetail key={item.id} data={item} />
+                ))
+            }
+        </div>
+    )
 }
 
 export default SearchContent;

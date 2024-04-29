@@ -1,14 +1,18 @@
 'use client'
+import { useSearchContext } from '@/context/SearchContext';
 import { SearchAviationServices } from './SearchAviationServices';
 
 export default function SearchHeader() {
-
+    const {handleSearch} = useSearchContext();
     return (
         <div className='search-page-header'>
 
             <div>
-                {/* <Link href={"/"} replace className="go-back">Go Back</Link> */}
-                <SearchAviationServices indicate headerText='Find aviation services'/>
+                <SearchAviationServices
+                    indicate
+                    headerText='Find aviation services'
+                    handleSubmit={handleSearch}                    
+                />
             </div>
 
         </div>

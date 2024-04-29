@@ -1,13 +1,30 @@
 'use client'
 import { Aviation, AviationModel } from "@/lib/nobox/structures"
-import { useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 import { ReturnObject } from "nobox-client";
 import { slugify } from "@/utils";
 import { searchAviation } from "@/utils/search";
+import { NoboxResponse } from "@/lib/nobox-client";
+import { SearchProps, useSearchContext } from "@/context/SearchContext";
 
-const SearchForm = ({handleInput, handleSearch}: {handleInput: (e: any)=>void, handleSearch?: (e?:any)=>void}) => {
+
+
+const SearchForm = ({value, handleInput, handleSearch}: {value:any, handleInput: (e: any)=>void, handleSearch?: (e?:any)=>void}) => {
     return (
-        <form action="/aviation" onSubmit={handleSearch}>
+        <form action="/aviation" onSubmit={(e)=>{
+            if (handleSearch) {
+                e.preventDefault();
+
+                const data = new FormData(e.target as HTMLFormElement);
+
+                const tag = data.get('airline');
+                const query = data.get("query");
+
+
+
+                handleSearch({tag, query});
+            }
+        }}>
             <div className="tags">
                 <label className="tag-item" >
                     <input type="radio" name="airline" id={slugify("All")} value={slugify("All")} />
@@ -36,6 +53,7 @@ const SearchForm = ({handleInput, handleSearch}: {handleInput: (e: any)=>void, h
                     className="pr-10 input rounded-l-full pl-8"
                     onChange={(e) => handleInput(e.target.value)}
                     autoComplete="off"
+                    value={value}
                 />
 
                 <button type="submit" className="btn btn-transparent btn-search">
@@ -48,17 +66,18 @@ const SearchForm = ({handleInput, handleSearch}: {handleInput: (e: any)=>void, h
 }
 
 
-const SearchIndicator = ({data}: {data: Array<any>}) => {
-    if (!data) return null;
+const SearchIndicator = () => {
+    const {searching, searchResult} = useSearchContext();
+    if (searching) return <p><i>Searching</i></p>;
 
-    if (data.length <= 0) {
-        return <p>No aviation service related to your search was found</p>
+    if (searchResult.length <= 0) {
+        return <p><i>No aviation service related to your search was found</i></p>
     }
 
 
     return (
         <p>
-            Found {data.length} aviation service {data.length > 1 ? 's': ''} related to your search
+            <i>Found {searchResult.length} aviation service{searchResult.length > 1 ? 's': ''} related to your search</i>
         </p>
     )
 
@@ -67,44 +86,25 @@ const SearchIndicator = ({data}: {data: Array<any>}) => {
 
 interface SearchAviationServicesProps {
     headerText?: string
-    indicate?: boolean
+    indicate?: boolean,
+    handleSubmit?: (searchProps: SearchProps) => void
+    handleInput?: (searchProps: SearchProps) => void
 }
 
 export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
-    const [data, setData] = useState<ReturnObject<Aviation>[]>([]);
-    const [searchQuery, setSearchQuery] = useState<string>("");
+    const {searchParams} = useSearchContext()
+    const [searchQuery, setSearchQuery] = useState<string>(()=>searchParams.query);
 
-    const aviation = async () => {
-        const result = await searchAviation(searchQuery);
-
-        setData(result);
-    };
-
-    const getAll = async () => {
-        const result = await AviationModel.find();
-        setData(result);
-    };
-
-
-    useEffect(() => {
-        if (searchQuery) {
-            aviation();
-        } else {
-            getAll()
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery]);
-    
 
     return (
         <div className="search-wrapper">
 
             {props.headerText && <h2>{props.headerText}</h2>}
 
-            <SearchForm handleInput={setSearchQuery}/>
+            <SearchForm value={searchQuery} handleInput={setSearchQuery} handleSearch={props.handleSubmit}/>
 
-            {props.indicate && <SearchIndicator data={data}/>}
+            {props.indicate && <SearchIndicator />}
         </div>
     )
 }

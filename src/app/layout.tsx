@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/styles.scss";
 import Header from "@/components/Header";
 import FooterSection from "@/components/Footer";
+import { SearchContextProvider } from "@/context/SearchContext";
 
 export const metadata: Metadata = {
     title: "Donmanuel Group",
@@ -17,7 +18,9 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <Header />
-                {children}
+                <SearchContextProvider>
+                    {children}
+                </SearchContextProvider>
                 <FooterSection />
             </body>
         </html>
