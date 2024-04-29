@@ -55,7 +55,7 @@ export const SearchContextProvider:React.FC<SearchContextProvider> = ({children}
         } finally {
             setSearching(()=>false);
 
-            console.log("result", result);
+            // console.log("result", result);
             setSearchResult(result);
         }
     };

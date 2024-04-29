@@ -93,8 +93,26 @@ interface SearchAviationServicesProps {
 
 export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
-    const {searchParams} = useSearchContext()
-    const [searchQuery, setSearchQuery] = useState<string>(()=>searchParams.query || "");
+    const [searchQuery, setSearchQuery] = useState<string | undefined>();
+
+    useEffect(()=>{
+        (()=>{
+            if (window && (searchQuery === undefined) ) {
+                const location = new URL(window.location.href);
+
+                let query = location.searchParams.get("query") || undefined;
+                let tag = location.searchParams.get("airline") || undefined;
+
+                
+                
+                if (query || tag){
+                    
+                    setSearchQuery(query || "");
+                }
+                
+            }
+        })()
+    },[searchQuery])
 
 
     return (
@@ -102,7 +120,7 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
             {props.headerText && <h2>{props.headerText}</h2>}
 
-            <SearchForm value={searchQuery} handleInput={setSearchQuery} handleSearch={props.handleSubmit}/>
+            <SearchForm value={searchQuery || ""} handleInput={setSearchQuery} handleSearch={props.handleSubmit}/>
 
             {props.indicate && <SearchIndicator />}
         </div>
