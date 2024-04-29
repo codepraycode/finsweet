@@ -58,7 +58,7 @@ const BookDetail = ({item: book, baseUrl}: BookDetailProps) => {
                                         ₦ {new Intl.NumberFormat().format(book.price)}
                                     </span>
                             {/* <span className="rating star">{book.rating.rate} ({book.rating.total} rating{book.rating.total > 1 && 's'})</span> */}
-                            <span className="rating">{book.date_released}</span>
+                            {/* <span className="rating">{book.date_released}</span> */}
                         </p>
 
                         <div className="attribution">

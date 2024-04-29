@@ -419,19 +419,10 @@ header {
     font-size: 1.5rem !important;
     // background-color: red;
 
-
-    span {
-        display: inline-block;
-
-        &:nth-child(odd) {
-            // background-color: red;
-
-
-            &::after {
-                content: "|";
-                margin-inline: 1rem;
-            }
-        }
+    .price {
+        @include mixins.poppins-semibold;
+        font-size: 2rem;
+        color: $hero-bg;
     }
 }
 

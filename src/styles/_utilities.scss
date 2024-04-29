@@ -363,9 +363,11 @@ a.nav-cta {
 
 
 .image-container {
-    height: 50vh !important;
+    height: 58vh !important;
 
-    background-position: center center;
+    // background-position: center 1rem;
+    background-position-x: center;
+    // background-position-y: -8rem;
     background-repeat: no-repeat;
     background-size: cover;
 }
