@@ -3,7 +3,7 @@ import { NoboxResponse } from "@/lib/nobox-client";
 import { Aviation } from "@/lib/nobox/structures";
 import { searchAviation } from "@/utils/search";
 import { useSearchParams } from "next/navigation";
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type SearchResult = NoboxResponse<Aviation>;
 export interface SearchProps {
