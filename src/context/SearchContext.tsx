@@ -46,18 +46,19 @@ export const SearchContextProvider:React.FC<SearchContextProvider> = ({children}
             return
         };
 
-        let result: NoboxResponse<Aviation>[] = [];
-        try {            
-            result = await searchAviation(searchQuery) || [];
-            setSearching(true)
-        } catch(err) {
-            console.error(err);
-        } finally {
-            setSearching(()=>false);
-
-            // console.log("result", result);
+        
+        searchAviation(searchQuery)
+        .then((result)=>{
             setSearchResult(result);
-        }
+        })
+        .catch((err)=>{
+            console.error(err);
+        })
+        .finally(()=>{
+            setSearching(false);
+        })
+
+        setSearching(true);
     };
 
     useEffect(()=>{

@@ -1,10 +1,7 @@
 'use client'
-import { Aviation, AviationModel } from "@/lib/nobox/structures"
-import { FormEventHandler, useEffect, useState } from "react";
-import { ReturnObject } from "nobox-client";
+
+import { useEffect, useState } from "react";
 import { slugify } from "@/utils";
-import { searchAviation } from "@/utils/search";
-import { NoboxResponse } from "@/lib/nobox-client";
 import { SearchProps, useSearchContext } from "@/context/SearchContext";
 
 
@@ -65,10 +62,9 @@ const SearchForm = ({value, handleInput, handleSearch}: {value:any, handleInput:
     )
 }
 
-
 const SearchIndicator = () => {
-    const {searching, searchResult} = useSearchContext();
-    if (searching) return <p><i>Searching</i></p>;
+    const {searching, searchResult, searchParams} = useSearchContext();
+    if (searching) return <p><i>Searching...</i></p>;
 
     if (searchResult.length <= 0) {
         return <p><i>No aviation service related to your search was found</i></p>
@@ -77,12 +73,11 @@ const SearchIndicator = () => {
 
     return (
         <p>
-            <i>Found {searchResult.length} aviation service{searchResult.length > 1 ? 's': ''} related to your search</i>
+            <i>Found {searchResult.length} aviation service{searchResult.length > 1 ? 's': ''} related to your search:  <b>&quot;{searchParams.query}&quot;</b></i>
         </p>
     )
 
 }
-
 
 interface SearchAviationServicesProps {
     headerText?: string
@@ -106,7 +101,6 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
                 
                 
                 if (query || tag){
-                    
                     setSearchQuery(query || "");
                 }
                 
@@ -126,4 +120,3 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
         </div>
     )
 }
-
