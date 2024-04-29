@@ -53,7 +53,7 @@ const SearchForm = ({value, handleInput, handleSearch}: {value:any, handleInput:
                     className="pr-10 input rounded-l-full pl-8"
                     onChange={(e) => handleInput(e.target.value)}
                     autoComplete="off"
-                    value={value}
+                    value={value || undefined}
                 />
 
                 <button type="submit" className="btn btn-transparent btn-search">
