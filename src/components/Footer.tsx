@@ -10,7 +10,7 @@ const { footer } = siteData;
 const FooterSection = () => {
     return (
         <Section
-            name="footer bg-primary"
+            name="footer"
         >
             <footer className="container footer-bottom">
                 <span className="copyright">

@@ -11,7 +11,7 @@ const AviationPage = () => {
         <Suspense fallback={<h1>Loading....</h1>}>
             <SearchHeader />
             <Section
-                name="search-list bg-primary"
+                name="search-list bg-light-blue"
                 // padded
             >
 

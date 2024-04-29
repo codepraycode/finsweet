@@ -25,7 +25,6 @@
 }
 
 
-$bg-one: hsl(229, 38%, 23%);
 
 .bg-one {
     background-color: $bg-one;
@@ -109,7 +108,7 @@ header {
     z-index: 1;
 
 
-    border-bottom: 1px solid $active-text;
+    border-bottom: 1px solid whitesmoke;
 
 
     .logo {
@@ -796,12 +795,14 @@ header {
 
     .paystack-input {
         // border: 1px solid $blue-light !important;
-        border: 1px solid $active-bg;
+        border: 1px solid $blue-light;
         border-radius: .3rem;
+
+        margin-bottom: 1rem;
     
         background-color: transparent;
     
-        color: $active-text;
+        color: $hero-bg;
     
         &::placeholder {
             font-size: .9rem;
@@ -837,7 +838,8 @@ header {
 
     flex-direction: column;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    // background-color: rgba(0, 0, 0, 0.5);
+    background-color: hsla(228, 40%, 15%, 0.548);
 
     position: relative;
 

@@ -1,44 +1,14 @@
-'use client';
 import Section from "@/components/UI/Section";
-import { Aviation, AviationModel } from "@/nobox/structures";
-import { ReturnObject } from "nobox-client";
-import { useEffect, useState } from "react";
-import { RouteCard } from "@/components/UI/RouteCard";
-import Image from "next/image";
-import { Card } from "@/components/UI/Card";
 
 
-const AviationService = ({ params }: { params: { slug: string } }) => {
-    const { slug } = params;
-    const [data, setData] = useState<ReturnObject<Aviation>>();
-    const [loading, setLoading] = useState(false);
-
-    const getAviation = async (slug: string) => await AviationModel.findOne({ slug });
-
-
-    useEffect(() => {
-        setLoading(true);
-        getAviation(slug).then((aviation) => {
-            setData(aviation);
-            setLoading(false);
-
-        })
-    }, [slug])
+const AboutPage = ({ params }: { params: { slug: string } }) => {
 
     return (
         <Section
-            wrapperClassName="bg-primary"
-            name="expertise"
+            wrapperClassName="bg-light-blue"
+            name="about"
             padded
         >
-            <Details />
-        </Section >
-    )
-}
-
-const Details = () => {
-    return (
-        <>
             <div>
                 <h1 className="section-h1">
                     About DonManuel Group
@@ -92,24 +62,12 @@ const Details = () => {
 
 
             </div>
-            {/* <div className="cards" >
-                <h1>Routes</h1>
-
-                <Card
-                    title={""}
-                    description={""}
-                    icon={{
-                        "url": "/images/icons/rocket.svg",
-                        "alt": "On Time Delivery",
-                        "width": 50,
-                        "height": 50
-                    }}
-                />
-            </div > */}
-        </>
+        </Section >
     )
 }
 
 
 
-export default AviationService;
+
+
+export default AboutPage;

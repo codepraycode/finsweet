@@ -19,7 +19,7 @@ const BookPage = () => {
 
     return (
         <Section
-            name="book-page bg-primary"
+            name="book-page bg-light-blue"
         >
             <BookDetail item={bookData} baseUrl={baseUrl as string}/>
         </Section>
