@@ -1,7 +1,9 @@
 import { parseExternalLink } from "@/utils/parseUrl";
 import Image from "next/image";
 
-export const XLargeCard = ({ icon, title, description, pills, onClick }: {
+
+
+interface XLargeCardProps {
     icon: {
         url: string;
         alt: string;
@@ -21,7 +23,14 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
         className?: string;
     };
     onClick: () => void;
-}) => {
+    category?: string
+}
+
+export const XLargeCard = (props: XLargeCardProps ) => {
+
+    const { icon, title, description, pills, onClick, category } = props;
+
+
     return <>
         <article className="card l-card airline-card" onClick={onClick}>
             <div className="card-icon">
@@ -37,6 +46,8 @@ export const XLargeCard = ({ icon, title, description, pills, onClick }: {
             </div>
 
             <h3>{title}</h3>
+
+            {<span className="category">{category}</span>}
 
             <div className="other-details">
 

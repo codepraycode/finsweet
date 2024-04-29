@@ -18,6 +18,7 @@ export interface Aviation {
     headoffice?: string,
     hubs?: string[],
     base?: string,
+    category?: string,
 }
 
 export const AviationStructure: Space<Aviation> = {
@@ -73,6 +74,10 @@ export const AviationStructure: Space<Aviation> = {
         },
         base: {
             description: "Company's base",
+            type: String,
+        },
+        category: {
+            description: "Aviation category",
             type: String,
         },
         searchDump: {

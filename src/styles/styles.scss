@@ -803,8 +803,25 @@ header {
 
 
     color: $light-blue;
-
     @include mixins.blur-bg($image: "/images/plane-air.jpg", $position-x: 6rem);
+
+    position: relative;
+
+
+    .category {
+        position: absolute;
+        top: 2.2rem;
+        right: 1.5rem;
+        border: 1px solid $active-bg;
+        color: $active-text;
+        border-radius: .3rem;
+        padding: .3rem .8rem ;
+        font-size: .8rem;
+
+        &:empty {
+            opacity: 0;
+        }
+    }
 
 
     .card-icon {
