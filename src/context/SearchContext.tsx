@@ -2,13 +2,12 @@
 import { NoboxResponse } from "@/lib/nobox-client";
 import { Aviation } from "@/lib/nobox/structures";
 import { searchAviation } from "@/utils/search";
-import { useSearchParams } from "next/navigation";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type SearchResult = NoboxResponse<Aviation>;
 export interface SearchProps {
-    tag: string,
-    query: string
+    tag: string | undefined,
+    query: string | undefined
 }
 
 
@@ -33,21 +32,18 @@ interface SearchContextProvider {
 
 export const SearchContextProvider:React.FC<SearchContextProvider> = ({children}) => {
 
-    const params = useSearchParams()
-    const query = params.get("query");
-    const airline = params.get("airline");
+    
+    // let query: string | undefined, airline: string | undefined;
+
 
     const [searchResult, setSearchResult ] = useState<SearchResult[]>([]);
     const [searching, setSearching ] = useState<boolean>(false);
-    const [searchParams, setSearchParams] = useState<SearchProps>(() => {
-        return {
-            tag: airline!,
-            query: query!,
-        }
+    const [searchParams, setSearchParams] = useState<SearchProps>({
+        tag: undefined,
+        query: undefined
     });
 
-
-    const search = async (searchQuery:string, tag:string | null) => {
+    const search = async (searchQuery:string, tag:string | undefined) => {
         let result: NoboxResponse<Aviation>[] = [];
         try {            
             result = await searchAviation(searchQuery);
@@ -62,22 +58,46 @@ export const SearchContextProvider:React.FC<SearchContextProvider> = ({children}
         }
     };
 
+    useEffect(()=>{
+        if (window) {
+            const location = new URL(window.location.href);
+
+            let query = location.searchParams.get("query") || undefined;
+            let tag = location.searchParams.get("airline") || undefined;
+
+            
+            
+            if (query || tag){
+                
+                setSearchParams(()=>({
+                    tag,
+                    query,
+                }));
+            }
+            
+        }
+    }, []);
+    
+    
+    const query: string | undefined = searchParams.query;
+    const tag: string | undefined = searchParams.tag;
+
+
     useEffect(() => {
         (
             async () => {
                 if (!query) return;
                 // const data = await AviationModel.search({ searchableFields: ["name", "details", "routes"], searchText: query });
 
-                search(query, airline);
+                search(query, tag);
             }
         )()
-    }, [query, airline])
+    }, [query, tag])
 
 
     function handleSearch(searchProps: SearchProps) {
-        console.log("Search", searchProps)
         setSearchParams(()=> (searchProps))
-        search(searchProps.query, searchProps.tag);
+        search(searchProps.query as string, searchProps.tag);
     }
 
 

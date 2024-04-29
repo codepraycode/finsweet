@@ -53,7 +53,7 @@ const SearchForm = ({value, handleInput, handleSearch}: {value:any, handleInput:
                     className="pr-10 input rounded-l-full pl-8"
                     onChange={(e) => handleInput(e.target.value)}
                     autoComplete="off"
-                    value={value || undefined}
+                    value={value || ""}
                 />
 
                 <button type="submit" className="btn btn-transparent btn-search">
@@ -94,7 +94,7 @@ interface SearchAviationServicesProps {
 export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
     const {searchParams} = useSearchContext()
-    const [searchQuery, setSearchQuery] = useState<string>(()=>searchParams.query);
+    const [searchQuery, setSearchQuery] = useState<string>(()=>searchParams.query || "");
 
 
     return (
