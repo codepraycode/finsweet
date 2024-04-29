@@ -22,6 +22,7 @@
 }
 
 
+$nav-z-index: 1;
 
 header {
     .header-wrapper {
@@ -40,6 +41,8 @@ header {
         align-self: center;
     }
 
+
+    
     nav {
         $nav-gap: 2rem;
 
@@ -133,6 +136,11 @@ header {
 
     @include mixins.sm {
         color: inherit;
+
+        &:has(input:checked){
+            z-index: 2;
+
+        }
 
         .hambugger:has(input:checked) {
 
@@ -873,6 +881,10 @@ header {
             padding-inline: 10rem;
 
 
+        }
+
+        @include mixins.sm {
+            z-index: 1;
         }
 
     }
