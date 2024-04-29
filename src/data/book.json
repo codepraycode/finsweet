@@ -1,24 +1,32 @@
 {
     "image": {
         "thumbmail": "http://via.placeholder.com/512x512",
-        "banner": "http://via.placeholder.com/1200x400"
+        "banner": "/images/company/book-launch.png"
     },
-    "title": "The Great Gatsby",
-    "slug": "the-great-gatsby",
+    "title": "THE SERVICE CREED",
+    "slug": "the-service-creed",
     "genre": [
         "Fiction",
         "Classic"
     ],
     "price": 12000.00,
     "summary": [
-        "The story primarily concerns the young and mysterious millionaire Jay Gatsby...",
-        "Considered one of the greatest works in American literature."
+        "THE SERVICE CREED is a manual for everyone willing to serve and for people who will teach those willing to serve.",
+        "This book will serve as a compass in this confusing world where many do not know who they are, where they are coming from and where they are headed.",
+        "It will help them reflect on the will to serve.",
+        "It will teach them on the will to serve. ",
+        "THE SERVICE CREED is a scientific application of rules to guide you to serve well. It is an art to every reader.",
+        "Flipping through the pages of THE SERVICE CREED, You will find the dos and don'ts, the norms, the errors that derailed their progress and the facts that derailed their progress towards success.",
+        "THE SERVICE CREED is a book that defines human purpose. We often forget why we are here. Anyone who is not serving (No matter how little) is not living completely.",
+        "If you have received service, you are not meant to keep it to yourself, you are meant to pass it on. Example of those who have truly served are GOD, Jesus, the Holy spirit, effective and skilled but relevant humans ranging from artisans to the greatest leaders around the world. We are all called to serve. Find your purpose and arm yourself with skills to serve humanity.",
+        "Follow these creeds one after the other and watch the results unfold positively.",
+        "THE SERVICE CREED is a RULE BOOK that has its trace from the past to the present; it is relevant to the future of those that will serve. Study it diligently and benefit from it while you help others to benefit from it too. Make it go round that all may find their purpose and benefit humanity."
     ],
     "date_released": "April 10, 1925",
     "author": {
-        "name": "F. Scott Fitzgerald",
-        "about": "Francis Scott Key Fitzgerald was an American novelist, essayist, screenwriter, and short-story writer. He was best known for his novels depicting the flamboyance and excess of the Jazz Age...",
-        "image": "fitzgerald.jpg"
+        "name": "Don Emmanuel Omonisaye",
+        "about": "",
+        "image": "/images/company/ceo-a.jpeg"
     },
     "download": {
         "link":"https://nobox-forms-bucket.s3.amazonaws.com/Creed25+final2.pdf",
