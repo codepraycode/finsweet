@@ -42,14 +42,25 @@ export const SearchContextProvider:React.FC<SearchContextProvider> = ({children}
     });
 
     const search = async (searchQuery:string, tag:string | undefined) => {
-        if (searchQuery.trim().length <= 0) {
-            return
-        };
+
+        // if (searchQuery.trim().length <= 0) {
+        //     return
+        // };
 
         
-        searchAviation(searchQuery)
-        .then((result)=>{
-            setSearchResult(result);
+        searchAviation(searchQuery, tag)
+        .then((result: SearchResult[])=>{
+
+            if (!result) return;
+            setSearchResult(()=>{
+
+                if (tag) {
+                    if (tag === "all") return result;
+                    return result.filter((item)=> item.category === tag);
+                }
+
+                return result;
+            });
         })
         .catch((err)=>{
             console.error(err);

@@ -6,7 +6,16 @@ import { SearchProps, useSearchContext } from "@/context/SearchContext";
 
 
 
-const SearchForm = ({value, handleInput, handleSearch}: {value:any, handleInput: (e: any)=>void, handleSearch?: (e?:any)=>void}) => {
+interface SearchFormProps {
+    queryValue: string,
+    tagValue?: string,
+    handleInput: (e: any)=>void,
+    handleSearch?: (e?:any)=>void
+}
+
+const SearchForm = (props: SearchFormProps ) => {
+    const {tagValue:filter, queryValue:value, handleInput, handleSearch} = props;
+
     return (
         <form action="/aviation" onSubmit={(e)=>{
             if (handleSearch) {
@@ -24,19 +33,28 @@ const SearchForm = ({value, handleInput, handleSearch}: {value:any, handleInput:
         }}>
             <div className="tags">
                 <label className="tag-item" >
-                    <input type="radio" name="airline" id={slugify("All")} value={slugify("All")} />
+                    <input
+                        type="radio" name="airline" id={slugify("All")} value={slugify("All")} 
+                        defaultChecked={filter === slugify("All")}
+                    />
                     <span>All</span>
                 </label>
                 <label className="tag-item" >
-                    <input type="radio" name="airline" id={slugify("Local Airlines")} value={slugify("Local Airlines")}/>
+                    <input type="radio" name="airline" id={slugify("Local Airlines")} value={slugify("Local Airlines")}
+                        defaultChecked={filter === slugify("Local Airlines")}
+                    />
                     <span>Local Airlines</span>
                 </label>
                 <label className="tag-item" >
-                    <input type="radio" value={slugify("International Airlines")} name="airline" id={slugify("International Airlines")} />
+                    <input type="radio" value={slugify("International Airlines")} name="airline" id={slugify("International Airlines")} 
+                        defaultChecked={filter === slugify("International Airlines")}
+                    />
                     <span>International Airlines</span>
                 </label>
                 <label className="tag-item" >
-                    <input type="radio" value={slugify("Private Jets")} name="airline" id={slugify("Private Jets")} />
+                    <input type="radio" value={slugify("Private Jets")} name="airline" id={slugify("Private Jets")} 
+                        defaultChecked={filter === slugify("Private Jets")}
+                    />
                     <span>Private Jets</span>
                 </label>
             </div>
@@ -89,6 +107,7 @@ interface SearchAviationServicesProps {
 export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
     const [searchQuery, setSearchQuery] = useState<string | undefined>();
+    const [searchTag, setSearchTag] = useState<string | undefined>();
 
     useEffect(()=>{
         (()=>{
@@ -98,12 +117,14 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
                 let query = location.searchParams.get("query") || undefined;
                 let tag = location.searchParams.get("airline") || undefined;
 
-                
-                
-                if (query || tag){
-                    setSearchQuery(query || "");
+
+                if (query) {
+                    setSearchQuery(query);
                 }
-                
+
+                if (tag) {
+                    setSearchTag(tag);
+                }
             }
         })()
     },[searchQuery])
@@ -114,7 +135,7 @@ export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
             {props.headerText && <h2>{props.headerText}</h2>}
 
-            <SearchForm value={searchQuery || ""} handleInput={setSearchQuery} handleSearch={props.handleSubmit}/>
+            <SearchForm tagValue={searchTag} queryValue={searchQuery || ""} handleInput={setSearchQuery} handleSearch={props.handleSubmit}/>
 
             {props.indicate && <SearchIndicator />}
         </div>
