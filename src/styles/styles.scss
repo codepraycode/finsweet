@@ -803,7 +803,7 @@ header {
 
 
     color: $light-blue;
-    @include mixins.blur-bg($image: "/images/plane-air.jpg", $position-x: 6rem);
+    @include mixins.blur-bg($image: "/images/plane-air-2.jpg", $position-x: 0.2rem);
 
     position: relative;
 

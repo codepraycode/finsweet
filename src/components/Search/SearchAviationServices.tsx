@@ -107,7 +107,7 @@ interface SearchAviationServicesProps {
 export const SearchAviationServices = (props: SearchAviationServicesProps) => {
 
     const [searchQuery, setSearchQuery] = useState<string | undefined>();
-    const [searchTag, setSearchTag] = useState<string | undefined>();
+    const [searchTag, setSearchTag] = useState<string | undefined>("all");
 
     useEffect(()=>{
         (()=>{
