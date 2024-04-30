@@ -60,7 +60,7 @@
     color: $light-blue;
 }
 
-@mixin blur-bg($image, $position-x: center, $position-y: center, $blur: 0.582) {
+@mixin blur-bg($image, $position-x: center, $position-y: center, $blur: 0.781) {
     background-image: url($image);
     background-position: $position-x $position-y;
     background-size: cover;
@@ -81,7 +81,7 @@
         height: 100%;
 
 
-        // background-color: rgba(0, 0, 0, $blur);
+        // background-color: hsla(229, 40%, 26%, 0.781);
         background-color: hsla(228, 40%, 15%, $blur);
 
         top: 0;
