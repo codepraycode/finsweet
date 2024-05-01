@@ -800,7 +800,7 @@ header {
 @include mixins.md {
 
     .search-item-list:empty {
-        height: 25vh;
+        height: 15vh;
     }
 
     // .search-list:has(.search-item-list:empty) ~ .footer{
@@ -810,13 +810,8 @@ header {
     //     width: 100%;
     // }
 
-    // @include mixins.push-footer('main:empty');
-    main ~.footer {
-        // background-color: green;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+    @include mixins.push-footer('.search-list:has(.search-item-list:empty)');
+    
 }
 
 
@@ -982,6 +977,10 @@ header {
             color: $active-text;
             font-size: 2rem;
         }
+
+        h1 {
+            color: $active-text;
+        }
     }
 
     
@@ -1008,8 +1007,9 @@ header {
         }
     }
 
+    .btn-resend,
     .btn-send {
-        display: inline-block;
+        display: block;
         width: 100%;
         padding-block: 1rem;
 
@@ -1028,5 +1028,28 @@ header {
             background-color: $active-bg;
             color: $hero-bg;
         }
+    }
+
+    .btn-resend {
+        width: 60%;
+        margin-block: 1rem;
+        margin-inline: auto;
+    }
+}
+
+
+.with-smiley {
+    display: flex;
+    align-items: center;
+    // background-color: red;
+    justify-content: center;
+
+    line-height: 2.5rem;
+    &::after {
+        content: "☺️";
+        display: inline-block;
+        font-size: 3rem;
+        // background-color: red;
+        margin-left: 1rem;
     }
 }

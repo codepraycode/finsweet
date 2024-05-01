@@ -1,8 +1,9 @@
-import ContactForm from "@/components/ContactForm";
+import ContactUs from "@/components/Contact";
+import ContactForm from "@/components/Contact/ContactForm";
 import Section from "@/components/UI/Section";
 
 
-const AboutPage = ({ params }: { params: { slug: string } }) => {
+const AboutPage = () => {
 
     return (
         <Section
@@ -81,11 +82,7 @@ const AboutPage = ({ params }: { params: { slug: string } }) => {
             </div>
 
 
-            <div className="form-wrapper">
-
-                <h3>Send a message</h3>
-                <ContactForm />
-            </div>
+            <ContactUs />
         </Section >
     )
 }

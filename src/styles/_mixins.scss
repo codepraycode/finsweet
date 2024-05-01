@@ -91,13 +91,23 @@
     }
 }
 
-@mixin push-footer($selector) {
-    
+@mixin push-footer($selector: null) {
 
-    #{$selector} ~.footer {
-        // background-color: green;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+
+    @if $selector == null {
+
+        main & ~.footer {
+            // background-color: green;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    } @else {
+        main #{$selector} ~ .footer {
+            // background-color: green;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     }
 }
