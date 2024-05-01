@@ -803,14 +803,14 @@ header {
         height: 15vh;
     }
 
-    // .search-list:has(.search-item-list:empty) ~ .footer{
-    //     // background-color: green;
-    //     position: fixed;
-    //     bottom: 0;
-    //     width: 100%;
-    // }
+    main:has(.search-item-list:empty) ~ .footer{
+        // background-color: green;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 
-    @include mixins.push-footer('.search-list:has(.search-item-list:empty)');
+    // @include mixins.push-footer('.search-list:has(.search-item-list:empty)');
     
 }
 

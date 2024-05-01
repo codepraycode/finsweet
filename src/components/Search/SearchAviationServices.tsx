@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { slugify } from "@/utils";
 import { SearchProps, useSearchContext } from "@/context/SearchContext";
 
@@ -15,6 +15,16 @@ interface SearchFormProps {
 
 const SearchForm = (props: SearchFormProps ) => {
     const {tagValue:filter, queryValue:value, handleInput, handleSearch} = props;
+
+
+    const handleTagSelect = (e:ChangeEvent<HTMLInputElement>) => {
+        // console.log(e.target.name, e.target.value, e.target.checked);
+
+        if (handleSearch) handleSearch({
+            query: value,
+            tag: e.target.value
+        });
+    }
 
     return (
         <form action="/aviation" onSubmit={(e)=>{
@@ -32,28 +42,32 @@ const SearchForm = (props: SearchFormProps ) => {
             }
         }}>
             <div className="tags">
-                <label className="tag-item" >
+                <label htmlFor={slugify("All")} className="tag-item" >
                     <input
                         type="radio" name="airline" id={slugify("All")} value={slugify("All")} 
                         defaultChecked={filter === slugify("All")}
+                        onChange={handleTagSelect}
                     />
                     <span>All</span>
                 </label>
-                <label className="tag-item" >
+                <label className="tag-item" htmlFor={slugify("Local Airlines")}>
                     <input type="radio" name="airline" id={slugify("Local Airlines")} value={slugify("Local Airlines")}
                         defaultChecked={filter === slugify("Local Airlines")}
+                        onChange={handleTagSelect}
                     />
                     <span>Local Airlines</span>
                 </label>
-                <label className="tag-item" >
+                <label className="tag-item" htmlFor={slugify("International Airlines")}>
                     <input type="radio" value={slugify("International Airlines")} name="airline" id={slugify("International Airlines")} 
                         defaultChecked={filter === slugify("International Airlines")}
+                        onChange={handleTagSelect}
                     />
                     <span>International Airlines</span>
                 </label>
-                <label className="tag-item" >
+                <label className="tag-item" htmlFor={slugify("Private Jets")}>
                     <input type="radio" value={slugify("Private Jets")} name="airline" id={slugify("Private Jets")} 
                         defaultChecked={filter === slugify("Private Jets")}
+                        onChange={handleTagSelect}
                     />
                     <span>Private Jets</span>
                 </label>
