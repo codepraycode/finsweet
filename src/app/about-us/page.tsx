@@ -1,7 +1,7 @@
 import Section from "@/components/UI/Section";
 
 
-const AboutPage = ({ params }: { params: { slug: string } }) => {
+const AboutPage = () => {
 
     return (
         <Section

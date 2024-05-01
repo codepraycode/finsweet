@@ -8,11 +8,11 @@ export default function Home() {
 
 
     return (
-        <main>
+        <>
             <IntroSlider />
             <AviationHero />
 
             <PopulateRecords />
-        </main>
+        </>
     );
 }

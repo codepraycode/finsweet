@@ -90,3 +90,14 @@
         z-index: -1;
     }
 }
+
+@mixin push-footer($selector) {
+    
+
+    #{$selector} ~.footer {
+        // background-color: green;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}

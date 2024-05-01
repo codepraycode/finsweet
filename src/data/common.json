@@ -35,7 +35,7 @@
         },
         "cta": {
             "label": "Request Quote",
-            "link": null,
+            "link": "/contact",
             "className": "btn-with-arrow btn-shape-bg"
         }
     },
