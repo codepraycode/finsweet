@@ -106,7 +106,7 @@ const SearchIndicator = () => {
     return (
         <p>
             <i>
-            Found {searchResult.length} aviation service{searchResult.length > 1 ? 's': ''} related to your search: <b>&quot;{searchParams.query}&quot;</b></i>
+            Found {searchResult.length} aviation service{searchResult.length > 1 ? 's': ''} related to your search: {searchParams.query && <b>&quot;{searchParams.query}&quot;</b>}</i>
         </p>
     )
 
