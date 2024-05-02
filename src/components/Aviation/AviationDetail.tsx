@@ -2,10 +2,17 @@
 
 import React from 'react'
 import { XLargeCard } from '../UI/XLargeCard'
+import { useRouter } from 'next/navigation';
+import { Aviation } from '@/lib/nobox/structures';
+import { NoboxResponse } from '@/lib/nobox-client';
 
-export default function AviationDetail({data:d}:any) {
+export default function AviationDetail({data:d}:{data: NoboxResponse<Aviation>}) {
+
+    const router = useRouter();
+
     const onClick = () => {
         // window.open("aviation/" + d.slug, '_blank');
+        router.push(`/aviation/${d.slug}`);
     }
 
     return (

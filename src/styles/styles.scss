@@ -829,6 +829,7 @@ header {
     display: flex;
     flex-direction: column;
 
+    cursor: pointer;
 
     color: $light-blue;
     @include mixins.blur-bg($image: "/images/plane-air-2.jpg", $position-x: 0.2rem);
@@ -1053,3 +1054,40 @@ header {
         margin-left: 1rem;
     }
 }
+
+
+.aviation-item-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+    
+    @include mixins.md {
+        flex-direction: row;
+        justify-content: space-between;
+        & > div:first-of-type {
+            // background-color: red;
+            max-width: 60%;
+        }
+
+
+        .routes-cards {
+            height: 45rem;
+            overflow-y: scroll;
+        }
+    }
+    
+
+    .routes-cards {
+
+        h1 {
+            position: sticky;
+            top: 0rem;
+            background-color: $white;
+            padding: 1rem;
+            border-bottom: 1px solid $white-darken;
+        }
+    }
+}
+
+
