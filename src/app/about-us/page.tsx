@@ -19,7 +19,7 @@ const AboutPage = () => {
                         Company Structure [RC1093505]
                     </h2>
                     DonManuel Group is a holding company with the following subsidiaries:
-                    <ul>
+                    <ul className="listly">
                         <li>DonManuel Concept Ltd</li>
                         <li>DonBryan Logistics Ltd</li>
                     </ul>
@@ -44,11 +44,11 @@ const AboutPage = () => {
                     <h2 className="section-header">
                         Mission
                     </h2>
-                    To Develop  lasting client relationships by providing exceptional value in the aviation industry with Smart work,Respect and Trust.
+                    To Develop  lasting client relationships by providing exceptional value in the aviation industry with Smart work, Respect and Trust.
                 </div>
                 <div className="p-div">
                     <h2 className="section-header">CORE VALUES</h2>
-                    <ul className="p-ul">
+                    <ul className="p-ul listly">
                         <li>Trust</li>
                         <li>Sincerity</li>
                         <li>Hard/Smart Work</li>

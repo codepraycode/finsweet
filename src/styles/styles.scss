@@ -8,6 +8,8 @@
 .p-div {
     margin-top: 2rem;
 
+    font-size: .99rem;
+
     @include mixins.sm {
         padding-inline: 1rem;
     }
@@ -1091,3 +1093,24 @@ header {
 }
 
 
+
+.listly {
+    list-style-type: none;
+    margin-top: 1rem;
+    
+    li {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        margin-bottom: .4rem;
+        &::before {
+            content: ">";
+            display: inline-block;
+            background-color: $active-bg;
+            margin-right: 1rem;
+
+            padding: .1rem .6rem;
+            border-radius: 9rem;
+        }
+    }
+}
