@@ -72,7 +72,9 @@ const AviationDisplay = ({slug}: { slug: string }) => {
                         Head Office
                     </h2>
 
-                    {data?.headoffice}
+                    <address>
+                        {data?.headoffice}
+                    </address>
                 </div>
 
 
@@ -95,7 +97,9 @@ const AviationDisplay = ({slug}: { slug: string }) => {
                         Base
                     </h2>
 
-                    {data?.base || "Unknown"}
+                    <address>
+                        {data?.base || "Unknown"}
+                    </address>
 
                 </div>
 
@@ -117,12 +121,7 @@ const AviationDisplay = ({slug}: { slug: string }) => {
 
             <div className="routes-cards" >
                 <h1>Routes ({data?.routes.length})</h1>
-                <div style={{
-                    // margin: "10px 0",
-                    // overflowY: "scroll",
-                    // height: "610px",
-                    // width: "100%",
-                }}>
+                <div>
                     {
                         data?.routes.map((item, i) => (
                             <RouteCard

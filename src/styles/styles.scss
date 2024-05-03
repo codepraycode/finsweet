@@ -28,7 +28,7 @@
 }
 
 
-$nav-z-index: 1;
+$nav-z-index: 5;
 
 header {
     .header-wrapper {
@@ -37,7 +37,7 @@ header {
 
     position: sticky;
     top: 0rem;
-    z-index: 1;
+    z-index: $nav-z-index;
 
 
     border-bottom: 1px solid whitesmoke;
@@ -144,7 +144,7 @@ header {
         color: inherit;
 
         &:has(input:checked){
-            z-index: 2;
+            z-index: $nav-z-index + 1;
 
         }
 
@@ -155,7 +155,7 @@ header {
             &~.nav-wrapper {
                 // display: flex;
                 opacity: 1;
-                z-index: 1;
+                z-index: $nav-z-index + 1;
 
                 flex-direction: column;
 
@@ -197,7 +197,7 @@ header {
 
                 .nav-cta {
                     // background-color: green;
-                    z-index: 1;
+                    z-index: $nav-z-index + 1;
 
                     width: fit-content;
                     margin-right: auto;
@@ -1082,11 +1082,43 @@ header {
 
     .routes-cards {
 
+        position: relative;
+        // padding-top: 5rem;
+    
+
         h1 {
             position: sticky;
             top: 0rem;
             background-color: $white;
+            backdrop-filter: blur(40px);
             padding: 1rem;
+            border-bottom: 1px solid $white-darken;
+            z-index: 3;
+
+            &::before {
+                content: "";
+
+                position: absolute;
+                display: inline-block;
+                background-image: url("/images/icons/plane-fly.svg");
+
+                background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                width: 5rem;
+                height: 5rem;
+
+                right: 1.5rem;
+                top: 0;
+
+                opacity: .6;
+
+            }
+        }
+
+
+        article {
             border-bottom: 1px solid $white-darken;
         }
     }
@@ -1112,5 +1144,94 @@ header {
             padding: .1rem .6rem;
             border-radius: 9rem;
         }
+    }
+}
+
+.routes {
+    
+    // display: flex;
+
+    position: relative;
+
+
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: .5rem;
+
+        font-size: .9rem;
+
+
+        &:first-of-type {
+            b {
+                background-image: url("/images/icons/location-from.svg");
+            }
+
+            margin-bottom: 4rem;
+
+            &::before {
+                content: "";
+
+                // border: .125rem solid $gray;
+                // border-style: dashed;
+
+                width: 2rem;
+                height: 2rem;
+                position: absolute;
+
+                top: calc(50% - 1rem);
+
+                background-image: url("/images/icons/plane.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-color: $active-bg;
+
+                transform: rotate(135deg);
+
+                // border-radius: 50%;
+
+                z-index: 2;
+            }
+
+            &::after {
+                content: "";
+
+                border: .125rem solid $gray;
+                border-style: dashed;
+
+                width: 50%;
+                height: 1px;
+                position: absolute;
+
+                top: 50%;
+
+                z-index: 1;
+            }
+        }
+        
+        &:last-of-type {
+            b {
+                background-image: url("/images/icons/location-to.svg");
+            }
+        }
+    }
+    
+    b {
+        // background-color: red;
+        display: inline-block;
+
+        text-indent: 100%;
+
+        width: 2rem;
+        height: 2rem;
+        overflow: hidden;
+
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
