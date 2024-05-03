@@ -658,6 +658,12 @@ header {
 }
 
 
+.form-wrapper {
+    background-color: $hero-bg;
+    position: sticky;
+    top: 6rem;
+}
+
 
 .search-wrapper {
     display: flex;
